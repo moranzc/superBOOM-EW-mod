@@ -1,0 +1,47 @@
+{
+  "wishdalemod:Yishujiushibaozha": {
+    "NAME": "落幕",
+    "DESCRIPTIONS": [
+      "所有敌人在 #b",
+      "回合后爆炸。"
+    ]
+  },
+  "wishdalemod:BaolielimingPower": {
+    "NAME": "爆裂黎明",
+    "DESCRIPTIONS": [
+      "攻击力+516%，在回合开始时在手牌中加入",
+      " 张 #y年长的死魂灵 。"
+    ]
+  },
+  "wishdalemod:YinbiPower": {
+    "NAME": "隐蔽",
+    "DESCRIPTIONS": [
+      "打出攻击牌时失去所有 #y无实体 "
+    ]
+  },
+  "wishdalemod:BianxieshibujizhanPower": {
+    "NAME": "便携式补给站",
+    "DESCRIPTIONS": [
+      "每次洗牌获得 #b",
+      "点 *能量"
+    ]
+  },
+  "wishdalemod:Lei": {
+    "NAME": "累",
+    "DESCRIPTIONS": [
+      "每回合减少3点能量"
+    ]
+  },
+  "wishdalemod:Canying": {
+    "NAME": "残影",
+    "DESCRIPTIONS": [
+      "累计 #y7 点时，获得 #y好礼 并清除 #y残影 NL #y好礼 NL 造成的伤害下降50% NL 每有一层所有敌人失夫9点生命。"
+    ]
+  },
+  "wishdalemod:Haoli": {
+    "NAME": "好礼",
+    "DESCRIPTIONS": [
+      "造成的伤害下降50% NL 每有一层所有敌人在回合开始时失夫9点生命。"
+    ]
+  }
+}

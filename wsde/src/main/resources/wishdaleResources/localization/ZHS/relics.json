@@ -1,0 +1,39 @@
+{
+  "wishdalemod:wishdalebadge": {
+    "NAME": "维什戴尔证章",
+    "FLAVOR": "干员行使投掷手职责。特发此证。以兹证明。",
+    "DESCRIPTIONS": [
+      "每回合第一张攻击牌造成两次伤害，第二次的伤害降低至攻击力的一半"
+    ]
+  },
+  "wishdalemod:AncestralLauncher": {
+    "NAME": "“祖宗发射器”",
+    "FLAVOR": "去吧，炸得更猛烈些！",
+    "DESCRIPTIONS": [
+      "替换 #g维什戴尔证章 。",
+      "每回合第一张攻击牌造成三次伤害，后两次的伤害降低至攻击力的一半"
+    ]
+  },
+  "wishdalemod:GoldBoneDice": {
+    "NAME": "“镶金骨骰”",
+    "FLAVOR": "镶金的骨骰只有一面刻着代表生存的印记，至于其他十九面......",
+    "DESCRIPTIONS": [
+      "所有敌人生命减少 #b",
+      "% 。"
+    ]
+  },
+  "wishdalemod:RoaringHand": {
+      "NAME": "轰鸣之手",
+    "FLAVOR": "命中标的，撼动大地。",
+    "DESCRIPTIONS": [
+      "每连续出攻击牌就使自身获得从1递增的 临时力量，最高15点。某回合不出攻击牌则使清空加成"
+    ]
+  },
+  "wishdalemod:AncientTreeFruit": {
+    "NAME": "古地树实",
+    "FLAVOR": "萨米的孩子将愿望许进树种里埋入皑皑白雪。待到大树结实，取下前四个果实，将最小的那个留给后代许愿，余下的树果，便是向萨米祈求答案的贡品。",
+    "DESCRIPTIONS": [
+      "立即获得三件随机的小玩意"
+    ]
+  }
+}

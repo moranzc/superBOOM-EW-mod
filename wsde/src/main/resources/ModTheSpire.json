@@ -1,0 +1,10 @@
+{
+  "modid": "WishdaleMod",
+  "name": "维什戴尔",
+  "author_list": ["墨染_zc"],
+  "description": "玩益达玩的。 NL 本产品包含但不限： NL 自动射击加上过载模式简单无脑弱智无限最终被坚不可摧狠狠腐乳但不吃律动最后动画无限但并无伤害狠狠凌迟自己拼尽全力无法战胜， NL 这些都是鸡煲干的，不关小墨的事 NL 以及祖传的光敏性癫痫提示",
+  "version": "1.0.0",
+  "sts_version": "10-30-2024",
+  "mts_version": "3.23.2",
+  "dependencies": ["basemod"]
+}
