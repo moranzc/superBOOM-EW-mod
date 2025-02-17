@@ -2,8 +2,10 @@ package wishdalmod.modcore;
 
 import basemod.BaseMod;
 import basemod.interfaces.*;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.*;
@@ -12,11 +14,15 @@ import wishdalmod.characters.EW;
 import wishdalmod.helpers.ModConfig;
 import wishdalmod.relics.*;
 
+import java.nio.charset.StandardCharsets;
+
+import static basemod.BaseMod.gson;
+import static com.megacrit.cardcrawl.core.Settings.language;
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_ZC;
 
 @SpireInitializer
-public class WishdaleMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber,  PostInitializeSubscriber,AddAudioSubscriber{
+public class WishdaleMod implements EditCardsSubscriber,EditStringsSubscriber,EditCharactersSubscriber,EditRelicsSubscriber,PostInitializeSubscriber,AddAudioSubscriber,EditKeywordsSubscriber{
     public static final String MY_CHARACTER_BUTTON = "wishdaleResources/images/char/Character_Button.png";
     public static final String MY_CHARACTER_PORTRAIT = "wishdaleResources/images/char/Character_Portrait.png";
     public static final String BG_ATTACK_512 = "wishdaleResources/images/512/bg_attack_512.png";
@@ -108,7 +114,20 @@ public class WishdaleMod implements EditCardsSubscriber, EditStringsSubscriber, 
         BaseMod.addCharacter(new EW(CardCrawlGame.playerName), MY_CHARACTER_BUTTON, MY_CHARACTER_PORTRAIT, WISHDALE_ZC);
 
     }
-
+    public void receiveEditKeywords() {
+        Gson gson = new Gson();
+        String lang = "ENG";
+        if (language == Settings.GameLanguage.ZHS) {
+                lang = "ZHS";
+        }
+            String json = Gdx.files.internal("wishdaleResources/localization/"+lang+"/keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        Keyword[] keywords = gson.fromJson(json, Keyword[].class);
+        if (keywords != null) {
+            for (Keyword keyword : keywords) {
+                BaseMod.addKeyword("wishdalemod", keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
+            }
+        }
+    }
     public void receiveEditStrings() {
         String lang;
         if (Settings.language == Settings.GameLanguage.ZHS) {
@@ -116,12 +135,12 @@ public class WishdaleMod implements EditCardsSubscriber, EditStringsSubscriber, 
         } else {
             lang = "ENG";
         }
-        BaseMod.loadCustomStringsFile(CardStrings.class, "wishdaleResources/localization/ZHS/cards.json");
-        BaseMod.loadCustomStringsFile(CharacterStrings.class, "wishdaleResources/localization/ZHS/characters.json");
-        BaseMod.loadCustomStringsFile(RelicStrings.class, "wishdaleResources/localization/ZHS/relics.json");
-        BaseMod.loadCustomStringsFile(PowerStrings.class, "wishdaleResources/localization/ZHS/powers.json");
-        BaseMod.loadCustomStringsFile(UIStrings.class, "wishdaleResources/localization/ZHS/ui.json");
-        //用lang会卡面没描述，不知道为什么先不管
+        BaseMod.loadCustomStringsFile(CardStrings.class, "wishdaleResources/localization/"+lang+"/cards.json");
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, "wishdaleResources/localization/"+lang+"/characters.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, "wishdaleResources/localization/"+lang+"/relics.json");
+        BaseMod.loadCustomStringsFile(PowerStrings.class, "wishdaleResources/localization/"+lang+"/powers.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class, "wishdaleResources/localization/"+lang+"/ui.json");
+
     }
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new wishdalebadge(), WISHDALE_RED);

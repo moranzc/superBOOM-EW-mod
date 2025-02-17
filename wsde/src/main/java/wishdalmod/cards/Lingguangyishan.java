@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import wishdalmod.actions.LinguangyishanAction;
 import wishdalmod.helpers.ModHelper;
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
@@ -27,7 +28,7 @@ public class Lingguangyishan extends CustomCard {
         this.exhaust = true;
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ForeignInfluenceAction(this.upgraded));
+        this.addToBot(new LinguangyishanAction(p));
     }
 
     public void upgrade() {

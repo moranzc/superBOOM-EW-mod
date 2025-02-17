@@ -1,13 +1,15 @@
 package wishdalmod.cards;
-//3场战斗后从牌组移除 75块钱 不足扣遗物
-//3费打1，斩杀升级所有牌
+
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import wishdalmod.actions.ShengjiAction;
 import wishdalmod.helpers.ModHelper;
 
@@ -31,7 +33,9 @@ public class Zixuechengcai extends CustomCard {
         this.isMultiDamage = true;
         this.baseDamage = 12;
         this.tags.add(CardTags.HEALING);
+        this.magicNumber = this.baseMagicNumber = 3;
     }
+
     public void triggerOnGlowCheck() {
         if (this.useTimes == 2) {
             this.glowColor = AbstractCard.GREEN_BORDER_GLOW_COLOR.cpy();
@@ -40,6 +44,25 @@ public class Zixuechengcai extends CustomCard {
         }
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
+        upgradeMagicNumber(-1);
+        applyPowers();
+        for (AbstractCard caa : AbstractDungeon.player.masterDeck.group) {
+            if (caa.uuid == this.uuid) {
+                caa.baseMagicNumber = caa.magicNumber = this.magicNumber;
+                this.upgradedMagicNumber = true;
+                if (caa.magicNumber == 0) {
+                    caa.untip();
+                    caa.unhover();
+                    AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(caa, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                    AbstractDungeon.player.masterDeck.removeCard(caa); break;
+                }
+                caa.applyPowers();
+                break;
+            }
+        }
+        if (this.baseMagicNumber == 0) {
+            this.exhaust = true;
+        }
         this.useTimes++;
         if (this.useTimes == 3) {
             this.exhaust = true;

@@ -9,7 +9,7 @@
   },
   "wishdalemod:Zhishixuebao": {
     "NAME": "知识学爆",
-    "DESCRIPTION": " !M! 力  NL  !M! 敏  NL  累 "
+    "DESCRIPTION": " !M! 力  NL  !M! 敏  NL  wishdalemod:累 "
   },
   "wishdalemod:Dailizhihui": {
     "NAME": "代理指挥",
@@ -25,8 +25,8 @@
   },
   "wishdalemod:Lingguangyishan": {
     "NAME": "灵光一闪",
-    "DESCRIPTION": "从3张任意颜色的攻击牌中选择1张加入你的手牌 NL 消耗  ",
-    "UPGRADE_DESCRIPTION": "从3张任意颜色的攻击牌中选择1张在本回合耗能变为0的牌 NL 消耗 "
+    "DESCRIPTION": " wishdalemod:银银银银银 NL 消耗  ",
+    "UPGRADE_DESCRIPTION": " wishdalemod:金金金金金 NL 消耗 "
   },
   "wishdalemod:Yigongdaishou": {
     "NAME": "以攻代守",
@@ -54,12 +54,12 @@
   },
   "wishdalemod:Zhongyanluomu": {
     "NAME": "终焉落幕",
-    "DESCRIPTION": "只有当抽牌堆中没有牌时才能打出 NL 让敌人在 !M! 回合后爆炸",
+    "DESCRIPTION": "wishdalemod:终焉 NL 让敌人在 !M! 回合后爆炸 NL 消耗 ",
     "UPGRADE_DESCRIPTION": "我的抽牌堆必须是他妈的 #r空的!"
   },
   "wishdalemod:Sihunlingdeyuxi": {
     "NAME": "死魂灵的余息",
-    "DESCRIPTION": "召唤一个魂灵之影，获得缓冲"
+    "DESCRIPTION": "召唤一个魂灵之影"
   },
   "wishdalemod:Shouliudan": {
     "NAME": "手榴弹",
@@ -67,11 +67,11 @@
   },
   "wishdalemod:Kunanchenshuzhe": {
     "NAME": "苦难陈述者",
-    "DESCRIPTION": "给予所有敌人99层 易伤和99层 虚弱 NL 消耗 NL ALL门"
+    "DESCRIPTION": "给予所有敌人99层 易伤 和99层 虚弱 NL 消耗 NL  [#ffd700]ALL[] wishdalemod:门"
   },
   "wishdalemod:Hunlingpingzhang": {
     "NAME": "魂灵屏障",
-    "DESCRIPTION": "阻止下 !M! 次你受到的生命值损伤"
+    "DESCRIPTION": " !M! 层缓冲"
   },
   "wishdalemod:Zhanhouxiuzheng": {
     "NAME": "战后修整",
@@ -83,7 +83,7 @@
   },
   "wishdalemod:Baolieliming": {
     "NAME": "爆裂黎明",
-    "DESCRIPTION": "召唤2个魂灵之影，攻击力+516%，在每回合开始时，将一张 *年长的死魂灵 加入你的手牌"
+    "DESCRIPTION": "丨 [#ffd700]boom[] wishdalemod:丨"
   },
   "wishdalemod:Sihunling": {
     "NAME": "起飞的年长的死魂灵",
@@ -111,7 +111,7 @@
   },
   "wishdalemod:Yinbao": {
     "NAME": "音爆",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害并使其本回合失去 !M! 点力量"
+    "DESCRIPTION": "群攻 !D! 伤 NL 使其本回合失去 !M! 力 X 次"
   },
   "wishdalemod:Zhanshuguihua": {
     "NAME": "战术规划",
@@ -153,7 +153,7 @@
   },
   "wishdalemod:Zixuechengcai": {
     "NAME": "自学成才",
-    "DESCRIPTION": " !D! 伤 NL 斩杀 时， 升级 你牌组中的两张随机牌 NL 使用三次后 消耗 "
+    "DESCRIPTION": " !D! 伤 NL 斩杀 时， 升级 你牌组中的两张随机牌 NL 剩 !M! 次"
   },
   "wishdalemod:Bianxieshibujizhan": {
     "NAME": "便携式补给站",

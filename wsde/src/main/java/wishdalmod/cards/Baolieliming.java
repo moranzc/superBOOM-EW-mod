@@ -32,12 +32,13 @@ public class Baolieliming extends CustomCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new BaolielimingPower(p, this.magicNumber), this.magicNumber));
+        CardCrawlGame.sound.play("BOOM");
     }
 
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(4);  // 升级后减少费用
+            this.upgradeBaseCost(4);
         }
     }
 

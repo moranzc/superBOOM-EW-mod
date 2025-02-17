@@ -86,6 +86,7 @@ public class EW extends CustomPlayer {
         retVal.add("wishdalemod:Defend");
         retVal.add("wishdalemod:Defend");
         retVal.add("wishdalemod:Defend");
+        retVal.add("wishdalemod:Dindianqingsuan");
         return retVal;
     }
     // 初始遗物的ID
@@ -98,8 +99,8 @@ public class EW extends CustomPlayer {
         return new CharSelectInfo(
                 characterStrings.NAMES[0], // 人物名字
                 characterStrings.TEXT[0], // 人物介绍
-                49, // 当前血量
-                49, // 最大血量
+                47, // 当前血量
+                47, // 最大血量
                 0, // 初始充能球栏位
                 99, // 初始携带金币
                 5, // 每回合抽牌数量
@@ -130,7 +131,7 @@ public class EW extends CustomPlayer {
     }
     // 高进阶带来的生命值损失
     public int getAscensionMaxHPLoss() {
-        return 10;
+        return 9;
     }
     // 卡牌的能量字体，没必要修改
     public BitmapFont getEnergyNumFont() {
