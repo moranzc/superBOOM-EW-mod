@@ -51,6 +51,9 @@ public class Zhongyanluomu extends CustomCard {
         } else if (p.drawPile.size() > 0) {
             this.cantUseMessage = CARD_STRINGS.UPGRADE_DESCRIPTION;
             return false;
+        } else if (p.discardPile.size() > 0) {
+            this.cantUseMessage = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            return false;
         } else {
             return canUse;
         }

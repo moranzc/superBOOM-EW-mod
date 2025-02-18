@@ -55,7 +55,7 @@
   "wishdalemod:Zhongyanluomu": {
     "NAME": "终焉落幕",
     "DESCRIPTION": "wishdalemod:终焉 NL 让敌人在 !M! 回合后爆炸 NL 消耗 ",
-    "UPGRADE_DESCRIPTION": "我的抽牌堆必须是他妈的 #r空的!"
+    "UPGRADE_DESCRIPTION": "我的抽弃牌堆必须是他妈的 #r空的!"
   },
   "wishdalemod:Sihunlingdeyuxi": {
     "NAME": "死魂灵的余息",
@@ -83,7 +83,7 @@
   },
   "wishdalemod:Baolieliming": {
     "NAME": "爆裂黎明",
-    "DESCRIPTION": "丨 [#ffd700]boom[] wishdalemod:丨"
+      "DESCRIPTION": "[#ffd700]召唤2个魂灵之影，攻击力+516%，在每回合开始时，将一张 *年长的死魂灵 加入你的手牌[] wishdalemod:丨"
   },
   "wishdalemod:Sihunling": {
     "NAME": "起飞的年长的死魂灵",
