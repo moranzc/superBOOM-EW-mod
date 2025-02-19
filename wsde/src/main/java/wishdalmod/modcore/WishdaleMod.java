@@ -6,23 +6,24 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
+import wishdalmod.actions.BaozhaAction;
 import wishdalmod.cards.*;
 import wishdalmod.characters.EW;
 import wishdalmod.helpers.ModConfig;
 import wishdalmod.relics.*;
 
 import java.nio.charset.StandardCharsets;
-
-import static basemod.BaseMod.gson;
 import static com.megacrit.cardcrawl.core.Settings.language;
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_ZC;
 
 @SpireInitializer
-public class WishdaleMod implements EditCardsSubscriber,EditStringsSubscriber,EditCharactersSubscriber,EditRelicsSubscriber,PostInitializeSubscriber,AddAudioSubscriber,EditKeywordsSubscriber{
+public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,EditStringsSubscriber,EditCharactersSubscriber,EditRelicsSubscriber,PostInitializeSubscriber,AddAudioSubscriber,EditKeywordsSubscriber{
     public static final String MY_CHARACTER_BUTTON = "wishdaleResources/images/char/Character_Button.png";
     public static final String MY_CHARACTER_PORTRAIT = "wishdaleResources/images/char/Character_Portrait.png";
     public static final String BG_ATTACK_512 = "wishdaleResources/images/512/bg_attack_512.png";
@@ -43,6 +44,12 @@ public class WishdaleMod implements EditCardsSubscriber,EditStringsSubscriber,Ed
         BaseMod.subscribe(this);
         BaseMod.addColor(WISHDALE_RED, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, BG_ATTACK_512, BG_SKILL_512, BG_POWER_512, ENEYGY_ORB, BG_ATTACK_1024, BG_SKILL_1024, BG_POWER_1024, BIG_ORB, SMALL_ORB);
         ModConfig.initModSettings();
+    }
+
+    public void receivePostExhaust(AbstractCard abstractCard) {
+        if (AbstractDungeon.player instanceof EW) {
+            AbstractDungeon.actionManager.addToTop(new BaozhaAction());
+        }
     }
 
     public static void initialize() {

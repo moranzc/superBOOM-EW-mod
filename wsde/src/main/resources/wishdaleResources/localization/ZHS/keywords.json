@@ -22,5 +22,9 @@
   {
     "NAMES": ["丨"],
     "DESCRIPTION": "BOOM! NL 目光呆滞吧"
+  },
+  {
+    "NAMES": ["爆炸"],
+    "DESCRIPTION": "在战斗结束前移出卡组，移出时对所有敌人造成1点伤害"
   }
 ]
