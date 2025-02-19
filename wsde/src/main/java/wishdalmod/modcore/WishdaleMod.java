@@ -155,9 +155,11 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addRelicToCustomPool(new GoldBoneDice(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new RoaringHand(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new AncientTreeFruit(), WISHDALE_RED);
+        BaseMod.addRelicToCustomPool(new Ruozhitutou(), WISHDALE_RED);
     }
     public void receiveAddAudio() {
         BaseMod.addAudio("BOOM", "wishdaleResources/audio/BOOM.mp3");
+        BaseMod.addAudio("Tutou", "wishdaleResources/audio/Tutou.mp3");
     }
 
 }

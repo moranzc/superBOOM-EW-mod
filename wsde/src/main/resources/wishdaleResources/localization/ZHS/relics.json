@@ -35,5 +35,13 @@
     "DESCRIPTIONS": [
       "立即获得三件随机的小玩意"
     ]
+  },
+  "wishdalemod:Ruozhitutou": {
+    "NAME": "若只兔头",
+    "FLAVOR": "辣鸡！",
+    "DESCRIPTIONS": [
+      "你是什么杯？",
+      "@相信武魂真身！@ NL @全军出击@ NL @我咬死你！@"
+    ]
   }
 }
