@@ -3,21 +3,33 @@ package wishdalmod.characters;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
+import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import wishdalmod.cards.Strike;
 import wishdalmod.helpers.CanyingXiaoguo;
@@ -226,7 +238,6 @@ public class EW extends CustomPlayer {
         if ((AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.getCurrRoom() instanceof MonsterRoom) && !isDead) {
             currentZuzongs.removeIf(r -> r.isDead);
             for (Zuzong r : currentZuzongs) r.render(sb);
-            globalAttributes.render(sb);
             renderHealth(sb);
             if (!orbs.isEmpty()) {
                 for (AbstractOrb o : orbs)
@@ -238,8 +249,6 @@ public class EW extends CustomPlayer {
             sb.setColor(Color.WHITE);
             renderShoulderImg(sb);
         } else {
-            for (AbstractCharacterSpine s : spines.values())
-                s.render(sb);
             hb.render(sb);
             healthHb.render(sb);
         }
@@ -256,10 +265,8 @@ public class EW extends CustomPlayer {
     public void applyStartOfTurnPowers() {
         super.applyStartOfTurnPowers();
         currentZuzongs.removeIf(r -> r.isDead);
-        boolean firstRing = true;
         for (Zuzong r : currentZuzongs) {
-            r.atStartOfTurn(firstRing);
-            firstRing = false;
+            r.applyStartOfTurnPowers();
         }
     }
     

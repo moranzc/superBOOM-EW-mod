@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -17,6 +18,7 @@ import wishdalmod.characters.EW;
 import wishdalmod.helpers.ImageHelper;
 import wishdalmod.helpers.ModConfig;
 import wishdalmod.relics.*;
+import wishdalmod.util.BoomIcon;
 
 import java.nio.charset.StandardCharsets;
 import static com.megacrit.cardcrawl.core.Settings.language;
@@ -59,6 +61,7 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
     }
 //注册
     public void receiveEditCards() {
+        CustomIconHelper.addCustomIcon(BoomIcon.get());
         BaseMod.addCard(new Strike());//打击
         BaseMod.addCard(new Strike());//打击
         BaseMod.addCard(new Defend());//防御

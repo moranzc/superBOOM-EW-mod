@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -20,6 +22,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import com.megacrit.cardcrawl.vfx.combat.HbBlockBrokenEffect;
 import com.megacrit.cardcrawl.vfx.combat.StrikeEffect;
+import wishdalmod.powers.Canying;
 
 
 public class Zuzong extends AbstractMonster {
@@ -95,7 +98,7 @@ public class Zuzong extends AbstractMonster {
 
     public void startOfTurnDamage() {
         int dmg = calculateDmg(TURN_DMG);
-        AbstractMonster m = AbstractDungeon.getRandomMonster(true);
+        AbstractMonster m = AbstractDungeon.getRandomMonster();
         if (m != null) {
             addToBot(new DamageAction(m, new DamageInfo(null, dmg, DamageInfo.DamageType.THORNS)));
             addToBot(new ApplyPowerAction(m, null, new Canying(m, CANYING_AMT)));

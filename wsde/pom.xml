@@ -34,7 +34,7 @@
             <systemPath>${Steam.path}/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>com.evacipated.cardcrawl</groupId>
+            <groupId>ModTheSpire</groupId>
             <artifactId>ModTheSpire</artifactId>
             <version>3.23.2</version>
             <scope>system</scope>
