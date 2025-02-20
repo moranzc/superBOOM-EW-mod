@@ -49,6 +49,13 @@
             <scope>system</scope>
             <systemPath>${Steam.path}/workshop/content/646570/1605060445/ModTheSpire.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>stslib</groupId>
+            <artifactId>stslib</artifactId>
+            <version>0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1609158507/STSLib.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>
