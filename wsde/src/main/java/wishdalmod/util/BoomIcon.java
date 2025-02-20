@@ -5,9 +5,9 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.icons.AbstractCustomIcon;
 
 public class BoomIcon extends AbstractCustomIcon {
-    public static final String ID = "wishdalmod:BOOM";
+    public static final String ID = "wishdalmod:tietu";
     private static BoomIcon singleton;
-    private static final Texture boomTexture = new Texture("cvetmod/images/ManaTheresa.png"); // TODO: 你画好图以后把这个改了
+    private static final Texture boomTexture = new Texture("wishdaleResources/images/UI/orb/BOOM!.jpg");
 
     public BoomIcon() {
         super(ID, boomTexture);

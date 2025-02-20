@@ -3,6 +3,8 @@ package wishdalmod.powers;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import com.megacrit.cardcrawl.core.Settings;
+import wishdalmod.helpers.ImageHelper;
 import wishdalmod.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -26,11 +28,30 @@ public class Canying
         String path128 = "wishdaleResources/images/powers/Canying84.png";
         String path48 = "wishdaleResources/images/powers/Canying34.png";
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 522, 700);
+        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
         updateDescription();
     }
-    public void renderIcons(SpriteBatch sb, float x, float y, Color c){
-        super.renderIcons(sb,this.owner.hb.cX,this.owner.hb.cY,c);
+    int currentIndex=0;
+    public void update(int slot) {
+        super.update(slot);
+        currentIndex++;
+        if (currentIndex >= ImageHelper.canyingpowerList.size())
+            currentIndex = 0;
+    }
+    public void renderIcons(SpriteBatch sb, float x,float y, Color c) {
+        super.renderIcons(sb,x,y,c);
+        TextureAtlas.AtlasRegion img = ImageHelper.getByIndex(currentIndex);
+        sb.setColor(Color.WHITE.cpy());
+        sb.draw(img,
+                this.owner.hb.cX - (float) img.packedWidth / 2.0F,
+                this.owner.hb.cY - (float) img.packedHeight / 2.0F,
+                (float) img.packedWidth / 2.0F,
+                (float) img.packedHeight / 2.0F,
+                (float) img.packedWidth,
+                (float) img.packedHeight,
+        Settings.scale,
+        Settings.scale,
+        0.0F);
     }
     public void updateDescription() { this.description = DESCRIPTIONS[0]; }
 }

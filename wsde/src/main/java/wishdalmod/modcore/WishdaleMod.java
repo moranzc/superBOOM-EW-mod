@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.localization.*;
 import wishdalmod.actions.BaozhaAction;
 import wishdalmod.cards.*;
 import wishdalmod.characters.EW;
+import wishdalmod.helpers.ImageHelper;
 import wishdalmod.helpers.ModConfig;
 import wishdalmod.relics.*;
 
@@ -39,6 +40,7 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
 
     public void receivePostInitialize() {
         ModConfig.initModConfigMenu();
+        ImageHelper.initThis();
     }
     public WishdaleMod() {
         BaseMod.subscribe(this);
@@ -57,6 +59,7 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
     }
 //注册
     public void receiveEditCards() {
+        BaseMod.addCard(new Strike());//打击
         BaseMod.addCard(new Strike());//打击
         BaseMod.addCard(new Defend());//防御
         BaseMod.addCard(new Sihunlingdeyuxi());//死魂灵的余息
