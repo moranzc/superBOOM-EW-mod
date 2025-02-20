@@ -22,8 +22,8 @@ import com.megacrit.cardcrawl.vfx.combat.HbBlockBrokenEffect;
 import com.megacrit.cardcrawl.vfx.combat.StrikeEffect;
 
 
-public class StarRing extends AbstractMonster {
-    public static final String ID = "rhinemod:StarRing";
+public class Zuzong extends AbstractMonster {
+    public static final String ID = "rhinemod:Zuzong";
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
     public static final String[] TEXT = uiStrings.TEXT;
     public static final Texture img = new Texture("wishdaleResources/images/char/StarRing.png");
@@ -32,7 +32,10 @@ public class StarRing extends AbstractMonster {
     public float hoverTimer;
     public Color nameColor;
     public Color nameBgColor;
-    public StarRing(int maxHealth, float x, float y) {
+    public int TURN_DMG = 3;
+    public int CANYING_AMT = 3;
+
+    public Zuzong(int maxHealth, float x, float y) {
         super(TEXT[0], ID, maxHealth, 0.0F, 0.0F, 150.0F, 150.0F, IMG, 0.0F, 0.0F, true);
         drawX = AbstractDungeon.player.drawX + x * Settings.scale;
         drawY = AbstractDungeon.player.drawY + y * Settings.scale;
@@ -84,55 +87,27 @@ public class StarRing extends AbstractMonster {
         }
     }
 
-    public void die() {
-        die(true);
-    }
-    public void die(boolean includeSelf) { die(includeSelf, 1); }
-    public void die(boolean includeSelf, int blastTimes) {
-        if (!isDead) {
-            isDead = true;
-            if (blastDamage == 0) blastDamage = maxHealth - currentHealth;
-            blastDamage *= blastTimes;
-            blastDamage /= 2;
-//            if (hasPower(CriticalPointPower.POWER_ID)) {
-//                AbstractDungeon.actionManager.addToTop(new StarRingBlastAction(blastDamage, includeSelf, getPower(CriticalPointPower.POWER_ID).amount));
-//            } else {
-//                AbstractDungeon.actionManager.addToTop(new StarRingBlastAction(blastDamage, includeSelf));
-//            }
-            AbstractDungeon.actionManager.addToTop(new WaitAction(0.5F));
-            for (AbstractPower p : powers) {
-                p.onDeath();
-            }
-        }
-    }
-    public void blast() {
-        AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.effectList.add(new FlashAtkImgEffect(p.hb.cX, p.hb.cY, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        DamageInfo info = new DamageInfo(null, 5, DamageInfo.DamageType.THORNS);
-        info.name = "StarRing";
-        p.damage(info);
-    }
     public int calculateDmg(float dmg) {
         for (AbstractPower p : powers) dmg = p.atDamageGive(dmg, DamageInfo.DamageType.NORMAL);
         for (AbstractPower p : powers) dmg = p.atDamageFinalGive(dmg, DamageInfo.DamageType.NORMAL);
         return (int)Math.floor(dmg);
     }
+
     public void startOfTurnDamage() {
-        int dmg = calculateDmg(5);
-        int cnt = 1;
-//        if (AbstractDungeon.player.hasPower(GalleriaStellariaPower.POWER_ID)) {
-//            cnt += AbstractDungeon.player.getPower(GalleriaStellariaPower.POWER_ID).amount;
-//        }
-//        addToBot(new WaitAction(0.5F));
-//        for (int i = 0; i < cnt; i ++) {
-//            addToBot(new StarRingBlastAction(dmg, false));
-//        }
+        int dmg = calculateDmg(TURN_DMG);
+        AbstractMonster m = AbstractDungeon.getRandomMonster(true);
+        if (m != null) {
+            addToBot(new DamageAction(m, new DamageInfo(null, dmg, DamageInfo.DamageType.THORNS)));
+            addToBot(new ApplyPowerAction(m, null, new Canying(m, CANYING_AMT)));
+        }
     }
+
     public void applyStartOfTurnPowers() {
         super.applyStartOfTurnPowers();
         startOfTurnDamage();
         loseBlock();
     }
+
     public void render(SpriteBatch sb) {
         if (isDead) return;
         sb.setColor(this.tint.color);
@@ -145,12 +120,11 @@ public class StarRing extends AbstractMonster {
         healthHb.update();
         if (hb.hovered || healthHb.hovered) renderPowerTips(sb);
     }
+
     public void renderPowerTips(SpriteBatch sb) {
         tips.clear();
-        String TipBody = TEXT[1] + calculateDmg(5) + TEXT[2];
-//            if (!AbstractDungeon.player.hasPower(EgotistPower.POWER_ID)) {
-//            TipBody += TEXT[3];
-//        }
+        String TipBody = TEXT[1] + calculateDmg(TURN_DMG) + TEXT[2] + CANYING_AMT + TEXT[3];
+
         tips.add(new PowerTip(TEXT[0], TipBody));
         for (AbstractPower p : powers) {
             if (p.region48 != null) {
@@ -173,7 +147,7 @@ public class StarRing extends AbstractMonster {
         }
 
 //        if (!(AbstractDungeon.player.hoveredCard instanceof AbstractRhineCard) ||
-//                !((AbstractRhineCard) AbstractDungeon.player.hoveredCard).isTargetStarRing) return;
+//                !((AbstractRhineCard) AbstractDungeon.player.hoveredCard).isTargetZuzong) return;
 //        在满足特定条件时，才会执行后续的代码逻辑
         if (!AbstractDungeon.player.isDraggingCard && !isDead) {
             if (hoverTimer != 0.0F) {

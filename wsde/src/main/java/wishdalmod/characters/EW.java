@@ -52,6 +52,13 @@ public class EW extends CustomPlayer {
     };
     // 每个图层的旋转速度
     private static final float[] LAYER_SPEED = new float[]{-40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F};
+    // 祖宗的位置
+    public static final float[] POSX = new float[] { 275.0F, 245.0F, 0.0F };
+    public static final float[] POSY = new float[] { 20.0F, 285.0F, 340.0F };
+    // 三个位置对应的祖宗
+    public final Zuzong[] zuzongs = new Zuzong[3];
+    // 当前存活的祖宗
+    public final ArrayList<Zuzong> currentZuzongs = new ArrayList<>();
     // 人物的本地化文本，如卡牌的本地化文本一样，如何书写见下
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("wishdalemod:wishdale");
     public EW(String name) {
@@ -211,10 +218,88 @@ public class EW extends CustomPlayer {
         @SpireEnum
         public static CardLibrary.LibraryType WISHDALE_RED;
     }
-    //星环
-//    public void onVictory() {
-//        super.onVictory();
-//        spines.get("S").idle = "Idle";
-//        currentRings.clear();
-//    }
+
+    //祖宗
+    @Override
+    public void render(SpriteBatch sb) {
+        stance.render(sb);
+        if ((AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.getCurrRoom() instanceof MonsterRoom) && !isDead) {
+            currentZuzongs.removeIf(r -> r.isDead);
+            for (Zuzong r : currentZuzongs) r.render(sb);
+            globalAttributes.render(sb);
+            renderHealth(sb);
+            if (!orbs.isEmpty()) {
+                for (AbstractOrb o : orbs)
+                    o.render(sb);
+            }
+        }
+
+        if (AbstractDungeon.getCurrRoom() instanceof RestRoom) {
+            sb.setColor(Color.WHITE);
+            renderShoulderImg(sb);
+        } else {
+            for (AbstractCharacterSpine s : spines.values())
+                s.render(sb);
+            hb.render(sb);
+            healthHb.render(sb);
+        }
+    }
+
+    @Override
+    public void update() {
+        super.update();
+        currentZuzongs.removeIf(r -> r.isDead);
+        for (Zuzong r : currentZuzongs) r.update();
+    }
+
+    @Override
+    public void applyStartOfTurnPowers() {
+        super.applyStartOfTurnPowers();
+        currentZuzongs.removeIf(r -> r.isDead);
+        boolean firstRing = true;
+        for (Zuzong r : currentZuzongs) {
+            r.atStartOfTurn(firstRing);
+            firstRing = false;
+        }
+    }
+    
+    public void summonZuzong(int maxHealth, int strength, int block) {
+        if (maxHealth <= 0) maxHealth = 1;
+        for (int i = 0; i < 3; i++)
+            if (zuzongs[i] == null || zuzongs[i].isDead) {
+                zuzongs[i] = new Zuzong(maxHealth, POSX[i], POSY[i]);
+                zuzongs[i].showHealthBar();
+                if (block > 0) {
+                    AbstractDungeon.actionManager.addToTop(new GainBlockAction(zuzongs[i], block));
+                }
+                if (strength > 0) {
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(zuzongs[i], this, new StrengthPower(zuzongs[i], strength)));
+                }
+                currentZuzongs.add(zuzongs[i]);
+                return;
+            }
+    }
+
+    @Override
+    public void damage(DamageInfo info) {
+        currentZuzongs.removeIf(r -> r.isDead);
+        if (!currentZuzongs.isEmpty()) {
+            currentZuzongs.get(currentZuzongs.size() - 1).damage(info);
+            for (AbstractRelic r : relics) r.onAttackedToChangeDamage(info, 0);
+            for (AbstractPower p : powers) p.onAttackedToChangeDamage(info, 0);
+            if (info.owner != null) {
+                for (AbstractPower p : powers) p.onAttacked(info, 0);
+                for (AbstractRelic r : relics) r.onAttacked(info, 0);
+            }
+            for (AbstractRelic r : relics)  r.onLoseHpLast(0);
+        } else {
+            super.damage(info);
+        }
+    }
+
+    @Override
+    public void onVictory() {
+        super.onVictory();
+        currentZuzongs.clear();
+    }
 }
