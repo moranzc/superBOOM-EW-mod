@@ -4,8 +4,10 @@ import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import wishdalmod.actions.SummonZuzongAction;
 import wishdalmod.helpers.ModHelper;
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
@@ -25,23 +27,18 @@ public class Sihunlingdeyuxi extends CustomCard {
 
     public Sihunlingdeyuxi() {
         super(ID, NAME, IMG_PATH, 1, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = HP;
-       // secondMagicNumber = baseSecondMagicNumber = 0;
-       // realBranch = 2;
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //addToBot(new SummonStarRingAction(magicNumber, secondMagicNumber));
+        AbstractDungeon.actionManager.addToTop(new SummonZuzongAction(30, 5, 10));
+
     }
 
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-
         }
-
     }
     public AbstractCard makeCopy() {
         return new Sihunlingdeyuxi();
     }
 }
-//upgradeMagicNumber(+2);

@@ -6,12 +6,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Interpolation;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,18 +16,17 @@ import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import com.megacrit.cardcrawl.vfx.combat.HbBlockBrokenEffect;
 import com.megacrit.cardcrawl.vfx.combat.StrikeEffect;
 import wishdalmod.powers.Canying;
 
 
 public class Zuzong extends AbstractMonster {
-    public static final String ID = "rhinemod:Zuzong";
+    public static final String ID = "wishdalemod:Zuzong";
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
     public static final String[] TEXT = uiStrings.TEXT;
-    public static final Texture img = new Texture("wishdaleResources/images/char/StarRing.png");
-    public static final String IMG = "wishdaleResources/images/char/StarRing.png";
+    public static final Texture img = new Texture("wishdaleResources/images/char/ZuZong.png");
+    public static final String IMG = "wishdaleResources/images/char/ZuZong.png";
     public int blastDamage;
     public float hoverTimer;
     public Color nameColor;
@@ -101,7 +97,7 @@ public class Zuzong extends AbstractMonster {
         AbstractMonster m = AbstractDungeon.getRandomMonster();
         if (m != null) {
             addToBot(new DamageAction(m, new DamageInfo(null, dmg, DamageInfo.DamageType.THORNS)));
-            addToBot(new ApplyPowerAction(m, null, new Canying(m, CANYING_AMT)));
+            addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new Canying(m, CANYING_AMT)));
         }
     }
 

@@ -88,7 +88,9 @@ public class EW extends CustomPlayer {
                 200.0F, 220.0F, // 人物碰撞箱大小，越大的人物模型这个越大
                 new EnergyManager(3) // 初始每回合的能量
         );
-        this.loadAnimation("wishdaleResources/images/char/char_1035_wisdel.atlas", "wishdaleResources/images/char/char_1035_wisdel.json", 1.8F);
+        this.loadAnimation("wishdaleResources/images/char/char_1035_wisdel.atlas",
+                        "wishdaleResources/images/char/char_1035_wisdel.json",
+                        1.8F);
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         e.setTimeScale(1.2F);
@@ -106,6 +108,7 @@ public class EW extends CustomPlayer {
         retVal.add("wishdalemod:Defend");
         retVal.add("wishdalemod:Defend");
         retVal.add("wishdalemod:Dindianqingsuan");
+        retVal.add("wishdalemod:Sihunlingdeyuxi");
         return retVal;
     }
     // 初始遗物的ID
@@ -231,37 +234,21 @@ public class EW extends CustomPlayer {
         public static CardLibrary.LibraryType WISHDALE_RED;
     }
 
+
+
     //祖宗
-    @Override
     public void render(SpriteBatch sb) {
-        stance.render(sb);
+        super.render(sb);
         if ((AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.getCurrRoom() instanceof MonsterRoom) && !isDead) {
             currentZuzongs.removeIf(r -> r.isDead);
-            for (Zuzong r : currentZuzongs) r.render(sb);
-            renderHealth(sb);
-            if (!orbs.isEmpty()) {
-                for (AbstractOrb o : orbs)
-                    o.render(sb);
-            }
-        }
-
-        if (AbstractDungeon.getCurrRoom() instanceof RestRoom) {
-            sb.setColor(Color.WHITE);
-            renderShoulderImg(sb);
-        } else {
-            hb.render(sb);
-            healthHb.render(sb);
+            for (Zuzong r: currentZuzongs) r.render(sb);
         }
     }
-
-    @Override
     public void update() {
         super.update();
         currentZuzongs.removeIf(r -> r.isDead);
         for (Zuzong r : currentZuzongs) r.update();
     }
-
-    @Override
     public void applyStartOfTurnPowers() {
         super.applyStartOfTurnPowers();
         currentZuzongs.removeIf(r -> r.isDead);
