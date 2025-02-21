@@ -35,7 +35,6 @@ public class Baolieliming extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToTop(new SummonZuzongAction(15, 0, 0));
         AbstractDungeon.actionManager.addToTop(new SummonZuzongAction(15, 0, 0));
-        AbstractDungeon.actionManager.addToTop(new SummonZuzongAction(15, 0, 0));
         this.addToBot(new ApplyPowerAction(p, p, new BaolielimingPower(p, this.magicNumber), this.magicNumber));
         CardCrawlGame.sound.play("BOOM");
     }
