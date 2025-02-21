@@ -1,0 +1,47 @@
+{
+  "wishdalemod:Yishujiushibaozha": {
+    "NAME": "Final Curtain",
+    "DESCRIPTIONS": [
+      "All enemies will explode after #b",
+      "turns."
+    ]
+  },
+  "wishdalemod:BaolielimingPower": {
+    "NAME": "Explosive Dawn",
+    "DESCRIPTIONS": [
+      "Attack +516%, at the start of each turn add",
+      " #yAged Soul to your hand."
+    ]
+  },
+  "wishdalemod:YinbiPower": {
+    "NAME": "Concealment",
+    "DESCRIPTIONS": [
+      "Lose all #yIntangible when playing an attack card."
+    ]
+  },
+  "wishdalemod:BianxieshibujizhanPower": {
+    "NAME": "Portable Supply Station",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " points of *Energy each time you shuffle."
+    ]
+  },
+  "wishdalemod:Lei": {
+    "NAME": "Exhaustion",
+    "DESCRIPTIONS": [
+      "Lose 2 energy each turn."
+    ]
+  },
+  "wishdalemod:Canying": {
+    "NAME": "Residual Image",
+    "DESCRIPTIONS": [
+      "When accumulated to #y7, gain #yGood Gift and clear #yResidual Image. NL #yGood Gift NL Damage caused is reduced by 50%. NL For each layer, all enemies lose 9 HP at the start of each turn."
+    ]
+  },
+  "wishdalemod:Haoli": {
+    "NAME": "Good Gift",
+    "DESCRIPTIONS": [
+      "Damage caused is reduced by 50%. NL For each layer, all enemies lose 9 HP at the start of each turn."
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "wishdalemod:wishdalebadge": {
+    "NAME": "Wishdale Badge",
+    "FLAVOR": "The operator carries out the duty of throwing hands. Specially issued this badge. To prove it.",
+    "DESCRIPTIONS": [
+      "The first attack card each turn deals damage twice, with the second damage reduced to half of the attack power."
+    ]
+  },
+  "wishdalemod:AncestralLauncher": {
+    "NAME": "Ancestral Launcher",
+    "FLAVOR": "Go, make it even more explosive!",
+    "DESCRIPTIONS": [
+      "Replaces #gWishdale Badge.",
+      "The first attack card each turn deals damage three times, with the latter two damages reduced to half of the attack power."
+    ]
+  },
+  "wishdalemod:GoldBoneDice": {
+    "NAME": "Golden Bone Dice",
+    "FLAVOR": "The golden-inlaid bone dice only have one side engraved with a mark representing survival, as for the other nineteen sides...",
+    "DESCRIPTIONS": [
+      "All enemies' HP decreases by #b",
+      "%."
+    ]
+  },
+  "wishdalemod:RoaringHand": {
+    "NAME": "Roaring Hand",
+    "FLAVOR": "Hit the target, shake the earth.",
+    "DESCRIPTIONS": [
+      "For every consecutive attack card played, gain temporary strength that increases by 1, up to a maximum of 15. If no attack cards are played in a turn, the bonus is reset."
+    ]
+  },
+  "wishdalemod:AncientTreeFruit": {
+    "NAME": "Ancient Tree Fruit",
+    "FLAVOR": "Sammy's child made a wish by burying it in the tree seeds, covered by the white snow. When the tree grows strong, pluck the first four fruits, leaving the smallest one for future generations to wish upon. The remaining fruits are offerings to Sammy to seek answers.",
+    "DESCRIPTIONS": [
+      "Immediately gain three random trinkets."
+    ]
+  },
+  "wishdalemod:Ruozhitutou": {
+    "NAME": "Ruozhi Rabbit Head",
+    "FLAVOR": "Trash!",
+    "DESCRIPTIONS": [
+      "What rank are you?",
+      "@Believe in the Soul of the Weapon!@ NL @All units attack!@ NL @I'll bite you to death!@"
+    ]
+  }
+}

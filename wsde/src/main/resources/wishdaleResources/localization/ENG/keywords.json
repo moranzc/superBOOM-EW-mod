@@ -1,0 +1,34 @@
+[
+  {
+    "NAMES": ["累"],
+    "DESCRIPTION": "Each turn, lose 2 energy. NL Oh no, I don't want to learn to pronounce!"
+  },
+  {
+    "NAMES": ["银银银银银"],
+    "DESCRIPTION": "Gain a random gold card, its cost for this turn is 8."
+  },
+  {
+    "NAMES": ["金金金金金"],
+    "DESCRIPTION": "Gain a random gold card, its cost for this turn is 8."
+  },
+  {
+    "NAMES": ["门"],
+    "DESCRIPTION": "Gain the Blessing of the Sea Cat, power is inevitable."
+  },
+  {
+    "NAMES": ["终焉"],
+    "DESCRIPTION": "Can only be played when both the draw pile and discard pile are empty."
+  },
+  {
+    "NAMES": ["丨丨"],
+    "DESCRIPTION": "BOOM! NL Staring blankly now."
+  },
+  {
+    "NAMES": ["丨"],
+    "DESCRIPTION": "Summon 2 Soul Shadows, Attack +516%, and at the beginning of each turn, add a *Aged Soul to your hand."
+  },
+  {
+    "NAMES": ["爆炸"],
+    "DESCRIPTION": "Remove from deck before the battle ends, causing 1 damage to all enemies upon removal."
+  }
+]
