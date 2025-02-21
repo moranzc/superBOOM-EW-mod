@@ -18,7 +18,6 @@ public class CanyingAction extends AbstractGameAction {
         if (this.source == AbstractDungeon.player && AbstractDungeon.player instanceof EW) {
             this.amount = ((EW)AbstractDungeon.player).CanyingXiaoguo.onGiveCanying(this.amount);
         }
-        addToTop(new HaoliAction(this.target));
         addToTop(new ApplyPowerAction(this.target, this.source, new Canying(this.target, this.amount)));
         this.isDone = true;
     }

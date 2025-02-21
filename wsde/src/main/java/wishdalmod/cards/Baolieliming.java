@@ -5,8 +5,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import wishdalmod.actions.SummonZuzongAction;
 import wishdalmod.helpers.ModHelper;
 import wishdalmod.powers.BaolielimingPower;
 
@@ -31,6 +33,9 @@ public class Baolieliming extends CustomCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToTop(new SummonZuzongAction(15, 0, 0));
+        AbstractDungeon.actionManager.addToTop(new SummonZuzongAction(15, 0, 0));
+        AbstractDungeon.actionManager.addToTop(new SummonZuzongAction(15, 0, 0));
         this.addToBot(new ApplyPowerAction(p, p, new BaolielimingPower(p, this.magicNumber), this.magicNumber));
         CardCrawlGame.sound.play("BOOM");
     }

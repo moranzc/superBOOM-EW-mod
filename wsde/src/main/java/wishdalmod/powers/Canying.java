@@ -3,6 +3,8 @@ package wishdalmod.powers;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.Settings;
 import wishdalmod.helpers.ImageHelper;
 import wishdalmod.helpers.ModHelper;
@@ -13,8 +15,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class Canying
-        extends AbstractPower {
+public class Canying extends AbstractPower {
     public static final String POWER_ID = ModHelper.makePath("Canying");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
@@ -52,6 +53,16 @@ public class Canying
         Settings.scale,
         Settings.scale,
         0.0F);
+    }
+    public void stackPower(int stackAmount){
+        super.stackPower(stackAmount);
+        while(this.amount>=7) {
+            this.amount -= 7;
+            addToTop(new ApplyPowerAction(this.owner, this.owner, new Haoli(this.owner, 1), 1));
+        }
+        if(this.amount<=0)
+            addToTop(new RemoveSpecificPowerAction(this.owner,this.owner,this));
+        updateDescription();
     }
     public void updateDescription() { this.description = DESCRIPTIONS[0]; }
 }

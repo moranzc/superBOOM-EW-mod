@@ -294,6 +294,9 @@ public class EW extends CustomPlayer {
     @Override
     public void onVictory() {
         super.onVictory();
+        for (Zuzong r : currentZuzongs) {
+            r.isDead = true;
+        }
         currentZuzongs.clear();
     }
 }
