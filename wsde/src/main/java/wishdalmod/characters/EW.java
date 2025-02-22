@@ -10,6 +10,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -23,6 +24,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -90,6 +92,8 @@ public class EW extends CustomPlayer {
                 200.0F, 220.0F, // 人物碰撞箱大小，越大的人物模型这个越大
                 new EnergyManager(3) // 初始每回合的能量
         );
+
+        // 小人动画
         this.loadAnimation("wishdaleResources/images/char/char_1035_wisdel.atlas",
                         "wishdaleResources/images/char/char_1035_wisdel.json",
                         1.8F);
@@ -97,7 +101,59 @@ public class EW extends CustomPlayer {
         e.setTime(e.getEndTime() * MathUtils.random());
         e.setTimeScale(1.2F);
 
+    // 待机和Die动画  过渡0.1秒
+        this.stateData.setMix("Idle", "Die", 0.1F);
+        this.state.setAnimation(0, "Idle", true);
     }
+    // 死亡动画
+    public void playDeathAnimation() {
+        this.state.setAnimation(0, "Die", false);
+    }
+    //卡牌动画
+
+    public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
+        boolean baolielimingActivated = false;
+        if (c.type == AbstractCard.CardType.ATTACK) {
+            if (baolielimingActivated) {
+                this.state.setAnimation(0, "Skill_3_Loop", true);  // 设置为循环动画
+            }
+            else {
+                int randomAttack = MathUtils.random(0, 2);
+                if (randomAttack == 0) {
+                    this.state.setAnimation(0, "Attack_A", false);
+                } else if (randomAttack == 1) {
+                    this.state.setAnimation(0, "Attack_B", false);
+                } else {
+                    this.state.setAnimation(0, "Attack_C", false);
+                }
+            }
+            this.state.addAnimation(0, "Idle", true, 0.0F);
+        }
+        else if (c.type == AbstractCard.CardType.POWER) {
+            if (c instanceof wishdalmod.cards.Baolieliming) {
+                baolielimingActivated = true;
+                this.state.setAnimation(0, "Skill_3_Begin", false);
+                this.state.addAnimation(0, "Skill_3_Loop", true, 0.0F);
+            }
+            else {
+                this.state.addAnimation(0, "Idle", true, 0.0F);
+            }
+        }
+        else {
+            this.state.addAnimation(0, "Idle", true, 0.0F);
+        }
+        if (baolielimingActivated) {
+            this.state.addAnimation(0, "Skill_3_Idle", true, 0.0F);
+        } else {
+            this.state.addAnimation(0, "Idle", true, 0.0F);
+        }
+
+        // 调用父类方法
+        super.useCard(c, monster, energyOnUse);
+    }
+
+
+
     // 初始卡组的ID，可直接写或引用变量
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
@@ -235,7 +291,6 @@ public class EW extends CustomPlayer {
         @SpireEnum
         public static CardLibrary.LibraryType WISHDALE_RED;
     }
-
 
 
     //祖宗
