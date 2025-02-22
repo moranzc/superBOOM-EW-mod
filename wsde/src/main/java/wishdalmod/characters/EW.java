@@ -110,12 +110,14 @@ public class EW extends CustomPlayer {
         this.state.setAnimation(0, "Die", false);
     }
     //卡牌动画
-
     public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
-        boolean baolielimingActivated = false;
         if (c.type == AbstractCard.CardType.ATTACK) {
-            if (baolielimingActivated) {
-                this.state.setAnimation(0, "Skill_3_Loop", true);  // 设置为循环动画
+            if (AbstractDungeon.player.hasPower("wishdalemod:BaolielimingPower")) {
+                this.state.setAnimation(0, "Skill_3_Loop", false);
+                this.state.addAnimation(0, "Skill_3_Idle", true, 0.0F);
+            }
+            else if (c instanceof wishdalmod.cards.Dindianqingsuan) {
+                this.state.setAnimation(0, "Skill_1", false);
             }
             else {
                 int randomAttack = MathUtils.random(0, 2);
@@ -126,31 +128,28 @@ public class EW extends CustomPlayer {
                 } else {
                     this.state.setAnimation(0, "Attack_C", false);
                 }
+                this.state.addAnimation(0, "Idle", true, 0.0F);
             }
-            this.state.addAnimation(0, "Idle", true, 0.0F);
         }
         else if (c.type == AbstractCard.CardType.POWER) {
             if (c instanceof wishdalmod.cards.Baolieliming) {
-                baolielimingActivated = true;
                 this.state.setAnimation(0, "Skill_3_Begin", false);
-                this.state.addAnimation(0, "Skill_3_Loop", true, 0.0F);
+                this.state.addAnimation(0, "Skill_3_Idle", true, 0.0F);
             }
             else {
                 this.state.addAnimation(0, "Idle", true, 0.0F);
             }
         }
         else {
+            if (AbstractDungeon.player.hasPower("wishdalemod:BaolielimingPower")) {
+                this.state.setAnimation(0, "Skill_3_Loop", false);
+                this.state.addAnimation(0, "Skill_3_Idle", true, 0.0F);
+            }
             this.state.addAnimation(0, "Idle", true, 0.0F);
         }
-        if (baolielimingActivated) {
-            this.state.addAnimation(0, "Skill_3_Idle", true, 0.0F);
-        } else {
-            this.state.addAnimation(0, "Idle", true, 0.0F);
-        }
-
-        // 调用父类方法
         super.useCard(c, monster, energyOnUse);
     }
+
 
 
 
