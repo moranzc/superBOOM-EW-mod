@@ -39,6 +39,8 @@ import wishdalmod.relics.wishdalebadge;
 
 import java.util.ArrayList;
 
+import static com.megacrit.cardcrawl.events.AbstractEvent.type;
+
 // 继承CustomPlayer类
 public class EW extends CustomPlayer {
     public CanyingXiaoguo CanyingXiaoguo = new CanyingXiaoguo();
@@ -277,7 +279,7 @@ public class EW extends CustomPlayer {
     @Override
     public void damage(DamageInfo info) {
         currentZuzongs.removeIf(r -> r.isDead);
-        if (!currentZuzongs.isEmpty()) {
+        if (info.type == DamageInfo.DamageType.NORMAL && !currentZuzongs.isEmpty()) {
             currentZuzongs.get(currentZuzongs.size() - 1).damage(info);
             for (AbstractRelic r : relics) r.onAttackedToChangeDamage(info, 0);
             for (AbstractPower p : powers) p.onAttackedToChangeDamage(info, 0);
