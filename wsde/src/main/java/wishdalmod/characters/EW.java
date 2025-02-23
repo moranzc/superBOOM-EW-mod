@@ -25,13 +25,13 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.BeatOfDeathPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
-import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import wishdalmod.cards.Strike;
 import wishdalmod.helpers.CanyingXiaoguo;
@@ -41,7 +41,6 @@ import wishdalmod.relics.wishdalebadge;
 
 import java.util.ArrayList;
 
-import static com.megacrit.cardcrawl.events.AbstractEvent.type;
 
 // 继承CustomPlayer类
 public class EW extends CustomPlayer {
@@ -136,16 +135,20 @@ public class EW extends CustomPlayer {
                 this.state.setAnimation(0, "Skill_3_Begin", false);
                 this.state.addAnimation(0, "Skill_3_Idle", true, 0.0F);
             }
+            else if (AbstractDungeon.player.hasPower("wishdalemod:BaolielimingPower")) {
+                this.state.addAnimation(0, "Skill_3_Idle", true, 0.0F);
+            }
             else {
                 this.state.addAnimation(0, "Idle", true, 0.0F);
             }
         }
         else {
             if (AbstractDungeon.player.hasPower("wishdalemod:BaolielimingPower")) {
-                this.state.setAnimation(0, "Skill_3_Loop", false);
                 this.state.addAnimation(0, "Skill_3_Idle", true, 0.0F);
             }
-            this.state.addAnimation(0, "Idle", true, 0.0F);
+            else{
+                this.state.addAnimation(0, "Idle", true, 0.0F);
+            }
         }
         super.useCard(c, monster, energyOnUse);
     }
@@ -293,6 +296,9 @@ public class EW extends CustomPlayer {
 
 
     //祖宗
+    public void removeDeadZuzong(Zuzong zuzong) {
+        currentZuzongs.remove(zuzong);
+    }
     public void render(SpriteBatch sb) {
         super.render(sb);
         if ((AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT || AbstractDungeon.getCurrRoom() instanceof MonsterRoom) && !isDead) {
@@ -312,12 +318,13 @@ public class EW extends CustomPlayer {
             r.applyStartOfTurnPowers();
         }
     }
-    
+
+
     public void summonZuzong(int maxHealth, int strength, int block) {
         if (maxHealth <= 0) maxHealth = 1;
         for (int i = 0; i < 3; i++)
             if (zuzongs[i] == null || zuzongs[i].isDead) {
-                zuzongs[i] = new Zuzong(maxHealth, POSX[i], POSY[i]);
+                zuzongs[i] = new Zuzong(this, maxHealth, POSX[i], POSY[i]);
                 zuzongs[i].showHealthBar();
                 if (block > 0) {
                     AbstractDungeon.actionManager.addToTop(new GainBlockAction(zuzongs[i], block));
@@ -329,8 +336,9 @@ public class EW extends CustomPlayer {
                 return;
             }
     }
-
-    @Override
+    public void die() {
+        isDead = true;
+    }
     public void damage(DamageInfo info) {
         currentZuzongs.removeIf(r -> r.isDead);
         if (info.type == DamageInfo.DamageType.NORMAL && !currentZuzongs.isEmpty()) {
@@ -342,12 +350,16 @@ public class EW extends CustomPlayer {
                 for (AbstractRelic r : relics) r.onAttacked(info, 0);
             }
             for (AbstractRelic r : relics)  r.onLoseHpLast(0);
-        } else {
+        }
+        else {
             super.damage(info);
         }
+        if (this.currentHealth <= 0)
+        {
+            die();
+            }
     }
 
-    @Override
     public void onVictory() {
         super.onVictory();
         for (Zuzong r : currentZuzongs) {

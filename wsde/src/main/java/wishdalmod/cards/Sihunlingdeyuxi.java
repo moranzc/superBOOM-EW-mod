@@ -26,16 +26,16 @@ public class Sihunlingdeyuxi extends CustomCard {
 
 
     public Sihunlingdeyuxi() {
-        super(ID, NAME, IMG_PATH, 1, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, 3, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToTop(new SummonZuzongAction(15, 0, 0));
-
     }
 
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeBaseCost(2);
         }
     }
     public AbstractCard makeCopy() {

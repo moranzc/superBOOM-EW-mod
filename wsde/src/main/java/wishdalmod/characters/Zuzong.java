@@ -22,6 +22,7 @@ import wishdalmod.powers.Canying;
 
 
 public class Zuzong extends AbstractMonster {
+    private EW ancestor;
     public static final String ID = "wishdalemod:Zuzong";
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
     public static final String[] TEXT = uiStrings.TEXT;
@@ -34,8 +35,9 @@ public class Zuzong extends AbstractMonster {
     public int TURN_DMG = 3;
     public int CANYING_AMT = 3;
 
-    public Zuzong(int maxHealth, float x, float y) {
+    public Zuzong(EW ew, int maxHealth, float x, float y) {
         super(TEXT[0], ID, maxHealth, 0.0F, 0.0F, 150.0F, 150.0F, IMG, 0.0F, 0.0F, true);
+        this.ancestor = ancestor;
         drawX = AbstractDungeon.player.drawX + x * Settings.scale;
         drawY = AbstractDungeon.player.drawY + y * Settings.scale;
         refreshHitboxLocation();
@@ -46,6 +48,7 @@ public class Zuzong extends AbstractMonster {
         healthBarUpdatedEvent();
     }
     public void damage(DamageInfo info) {
+        if (isDead || isDying) return;
         if (info.output > 0 && hasPower("IntangiblePlayer")) {
             info.output = 1;
         }
@@ -71,8 +74,12 @@ public class Zuzong extends AbstractMonster {
                 currentHealth -= damageAmount;
                 AbstractDungeon.effectList.add(new StrikeEffect(this, this.hb.cX, this.hb.cY, damageAmount));
                 if (currentHealth <= 0) {
-                    blastDamage = maxHealth - currentHealth;
                     currentHealth = 0;
+                    die();
+                    if (this.currentBlock > 0) {
+                        this.loseBlock();
+                        AbstractDungeon.effectList.add(new HbBlockBrokenEffect(this.hb.cX - this.hb.width / 2.0F + BLOCK_ICON_X, this.hb.cY - this.hb.height / 2.0F + BLOCK_ICON_Y));
+                    }
                 }
                 this.healthBarUpdatedEvent();
             }
@@ -85,7 +92,13 @@ public class Zuzong extends AbstractMonster {
             }
         }
     }
-
+    public void die() {
+        super.die();
+        isDead = true;
+        if (ancestor != null) {
+            ancestor.removeDeadZuzong(this);
+        }
+    }
     public int calculateDmg(float dmg) {
         for (AbstractPower p : powers) dmg = p.atDamageGive(dmg, DamageInfo.DamageType.NORMAL);
         for (AbstractPower p : powers) dmg = p.atDamageFinalGive(dmg, DamageInfo.DamageType.NORMAL);
