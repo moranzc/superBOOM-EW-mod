@@ -75,7 +75,6 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCard(new Yigongdaishou());//以攻代守
         BaseMod.addCard(new Zidongsheji());//自动射击
         BaseMod.addCard(new Wuxianhuoli());//无限火力
-        BaseMod.addCard(new Sihunling());//死魂灵
         BaseMod.addCard(new Guozaimoshi());//过载模式
         BaseMod.addCard(new Yinbao());//音爆
         BaseMod.addCard(new Yizhanyangzhan());//以战养战
@@ -85,7 +84,6 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCard(new Yineisidetou());//伊内丝的头
         BaseMod.addCard(new Zixuechengcai());//自学成才
         BaseMod.addCard(new Dindianqingsuan());//定点、
-        // BaseMod.addCard(new 预设());//预设
         //BaseMod.addCard(new 预设());//预设
         //BaseMod.addCard(new 预设());//预设
         //技能
@@ -120,6 +118,11 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         //BaseMod.addCard(new 预设());//预设
         //BaseMod.addCard(new 预设());//预设
         //BaseMod.addCard(new 预设());//预设
+
+        //特殊
+        BaseMod.addCard(new ZhanshiBOM());//展示简单
+        BaseMod.addCard(new ZhanshiBOOM());//展示呆滞
+        BaseMod.addCard(new Sihunling());//死魂灵（爆裂黎明）
     }
 
     public void receiveEditCharacters() {

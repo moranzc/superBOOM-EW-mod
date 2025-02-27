@@ -1,47 +1,77 @@
 {
   "wishdalemod:Strike": {
     "NAME": "打击",
-    "DESCRIPTION": " !D! 伤"
+    "DESCRIPTION": " !D! 伤",
+    "EXTENDED_DESCRIPTION": [
+      "造成 !D! 点 伤害"
+    ]
   },
   "wishdalemod:Defend": {
     "NAME": "防御",
-    "DESCRIPTION": " !B! 防"
+    "DESCRIPTION": " !B! 防",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !B! 点 格挡 "
+    ]
+
   },
   "wishdalemod:Zhishixuebao": {
     "NAME": "知识学爆",
-    "DESCRIPTION": " !M! 力  NL  !M! 敏  NL  wishdalemod:累 "
+    "DESCRIPTION": " !M! 力  NL  !M! 敏  NL  wishdalemod:累 ",
+    "EXTENDED_DESCRIPTION": [
+    "获得 !M! 点 力量  NL 获得 !M! 敏捷  NL wishdalemod:累 "
+    ]
   },
   "wishdalemod:Dailizhihui": {
     "NAME": "代理指挥",
-    "DESCRIPTION": "随机打出手中所有牌"
+    "DESCRIPTION": "随机打出手中所有牌",
+    "EXTENDED_DESCRIPTION": [
+      "失去 6 点生命 NL 获得 3 层 再生 NL 你在本回合内不能再抽牌 NL 随机打出手中所有牌"
+    ]
   },
   "wishdalemod:Boom": {
     "NAME": "BOOM！",
-    "DESCRIPTION": "在2回合结束后，造成 !M! 点群伤"
+    "DESCRIPTION": "2回合后，造成 !M! 点群伤",
+    "EXTENDED_DESCRIPTION": [
+      "在2回合结束后，对所有敌人造成 !M! 点伤害"
+    ]
+
   },
   "wishdalemod:Zhenhandan": {
     "NAME": "震撼弹",
-    "DESCRIPTION": " !D! 伤 NL 获得未被格挡伤害相等的 格挡 给群怪 !M! 层 虚弱 和 易伤"
+    "DESCRIPTION": "给群怪 !M! 层 虚弱 和 易伤 NL !D! 伤 NL 获得未被格挡伤害相等的 格挡 ",
+    "EXTENDED_DESCRIPTION": [
+    "造成 !D! 点伤害 NL 获得与所造成的未被格挡的伤害相等的 格挡 NL 给群怪 !M! 层 虚弱"
+    ]
   },
   "wishdalemod:Lingguangyishan": {
     "NAME": "灵光一闪",
-    "DESCRIPTION": " wishdalemod:银银银银银 NL 消耗  ",
-    "UPGRADE_DESCRIPTION": " wishdalemod:金金金金金 NL 消耗 "
+    "DESCRIPTION": " wishdalemod:银银银银银 NL [#ffd700]ALL[] wishdalemod:门NL 虚无 NL 消耗  ",
+    "UPGRADE_DESCRIPTION": " wishdalemod:金金金金金 NL[#ffd700]ALL[] wishdalemod:门NL 消耗 ",
+    "EXTENDED_DESCRIPTION": [
+      " 增加一张随机金卡到你的手牌。 NL 这张牌在本回合耗能变为0 NL [#ffd700]ALL[] wishdalemod:门 NL 虚无 NL 消耗 NL 我们保留了抽卡的乐趣这样你才知道你玩的是EWmod ",
+      " 增加一张随机金卡到你的手牌。 NL 这张牌在本回合耗能变为0 NL [#ffd700]ALL[] wishdalemod:门 NL 消耗 NL 我们保留了抽卡的乐趣这样你才知道你玩的是维什戴尔mod"
+    ]
   },
   "wishdalemod:Yigongdaishou": {
     "NAME": "以攻代守",
     "DESCRIPTION": "只有手牌全是攻击牌时才能打出 NL  !D! 伤",
     "EXTENDED_DESCRIPTION": [
-      "我手中还有非攻击牌你眼瞎吗?"
+      "我手中还 *萨卡兹粗口 有非攻击牌你眼瞎吗?"
       ]
   },
   "wishdalemod:Zidongsheji": {
     "NAME": "自动射击",
-    "DESCRIPTION": "不能被打出 。 NL 抽到时造成 !D! 伤并 丢弃 "
+    "DESCRIPTION": "不能被打出  NL 抽到自动随机 !D! 伤并 丢弃 ",
+    "EXTENDED_DESCRIPTION": [
+      "不能被打出  NL 抽到时随机对敌人造成 !D! 点 伤害并 丢弃 "
+    ]
   },
   "wishdalemod:Wuxianhuoli": {
     "NAME": "无限火力",
-    "DESCRIPTION": " !D! X !M!  NL 在弃牌堆放入一张此牌的复制品 NL 消耗 "
+    "DESCRIPTION": " !D! X !M!  NL 复制一张到弃牌堆 NL 消耗 ",
+    "EXTENDED_DESCRIPTION": [
+      "对敌人造成 !D! 点伤害 !M! 次 NL 在弃牌堆放入一张此牌的复制品"
+    ]
   },
   "wishdalemod:Shefu": {
     "NAME": "设伏",
@@ -50,12 +80,15 @@
   },
   "wishdalemod:Baohedaji": {
     "NAME": "饱和打击",
-    "DESCRIPTION": "群攻 NL  !D! X 5"
+    "DESCRIPTION": "群攻 NL  !D! X 5",
+    "EXTENDED_DESCRIPTION": [
+      "对所有敌人造成 !D! 点 伤害5次。"
+    ]
   },
   "wishdalemod:Zhongyanluomu": {
     "NAME": "终焉落幕",
     "DESCRIPTION": "wishdalemod:终焉 NL 让敌人在 !M! 回合后爆炸 NL 消耗 ",
-    "UPGRADE_DESCRIPTION": "我的抽弃牌堆必须是他妈的 #r空的!"
+    "UPGRADE_DESCRIPTION": "我的抽弃牌堆必须是 *萨卡兹粗口 的 #r空的!"
   },
   "wishdalemod:Sihunlingdeyuxi": {
     "NAME": "死魂灵的余息",
@@ -63,15 +96,26 @@
   },
   "wishdalemod:Shouliudan": {
     "NAME": "手榴弹",
-    "DESCRIPTION": "群攻 NL  !D! X 2"
+    "DESCRIPTION": "群攻 NL  !D! X 2",
+    "EXTENDED_DESCRIPTION": [
+      "对所有敌人造成 !D! 点伤害2次"
+    ]
+
   },
   "wishdalemod:Kunanchenshuzhe": {
     "NAME": "苦难陈述者",
-    "DESCRIPTION": "给予所有敌人99层 易伤 和99层 虚弱 NL 消耗 NL  [#ffd700]ALL[] wishdalemod:门"
+    "DESCRIPTION": "ALL 99层 易伤 和 虚弱 NL 消耗 NL  [#ffd700]ALL[] wishdalemod:门",
+    "EXTENDED_DESCRIPTION": [
+      "给予所有敌人99层 易伤 和99层 虚弱 NL 消耗 NL [#ffd700]ALL[] wishdalemod:门 NL 都说了有海猫赐福，不可能削"
+    ]
   },
   "wishdalemod:Hunlingpingzhang": {
     "NAME": "魂灵屏障",
-    "DESCRIPTION": " !M! 层缓冲"
+    "DESCRIPTION": " !M! 层缓冲",
+    "EXTENDED_DESCRIPTION": [
+      "阻止下 !M! 次你受到的生命值损伤"
+    ]
+
   },
   "wishdalemod:Zhanhouxiuzheng": {
     "NAME": "战后修整",
@@ -83,11 +127,17 @@
   },
   "wishdalemod:Baolieliming": {
     "NAME": "爆裂黎明",
-      "DESCRIPTION": " *丨 wishdalemod:丨 [wishdalmod:tietuIcon]  wishdalemod:丨丨"
+    "DESCRIPTION": " *丨 wishdalemod:丨 [wishdalmod:tietuIcon] boom [wishdalmod:tietuIcon] wishdalemod:丨丨",
+    "EXTENDED_DESCRIPTION": [
+      "超模"
+    ]
   },
   "wishdalemod:Sihunling": {
     "NAME": "起飞的年长的死魂灵",
-    "DESCRIPTION": "保留 。 NL 群攻 !D! 伤 NL 消耗 "
+    "DESCRIPTION": "保留 。 NL 群攻 !D! 伤 NL 消耗 ",
+    "EXTENDED_DESCRIPTION": [
+      "保留 NL 对所有敌人造成 !D! 点伤害 NL 消耗 "
+    ]
   },
   "wishdalemod:Muguangdaizhi": {
     "NAME": "目光呆滞",
@@ -99,7 +149,10 @@
   },
   "wishdalemod:Guozaimoshi": {
     "NAME": "过载模式",
-    "DESCRIPTION": " !D! 伤, 抽 1 , 抽到攻击牌重复效果 "
+    "DESCRIPTION": " !D! 伤, 抽 1 , 抽到攻击牌重复效果 ",
+    "EXTENDED_DESCRIPTION": [
+      "造成 !D! 点伤害 NL 抽 1 张牌 NL 如果这张牌是攻击牌，重复一次"
+    ]
   },
   "wishdalemod:Yinbi": {
     "NAME": "隐蔽",
@@ -107,7 +160,10 @@
   },
   "wishdalemod:Shanguangdan": {
     "NAME": "闪光弹",
-    "DESCRIPTION": "所有敌人失去 !M! 力量 1回合 NL 消耗 "
+    "DESCRIPTION": "群体降 !M! 力量 NL 消耗 NL 光敏性癫痫提示",
+    "EXTENDED_DESCRIPTION": [
+      "所有敌人失去 !M! 力量 1回合。 NL 消耗 NL 光敏性癫痫提示"
+    ]
   },
   "wishdalemod:Yinbao": {
     "NAME": "音爆",
@@ -119,28 +175,41 @@
   },
   "wishdalemod:Buwendingbuji": {
     "NAME": "不稳定补给",
-    "DESCRIPTION": "50%概率获得 [E] , NL 触发 !M! 次 NL 有50%概率 消耗 "
+    "DESCRIPTION": "50%概率获得 [E]  NL 触发 !M! 次 NL 有50%概率 消耗 ",
+    "EXTENDED_DESCRIPTION": [
+      "触发 !M! 次 NL 50%概率获得 [E]  NL 有50%概率 消耗 "
+    ]
   },
   "wishdalemod:Yizhanyangzhan": {
     "NAME": "以战养战",
-    "DESCRIPTION": "造成 !D! 点伤害 。击杀时获得目标最大生命值的 格挡 "
+    "DESCRIPTION": "造成 !D! 点 伤害 。击杀时获得目标最大生命值的 格挡 "
   },
   "wishdalemod:Yishanghuanshang": {
     "NAME": "以血还血",
-    "DESCRIPTION": "造成已损失的生命值的伤害。使用三次后 消耗 "
+    "DESCRIPTION": "造成损失血量2倍的伤害 NL 使用三次后 消耗 ",
+    "EXTENDED_DESCRIPTION": [
+    "造成已损失的生命值的伤害 NL 使用三次后 消耗 "
+    ]
   },
   "wishdalemod:Zhupaojiwushuzengfudanyuan": {
     "NAME": "主炮级巫术增幅单元",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害 !M! 次。 NL 能被多次修复 (升级) 。 NL (随机提升一项属性)"
+    "DESCRIPTION": "对所有敌人造成 !D! 点 伤害 !M! 次 NL 能被多次修复 (升级) 。 NL (随机提升一项属性)"
   },
   "wishdalemod:Diedai": {
     "NAME": "迭代",
-    "DESCRIPTION": " !D! 伤, 所有 *迭代 伤害提升 !M!  NL 每打出一次耗能减1"
+    "DESCRIPTION": " !D! 伤, 所有 *迭代 伤害提升 !M!  NL 每打出一次耗能减1",
+    "EXTENDED_DESCRIPTION": [
+      "造成 !D! 点伤害 NL 这张牌每被打出一次 NL 在本场战斗中其伤害增加 !M! 在本场战斗中的耗能减少1"
+    ]
   },
   "wishdalemod:Chongzu": {
     "NAME": "重组",
-    "DESCRIPTION": " !B! 防 , 抽 !M! NL 打出后切换为攻击牌 ",
-    "UPGRADE_DESCRIPTION": " !D! 伤 , 抽 !M! NL 打出后切换为技能牌 "
+    "DESCRIPTION": " !B! 防  抽 !M! NL 变攻击 ",
+    "UPGRADE_DESCRIPTION": " !D! 伤  抽 !M! NL 变防御 ",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !B! 点 格挡 NL 抽 !M! 张牌 NL 打出后切换为攻击牌 ",
+      "造成 !D! 点 伤害 NL 抽 !M! 张牌 NL 打出后切换为技能牌 "
+    ]
   },
   "wishdalemod:Tudou": {
     "NAME": "土豆，土豆",
@@ -149,7 +218,10 @@
   },
   "wishdalemod:Yineisidetou": {
     "NAME": "伊内丝的头",
-    "DESCRIPTION": "抽到时对所有敌人造成 !D! 点伤害并 丢弃 "
+    "DESCRIPTION": "不能被打出 NL 抽到自动 群攻 !D! 伤 并 丢弃 ",
+    "EXTENDED_DESCRIPTION": [
+      "不能被打出 NL 抽到时对所有敌人造成 !D! 点 伤害并 丢弃 "
+    ]
   },
   "wishdalemod:Zixuechengcai": {
     "NAME": "自学成才",
@@ -162,6 +234,17 @@
   },
   "wishdalemod:Dindianqingsuan": {
     "NAME": "定点清算",
-    "DESCRIPTION": " !D! X 2，给 !M! 层 残影"
+    "DESCRIPTION": " !D! X 2，给 !M! 层 wishdalemod:残影",
+    "EXTENDED_DESCRIPTION": [
+      "对敌人造成 !D! 点伤害 2 次 NL 给予 !M! 层 wishdalemod:残影"
+    ]
+  },
+  "wishdalemod:ZhanshiBOM": {
+    "NAME": "手法干员",
+    "DESCRIPTION": "原汁原味的塔"
+  },
+  "wishdalemod:ZhanshiBOOM": {
+    "NAME": "目光呆滞",
+    "DESCRIPTION": "大脑被爆裂黎明所替换"
   }
 }

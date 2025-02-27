@@ -40,7 +40,7 @@ public class Yishujiushibaozha extends AbstractPower {
             addToBot(new RemoveSpecificPowerAction(p, p, POWER_ID));
             for (AbstractMonster m : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
                 m.currentHealth = 1;
-                m.damage(new DamageInfo(m, 999, DamageInfo.DamageType.HP_LOSS));
+                m.damage(new DamageInfo(m, 999999, DamageInfo.DamageType.HP_LOSS));
                 addToBot(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.1F));
             }
         }

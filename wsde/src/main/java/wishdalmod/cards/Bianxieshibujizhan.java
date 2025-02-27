@@ -27,6 +27,8 @@ public class Bianxieshibujizhan extends CustomCard {
         this.baseMagicNumber = this.magicNumber = 1;
         this.isEthereal = true;
     }
+    public void use(AbstractPlayer p, AbstractMonster m) { addToBot(new ApplyPowerAction(p, p, new BianxieshibujizhanPower(p, this.magicNumber))); }
+
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
@@ -35,7 +37,6 @@ public class Bianxieshibujizhan extends CustomCard {
             initializeDescription();
         }
     }
-    public void use(AbstractPlayer p, AbstractMonster m) { addToBot(new ApplyPowerAction(p, p, new BianxieshibujizhanPower(p, this.magicNumber))); }
     public AbstractCard makeCopy() {
         return new Bianxieshibujizhan();
     }

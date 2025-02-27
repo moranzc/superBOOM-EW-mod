@@ -38,7 +38,15 @@ public class Baolieliming extends CustomCard {
         this.addToBot(new ApplyPowerAction(p, p, new BaolielimingPower(p, this.magicNumber), this.magicNumber));
         CardCrawlGame.sound.play("BOOM");
     }
+    public void changeType(boolean hard) {
+        if (!hard) {
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        } else {
 
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        }
+        initializeDescription();
+    }
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();

@@ -10,7 +10,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -26,9 +25,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.BeatOfDeathPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
@@ -152,9 +149,6 @@ public class EW extends CustomPlayer {
         }
         super.useCard(c, monster, energyOnUse);
     }
-
-
-
 
     // 初始卡组的ID，可直接写或引用变量
     public ArrayList<String> getStartingDeck() {
@@ -366,5 +360,6 @@ public class EW extends CustomPlayer {
             r.isDead = true;
         }
         currentZuzongs.clear();
+        this.state.addAnimation(0, "Idle", true, 0.0F);
     }
 }

@@ -9,49 +9,36 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import wishdalmod.helpers.ModHelper;
-import wishdalmod.screen.TypeSelectScreen;
 
 import static com.megacrit.cardcrawl.cards.AbstractCard.CardColor.COLORLESS;
 
-public class Sihunling extends CustomCard {
-    public static final String ID = ModHelper.makePath("Sihunling");
+public class ZhanshiBOM extends CustomCard {
+    public static final String ID = ModHelper.makePath("ZhanshiBOM");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
-    private static final String IMG_PATH = ModHelper.getCardImagePath("Sihunling");
-    private static final String DESCRIPTION = TypeSelectScreen.getType() == 0 ? CARD_STRINGS.DESCRIPTION : CARD_STRINGS.EXTENDED_DESCRIPTION[0];
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final String IMG_PATH = ModHelper.getCardImagePath("ZhanshiBOM");
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
+    private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    public Sihunling() {
+
+    public ZhanshiBOM() {
         super(ID, NAME, IMG_PATH, 0, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        this.baseDamage = 9;
         this.isMultiDamage = true;
+        this.cardsToPreview = new Burn();
         this.selfRetain = true;
         this.exhaust = true;
-        updateCardAttributes();
-    }
-    private void updateCardAttributes() {
-        if (TypeSelectScreen.getType() == 0) {
-            this.baseDamage = 13;
-            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
-        } else {
-            this.baseDamage = 9;
-            this.rawDescription = CARD_STRINGS.DESCRIPTION;
-        }
-        this.initializeDescription();
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
     }
+
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            if (TypeSelectScreen.getType() == 0) {
-                this.upgradeDamage(3);
-            } else {
-                this.upgradeDamage(4);
-            }
-            this.initializeDescription();
+            this.upgradeDamage(4);
         }
     }
 }

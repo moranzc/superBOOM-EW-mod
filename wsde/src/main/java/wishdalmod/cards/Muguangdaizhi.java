@@ -32,8 +32,6 @@ public class Muguangdaizhi extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(this.magicNumber, new RandomizeDrawCardCostAction(), true));
     }
-
-
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();

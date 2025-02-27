@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import wishdalmod.helpers.ModHelper;
+import wishdalmod.screen.TypeSelectScreen;
 
 import java.util.Iterator;
 
@@ -24,32 +25,57 @@ public class Zhenhandan extends CustomCard {
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = ModHelper.getCardImagePath("Zhenhandan");
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
+    private static final String DESCRIPTION = TypeSelectScreen.getType() == 0 ? CARD_STRINGS.DESCRIPTION : CARD_STRINGS.EXTENDED_DESCRIPTION[0];
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardColor COLOR = WISHDALE_RED;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     public Zhenhandan() {
         super(ID, NAME, IMG_PATH, 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = 9;
-        this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
+        updateCardAttributes();
+    }
+    private void updateCardAttributes() {
+        if (TypeSelectScreen.getType() == 0) {
+            this.baseDamage = 8;
+            this.baseMagicNumber = 1;
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            this.baseDamage = 9;
+            this.baseMagicNumber = 1;
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        }
+        this.initializeDescription();
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new WallopAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
-        Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
-        while(var3.hasNext()) {
-            AbstractMonster mo = (AbstractMonster)var3.next();
-            this.addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-            this.addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        if (TypeSelectScreen.getType() == 0) {
+            this.addToBot(new WallopAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+            Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
+            while(var3.hasNext()) {
+                AbstractMonster mo = (AbstractMonster)var3.next();
+                this.addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            }
+        } else {
+            Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
+            while(var3.hasNext()) {
+                AbstractMonster mo = (AbstractMonster)var3.next();
+                this.addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                this.addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                this.addToBot(new WallopAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+            }
         }
+
     }
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(5);
+            if (TypeSelectScreen.getType() == 0) {
+                this.upgradeDamage(4);
+            } else {
+                this.upgradeDamage(5);
+            }
+            this.initializeDescription();
         }
-
     }
     public AbstractCard makeCopy() {
         return new Zhenhandan();

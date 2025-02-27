@@ -17,9 +17,17 @@ public class WishdaleBOOMBOOMPatch {
             for (DescriptionLine line :_inst.description) {
                 line.text = line.text.replace("消耗", "爆炸");
             }
+            for (DescriptionLine line :_inst.description) {
+                line.text = line.text.replace("虚无", "自爆");
+            }
             for (int i =0; i<_inst.keywords.size(); i++) {
                 if (_inst.keywords.get(i).equals("消耗")) {
                     _inst.keywords.set(i, "wishdalemod:爆炸");
+                }
+            }
+            for (int i =0; i<_inst.keywords.size(); i++) {
+                if (_inst.keywords.get(i).equals("虚无")) {
+                    _inst.keywords.set(i, "wishdalemod:自爆");
                 }
             }
         }

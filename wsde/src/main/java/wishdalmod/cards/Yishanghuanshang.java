@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import wishdalmod.helpers.ModHelper;
+import wishdalmod.screen.TypeSelectScreen;
 
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
@@ -19,7 +20,7 @@ public class Yishanghuanshang extends CustomCard {
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = ModHelper.getCardImagePath("Yishanghuanshang");
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
+    private static final String DESCRIPTION = TypeSelectScreen.getType() == 0 ? CARD_STRINGS.DESCRIPTION : CARD_STRINGS.EXTENDED_DESCRIPTION[0];
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardColor COLOR = WISHDALE_RED;
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -29,6 +30,16 @@ public class Yishanghuanshang extends CustomCard {
     public Yishanghuanshang() {
         super(ID, NAME, IMG_PATH, 3, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = 0;
+        updateCardAttributes();
+    }
+    private void updateCardAttributes() {
+        if (TypeSelectScreen.getType() == 0) {
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            this.upgradeBaseCost(2);
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        }
+        this.initializeDescription();
     }
     public void triggerOnGlowCheck() {
         if (this.useTimes == 2) {
@@ -45,27 +56,36 @@ public class Yishanghuanshang extends CustomCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
         this.rawDescription = CARD_STRINGS.DESCRIPTION;
     }
-
-
     public void applyPowers() {
-        AbstractPlayer p = AbstractDungeon.player;
-        this.baseDamage = p.maxHealth - p.currentHealth;
-        super.applyPowers();
-        this.rawDescription = CARD_STRINGS.DESCRIPTION;
-        this.rawDescription += CARD_STRINGS.UPGRADE_DESCRIPTION;
-        initializeDescription();
+        if (TypeSelectScreen.getType() == 0) {
+            AbstractPlayer p = AbstractDungeon.player;
+            this.baseDamage = p.maxHealth - p.currentHealth;
+            super.applyPowers();
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+            this.rawDescription += CARD_STRINGS.UPGRADE_DESCRIPTION;
+            initializeDescription();
+        } else {
+            AbstractPlayer p = AbstractDungeon.player;
+            this.baseDamage = (p.maxHealth - p.currentHealth)*2;
+            super.applyPowers();
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+            this.rawDescription += CARD_STRINGS.UPGRADE_DESCRIPTION;
+            initializeDescription();
+        }
     }
-
     public void onMoveToDiscard() {
         this.rawDescription = CARD_STRINGS.DESCRIPTION;
         initializeDescription();
     }
-
-
     public void upgrade() {
         if (!this.upgraded) {
-            upgradeName();
-            upgradeBaseCost(2);
+            this.upgradeName();
+            if (TypeSelectScreen.getType() == 0) {
+                upgradeBaseCost(2);
+            } else {
+                upgradeBaseCost(1);
+            }
+            this.initializeDescription();
         }
     }
     public AbstractCard makeCopy() {

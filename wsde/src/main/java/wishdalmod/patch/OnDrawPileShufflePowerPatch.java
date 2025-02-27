@@ -1,4 +1,4 @@
-package wishdalmod.helpers;
+package wishdalmod.patch;
 
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

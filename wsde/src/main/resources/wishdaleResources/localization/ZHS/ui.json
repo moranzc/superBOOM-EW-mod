@@ -4,6 +4,13 @@
       "模组设置"
     ]
   },
+  "wishdalemod:Types": {
+    "TEXT": [
+      "选择",
+      "手法干员",
+      "目光呆滞"
+    ]
+  },
   "wishdalemod:Zuzong": {
     "TEXT": [
       "魂灵之影",
