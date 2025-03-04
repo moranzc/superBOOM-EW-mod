@@ -35,7 +35,7 @@ public class Shouliudan extends CustomCard {
             this.isMultiDamage = true;
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
-            this.baseDamage = 7;
+            this.baseDamage = 6;
             this.isMultiDamage = true;
             this.rawDescription = CARD_STRINGS.DESCRIPTION;
         }
@@ -50,7 +50,7 @@ public class Shouliudan extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             if (TypeSelectScreen.getType() == 0) {
-                this.upgradeDamage(2);
+                this.upgradeDamage(1);
             } else {
                 this.upgradeDamage(3);
             }

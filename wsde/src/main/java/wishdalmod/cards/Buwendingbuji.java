@@ -26,16 +26,16 @@ public class Buwendingbuji extends CustomCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     public Buwendingbuji() {
-        super(ID, NAME, IMG_PATH, 1, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH,TypeSelectScreen.getType() == 0 ? 1 : 0, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = false;
         updateCardAttributes();
     }
     private void updateCardAttributes() {
         if (TypeSelectScreen.getType() == 0) {
-            this.magicNumber = this.baseMagicNumber = 1;
+            this.magicNumber = this.baseMagicNumber = 2;
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
-            this.magicNumber = this.baseMagicNumber = 2;
+            this.magicNumber = this.baseMagicNumber = 3;
             this.rawDescription = CARD_STRINGS.DESCRIPTION;
         }
         this.initializeDescription();

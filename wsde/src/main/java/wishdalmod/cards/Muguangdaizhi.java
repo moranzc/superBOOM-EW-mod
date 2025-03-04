@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import wishdalmod.actions.RandomizeDrawCardCostAction;
 import wishdalmod.helpers.ModHelper;
+import wishdalmod.screen.TypeSelectScreen;
 
 import java.util.ArrayList;
 
@@ -26,7 +27,7 @@ public class Muguangdaizhi extends CustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public Muguangdaizhi() {
-        super(ID, NAME, IMG_PATH, 1, DESCRIPTION,TYPE,COLOR,RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 1 : 0, DESCRIPTION,TYPE,COLOR,RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
     }
     public void use(AbstractPlayer p, AbstractMonster m) {

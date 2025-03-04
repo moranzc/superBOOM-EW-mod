@@ -32,7 +32,7 @@ public class Wuxianhuoli extends CustomCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public Wuxianhuoli() {
-        super(ID, NAME, IMG_PATH, 1, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH,TypeSelectScreen.getType() == 0 ? 1 : 0, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber;
         this.tags.add(CardTags.STARTER_STRIKE);
         this.tags.add(CardTags.STRIKE);

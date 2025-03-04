@@ -35,6 +35,7 @@ public class Dailizhihui extends CustomCard {
     }
     private void updateCardAttributes() {
         if (TypeSelectScreen.getType() == 0) {
+            this.exhaust = true;
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
             this.rawDescription = CARD_STRINGS.DESCRIPTION;

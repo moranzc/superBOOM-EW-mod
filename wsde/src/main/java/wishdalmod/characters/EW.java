@@ -34,6 +34,7 @@ import wishdalmod.cards.Strike;
 import wishdalmod.helpers.CanyingXiaoguo;
 import wishdalmod.modcore.WishdaleMod;
 import wishdalmod.relics.wishdalebadge;
+import wishdalmod.screen.TypeSelectScreen;
 
 
 import java.util.ArrayList;
@@ -172,19 +173,36 @@ public class EW extends CustomPlayer {
         return retVal;
     }
     public CharSelectInfo getLoadout() {
-        return new CharSelectInfo(
-                characterStrings.NAMES[0], // 人物名字
-                characterStrings.TEXT[0], // 人物介绍
-                47, // 当前血量
-                47, // 最大血量
-                0, // 初始充能球栏位
-                99, // 初始携带金币
-                5, // 每回合抽牌数量
-                this, // 别动
-                this.getStartingRelics(), // 初始遗物
-                this.getStartingDeck(), // 初始卡组
-                false
-        );
+        if (TypeSelectScreen.getType() == 0) {
+            return new CharSelectInfo(
+                    characterStrings.NAMES[0], // 人物名字
+                    characterStrings.TEXT[0], // 人物介绍
+                    47, // 当前血量
+                    47, // 最大血量
+                    0, // 初始充能球栏位
+                    99, // 初始携带金币
+                    5, // 每回合抽牌数量
+                    this, // 别动
+                    this.getStartingRelics(), // 初始遗物
+                    this.getStartingDeck(), // 初始卡组
+                    false
+            );
+        } else {
+            return new CharSelectInfo(
+                    characterStrings.NAMES[0], // 人物名字
+                    characterStrings.TEXT[0], // 人物介绍
+                    79, // 当前血量
+                    79, // 最大血量
+                    0, // 初始充能球栏位
+                    99, // 初始携带金币
+                    5, // 每回合抽牌数量
+                    this, // 别动
+                    this.getStartingRelics(), // 初始遗物
+                    this.getStartingDeck(), // 初始卡组
+                    false
+            );
+        }
+
     }
 
     // 人物名字（出现在游戏左上角）

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import wishdalmod.helpers.ModHelper;
 import wishdalmod.powers.Yishujiushibaozha;
+import wishdalmod.screen.TypeSelectScreen;
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
@@ -24,18 +25,12 @@ public class Zhongyanluomu extends CustomCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     public Zhongyanluomu() {
-        super(ID, NAME, IMG_PATH, 0, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH,TypeSelectScreen.getType() == 0 ? 4 : 0, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
         this.exhaust = true;
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new Yishujiushibaozha(p, this.magicNumber), 0));
-    }
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            upgradeMagicNumber(-1);
-        }
     }
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
@@ -58,7 +53,18 @@ public class Zhongyanluomu extends CustomCard {
             return canUse;
         }
     }
-
+    public void upgrade() {
+        if (!this.upgraded) {
+            this.upgradeName();
+            if (TypeSelectScreen.getType() == 0) {
+                this.upgradeBaseCost(3);
+                upgradeMagicNumber(-1);
+            } else {
+                upgradeMagicNumber(-1);
+            }
+            this.initializeDescription();
+        }
+    }
     public AbstractCard makeCopy() {
         return new Zhongyanluomu();
     }

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import wishdalmod.helpers.ModHelper;
 import wishdalmod.powers.BianxieshibujizhanPower;
+import wishdalmod.screen.TypeSelectScreen;
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
@@ -23,7 +24,7 @@ public class Bianxieshibujizhan extends CustomCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     public Bianxieshibujizhan() {
-        super(ID, NAME, IMG_PATH, 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH,TypeSelectScreen.getType() == 0 ? 2 : 1, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = 1;
         this.isEthereal = true;
     }

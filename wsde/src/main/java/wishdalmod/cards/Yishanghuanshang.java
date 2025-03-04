@@ -28,15 +28,15 @@ public class Yishanghuanshang extends CustomCard {
     private int useTimes = 0;
 
     public Yishanghuanshang() {
-        super(ID, NAME, IMG_PATH, 3, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 3 : 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = 0;
+
         updateCardAttributes();
     }
     private void updateCardAttributes() {
         if (TypeSelectScreen.getType() == 0) {
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
-            this.upgradeBaseCost(2);
             this.rawDescription = CARD_STRINGS.DESCRIPTION;
         }
         this.initializeDescription();
@@ -59,14 +59,14 @@ public class Yishanghuanshang extends CustomCard {
     public void applyPowers() {
         if (TypeSelectScreen.getType() == 0) {
             AbstractPlayer p = AbstractDungeon.player;
-            this.baseDamage = p.maxHealth - p.currentHealth;
+            this.baseDamage =(p.maxHealth - p.currentHealth)*3/2;
             super.applyPowers();
             this.rawDescription = CARD_STRINGS.DESCRIPTION;
             this.rawDescription += CARD_STRINGS.UPGRADE_DESCRIPTION;
             initializeDescription();
         } else {
             AbstractPlayer p = AbstractDungeon.player;
-            this.baseDamage = (p.maxHealth - p.currentHealth)*2;
+            this.baseDamage = (p.maxHealth - p.currentHealth);
             super.applyPowers();
             this.rawDescription = CARD_STRINGS.DESCRIPTION;
             this.rawDescription += CARD_STRINGS.UPGRADE_DESCRIPTION;
@@ -84,6 +84,7 @@ public class Yishanghuanshang extends CustomCard {
                 upgradeBaseCost(2);
             } else {
                 upgradeBaseCost(1);
+                this.rawDescription = CARD_STRINGS.DESCRIPTION;
             }
             this.initializeDescription();
         }

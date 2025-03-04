@@ -28,6 +28,8 @@ public void upgrade() {
             this.initializeDescription();
         }
     }
+
+    TypeSelectScreen.getType() == 0 ? 3 : 2
 造成 !D! 点伤害。
 随机对敌人造成 !D! 点伤害 !M! 次。
 对敌人造成 !D! 点伤害 !M! 次。
@@ -35,16 +37,12 @@ public void upgrade() {
 获得 !B! 点 格挡 。
 NL 抽 !M! 张牌。
 
-Baolieliming
-Bianxieshibujizhan
+爆裂黎明
 目光呆滞
-Shefu
-Yigongdaishou
-Yinbi
-yinbao
+设伏
+隐蔽
 战术规划
-Zixuechengcai
-终焉落幕
+自学成才
 主炮
 以战养战
 战后修整

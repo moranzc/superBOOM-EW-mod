@@ -40,13 +40,13 @@
     "NAME": "震撼弹",
     "DESCRIPTION": "给群怪 !M! 层 虚弱 和 易伤 NL !D! 伤 NL 获得未被格挡伤害相等的 格挡 ",
     "EXTENDED_DESCRIPTION": [
-    "造成 !D! 点伤害 NL 获得与所造成的未被格挡的伤害相等的 格挡 NL 给群怪 !M! 层 虚弱"
+    "造成 !D! 点伤害 NL 获得与所造成的未被格挡的伤害相等的 格挡 NL 给所有敌人 !M! 层 虚弱"
     ]
   },
   "wishdalemod:Lingguangyishan": {
     "NAME": "灵光一闪",
-    "DESCRIPTION": " wishdalemod:银银银银银 NL [#ffd700]ALL[] wishdalemod:门NL 虚无 NL 消耗  ",
-    "UPGRADE_DESCRIPTION": " wishdalemod:金金金金金 NL[#ffd700]ALL[] wishdalemod:门NL 消耗 ",
+    "DESCRIPTION": " wishdalemod:银银银银银 NL [#ffd700]ALL[] wishdalemod:门 NL 虚无 NL 消耗  ",
+    "UPGRADE_DESCRIPTION": " wishdalemod:金金金金金 NL [#ffd700]ALL[] wishdalemod:门 NL 消耗 ",
     "EXTENDED_DESCRIPTION": [
       " 增加一张随机金卡到你的手牌。 NL 这张牌在本回合耗能变为0 NL [#ffd700]ALL[] wishdalemod:门 NL 虚无 NL 消耗 NL 我们保留了抽卡的乐趣这样你才知道你玩的是EWmod ",
       " 增加一张随机金卡到你的手牌。 NL 这张牌在本回合耗能变为0 NL [#ffd700]ALL[] wishdalemod:门 NL 消耗 NL 我们保留了抽卡的乐趣这样你才知道你玩的是维什戴尔mod"
@@ -54,9 +54,10 @@
   },
   "wishdalemod:Yigongdaishou": {
     "NAME": "以攻代守",
-    "DESCRIPTION": "只有手牌全是攻击牌时才能打出 NL  !D! 伤",
+    "DESCRIPTION": "手牌全为攻击牌才能打 NL  !D! 伤",
     "EXTENDED_DESCRIPTION": [
-      "我手中还 *萨卡兹粗口 有非攻击牌你眼瞎吗?"
+      "我手中还 *萨卡兹粗口 有非攻击牌你眼瞎吗?",
+      "只有在手牌每一张牌都是攻击牌时才能被打出。 NL 造成 !D! 点伤害。获得 !B! 点 格挡"
       ]
   },
   "wishdalemod:Zidongsheji": {
@@ -92,7 +93,10 @@
   },
   "wishdalemod:Sihunlingdeyuxi": {
     "NAME": "死魂灵的余息",
-    "DESCRIPTION": "召唤一个魂灵之影"
+    "DESCRIPTION": "召唤一个魂灵之影",
+    "EXTENDED_DESCRIPTION": [
+      "召唤一个15点 生命值 的 wishdalemod:魂灵之影"
+    ]
   },
   "wishdalemod:Shouliudan": {
     "NAME": "手榴弹",
@@ -106,7 +110,7 @@
     "NAME": "苦难陈述者",
     "DESCRIPTION": "ALL 99层 易伤 和 虚弱 NL 消耗 NL  [#ffd700]ALL[] wishdalemod:门",
     "EXTENDED_DESCRIPTION": [
-      "给予所有敌人99层 易伤 和99层 虚弱 NL 消耗 NL [#ffd700]ALL[] wishdalemod:门 NL 都说了有海猫赐福，不可能削"
+      "给予所有敌人99层 易伤 和99层 虚弱 NL 消耗 NL [#ffd700]ALL[] wishdalemod:门"
     ]
   },
   "wishdalemod:Hunlingpingzhang": {
@@ -186,9 +190,9 @@
   },
   "wishdalemod:Yishanghuanshang": {
     "NAME": "以血还血",
-    "DESCRIPTION": "造成损失血量2倍的伤害 NL 使用三次后 消耗 ",
+    "DESCRIPTION": "造成损失血量的伤害 NL 使用三次后 消耗 ",
     "EXTENDED_DESCRIPTION": [
-    "造成已损失的生命值的伤害 NL 使用三次后 消耗 "
+    "造成已损失的生命值1.5倍的伤害 NL 使用三次后 消耗 "
     ]
   },
   "wishdalemod:Zhupaojiwushuzengfudanyuan": {
@@ -199,7 +203,7 @@
     "NAME": "迭代",
     "DESCRIPTION": " !D! 伤, 所有 *迭代 伤害提升 !M!  NL 每打出一次耗能减1",
     "EXTENDED_DESCRIPTION": [
-      "造成 !D! 点伤害 NL 这张牌每被打出一次 NL 在本场战斗中其伤害增加 !M! 在本场战斗中的耗能减少1"
+      "造成 !D! 点伤害 NL 这张牌每被打出一次 NL 在本场战斗中其伤害增加 !M! NL 耗能减少1"
     ]
   },
   "wishdalemod:Chongzu": {

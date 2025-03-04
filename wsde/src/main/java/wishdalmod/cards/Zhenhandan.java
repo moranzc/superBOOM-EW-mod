@@ -32,17 +32,18 @@ public class Zhenhandan extends CustomCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     public Zhenhandan() {
         super(ID, NAME, IMG_PATH, 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber;
         updateCardAttributes();
     }
     private void updateCardAttributes() {
         if (TypeSelectScreen.getType() == 0) {
             this.baseDamage = 8;
             this.baseMagicNumber = 1;
+            this.magicNumber = this.baseMagicNumber;
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
             this.baseDamage = 9;
             this.baseMagicNumber = 1;
+            this.magicNumber = this.baseMagicNumber;
             this.rawDescription = CARD_STRINGS.DESCRIPTION;
         }
         this.initializeDescription();
@@ -61,8 +62,8 @@ public class Zhenhandan extends CustomCard {
                 AbstractMonster mo = (AbstractMonster)var3.next();
                 this.addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
                 this.addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-                this.addToBot(new WallopAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
             }
+            this.addToBot(new WallopAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
         }
 
     }
