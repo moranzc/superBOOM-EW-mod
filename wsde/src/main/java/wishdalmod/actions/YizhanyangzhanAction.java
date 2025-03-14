@@ -1,11 +1,13 @@
 package wishdalmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class YizhanyangzhanAction
@@ -29,6 +31,7 @@ public class YizhanyangzhanAction
             this.target.damage(this.info);
             if (this.target.isDying || this.target.currentHealth <= 0) {
                 addToTop(new GainBlockAction(AbstractDungeon.player, this.target.maxHealth));
+                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BlurPower(AbstractDungeon.player, 2), 2));
             }
 
             if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead()) {

@@ -186,7 +186,7 @@
   },
   "wishdalemod:Yizhanyangzhan": {
     "NAME": "以战养战",
-    "DESCRIPTION": "造成 !D! 点 伤害 。击杀时获得目标最大生命值的 格挡 "
+    "DESCRIPTION": "造成 !D! 点 伤害 。击杀时获得持续2回合的目标最大生命值的 格挡 "
   },
   "wishdalemod:Yishanghuanshang": {
     "NAME": "以血还血",
@@ -250,5 +250,53 @@
   "wishdalemod:ZhanshiBOOM": {
     "NAME": "目光呆滞",
     "DESCRIPTION": "大脑被爆裂黎明所替换"
+  },
+  "wishdalemod:Canyingbishou": {
+    "NAME": "残影匕首",
+    "DESCRIPTION": " !D! 伤 NL !M! 层 wishdalemod:残影",
+    "EXTENDED_DESCRIPTION": [
+      "对敌人造成 !D! 点伤害 NL 给予 !M! 层 wishdalemod:残影"
+    ]
+  },
+  "wishdalemod:Mositima": {
+    "NAME": "助战:莫斯提马",
+    "DESCRIPTION": "腾跃",
+    "EXTENDED_DESCRIPTION": [
+      "在本回合结束后，额外获得一回合。 NL 结束你的回合。 NL 消耗 。"
+    ]
+  },
+  "wishdalemod:Shunshen": {
+    "NAME": "瞬身",
+    "DESCRIPTION": "!B! 防 NL 2 残影(猎宝) ",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !B! 点 格挡 。 NL 你的下一回合开始时 格挡 不会消失。"
+    ]
+  },
+  "wishdalemod:Gedang": {
+    "NAME": "格挡",
+    "DESCRIPTION": "!B! 防 NL 在3次后得 1 敏捷 ",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !B! 点 格挡 。 NL 在第三次打出后获得 1 敏捷"
+    ]
+  },
+  "wishdalemod:Meide": {
+    "NAME": "美德",
+    "DESCRIPTION": "消耗诅咒、状态牌 NL 每张获得 !B! 点 格挡",
+    "EXTENDED_DESCRIPTION": [
+      "消耗 抽牌堆、弃牌堆和手牌中的所有诅咒牌和状态牌，每张获得 !B! 点 格挡"
+    ]
+  },
+  "wishdalemod:Huandan": {
+    "NAME": "换弹",
+    "DESCRIPTION": "消耗手牌 NL 抽等量牌",
+    "EXTENDED_DESCRIPTION": [
+      "消耗所有手牌。 NL 然后抽相同数量张牌。 NL 消耗 。",
+      "消耗所有手牌。 NL 然后抽相同数量张牌。",
+      "消耗手牌 NL 抽等量牌 NL 获得 [E] "
+    ]
+  },
+  "wishdalemod:Boming": {
+    "NAME": "搏命",
+    "DESCRIPTION": "固有 NL 将生命值变为 5，获得等量于损失生命值的格挡。获得 !M! 层 残影 NL 消耗"
   }
 }

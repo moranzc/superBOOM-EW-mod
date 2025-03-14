@@ -26,13 +26,13 @@ public class AncestralLauncher extends CustomRelic {
         return this.DESCRIPTIONS[0];
     }
     public boolean canSpawn() {
-        return AbstractDungeon.player.hasRelic(wishdalebadge.ID);
+        return AbstractDungeon.player.hasRelic(Wishdalebadge.ID);
     }
     public void obtain() {
         AbstractPlayer player = AbstractDungeon.player;
-        if (player.hasRelic(wishdalebadge.ID)) {
+        if (player.hasRelic(Wishdalebadge.ID)) {
             player.relics.stream()
-                    .filter(r -> r instanceof wishdalebadge)
+                    .filter(r -> r instanceof Wishdalebadge)
                     .findFirst()
                     .map(r -> Integer.valueOf(player.relics.indexOf(r)))
                     .ifPresent(index ->

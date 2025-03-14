@@ -12,13 +12,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import wishdalmod.helpers.ModHelper;
 
-public class wishdalebadge extends CustomRelic {
-    public static final String ID = ModHelper.makePath("wishdalebadge");
+public class Wishdalebadge extends CustomRelic {
+    public static final String ID = ModHelper.makePath("Wishdalebadge");
     private static final String IMG = "wishdaleResources/images/relics/wishdalebadge.png";
     private static final String IMG_OTL = "wishdaleResources/images/relics/wishdalebadge_o.png";
     private boolean activated = true;
 
-    public wishdalebadge() {
+    public Wishdalebadge() {
         super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL),AbstractRelic.RelicTier.STARTER, AbstractRelic.LandingSound.CLINK);
     }
 
@@ -27,7 +27,7 @@ public class wishdalebadge extends CustomRelic {
     }
 
     public CustomRelic makeCopy() {
-        return new wishdalebadge();
+        return new Wishdalebadge();
     }
 
     public void atBattleStart() {

@@ -33,7 +33,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import wishdalmod.cards.Strike;
 import wishdalmod.helpers.CanyingXiaoguo;
 import wishdalmod.modcore.WishdaleMod;
-import wishdalmod.relics.wishdalebadge;
+import wishdalmod.relics.Wishdalebadge;
 import wishdalmod.screen.TypeSelectScreen;
 
 
@@ -169,7 +169,7 @@ public class EW extends CustomPlayer {
     // 初始遗物的ID
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(wishdalebadge.ID);
+        retVal.add(Wishdalebadge.ID);
         return retVal;
     }
     public CharSelectInfo getLoadout() {

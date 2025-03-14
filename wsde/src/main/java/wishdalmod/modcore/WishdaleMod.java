@@ -83,7 +83,11 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCard(new Diedai());//迭代
         BaseMod.addCard(new Yineisidetou());//伊内丝的头
         BaseMod.addCard(new Zixuechengcai());//自学成才
-        BaseMod.addCard(new Dindianqingsuan());//定点、
+        BaseMod.addCard(new Dindianqingsuan());//定点清算
+        BaseMod.addCard(new Canyingbishou());//残影匕首
+        //BaseMod.addCard(new 预设());//预设
+        //BaseMod.addCard(new 预设());//预设
+        //BaseMod.addCard(new 预设());//预设
         //BaseMod.addCard(new 预设());//预设
         //BaseMod.addCard(new 预设());//预设
         //技能
@@ -99,11 +103,15 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCard(new Buwendingbuji());//不稳定补给
         BaseMod.addCard(new Chongzu());//重组
         BaseMod.addCard(new Tudou());//土豆，土豆
+        BaseMod.addCard(new Mositima());//莫斯提马
+        BaseMod.addCard(new Shunshen());//瞬身
+        BaseMod.addCard(new Gedang());//格挡
+        BaseMod.addCard(new Meide());//美德
+        BaseMod.addCard(new Huandan());//换弹
+        BaseMod.addCard(new Boming());//搏命
         //BaseMod.addCard(new 预设());//预设
         //BaseMod.addCard(new 预设());//预设
         //BaseMod.addCard(new 预设());//预设
-        //BaseMod.addCard(new 预设());//预设
-        //BaseMod.addCard(new StarSculpt());//塑星
 
         //能力
         BaseMod.addCard(new Hunlingpingzhang());//魂灵屏障
@@ -126,7 +134,6 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
     }
 
     public void receiveEditCharacters() {
-        // 向basemod注册人物
         BaseMod.addCharacter(new EW(CardCrawlGame.playerName), MY_CHARACTER_BUTTON, MY_CHARACTER_PORTRAIT, WISHDALE_ZC);
 
     }
@@ -159,12 +166,17 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
 
     }
     public void receiveEditRelics() {
-        BaseMod.addRelicToCustomPool(new wishdalebadge(), WISHDALE_RED);
+        BaseMod.addRelicToCustomPool(new Wishdalebadge(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new AncestralLauncher(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new GoldBoneDice(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new RoaringHand(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new AncientTreeFruit(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new Ruozhitutou(), WISHDALE_RED);
+        BaseMod.addRelicToCustomPool(new HotWaterBottle(), WISHDALE_RED);
+        BaseMod.addRelicToCustomPool(new Guowangdexinqiang(), WISHDALE_RED);
+        BaseMod.addRelicToCustomPool(new Guowangdekaijia(), WISHDALE_RED);
+        BaseMod.addRelicToCustomPool(new Guowangdeyanshen(), WISHDALE_RED);
+        BaseMod.addRelicToCustomPool(new Zhuwangdeguanmian(), WISHDALE_RED);
     }
     public void receiveAddAudio() {
         BaseMod.addAudio("BOOM", "wishdaleResources/audio/BOOM.mp3");

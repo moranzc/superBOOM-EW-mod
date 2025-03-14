@@ -1,12 +1,15 @@
 package wishdalmod.powers;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.TextAboveCreatureEffect;
 import wishdalmod.helpers.ModHelper;
 
 public class BianxieshibujizhanPower extends AbstractPower {
@@ -30,5 +33,10 @@ public class BianxieshibujizhanPower extends AbstractPower {
     public void onShuffle() {
         addToBot(new GainEnergyAction(this.amount));
         flash();
+        AbstractDungeon.effectList.add(new TextAboveCreatureEffect(
+                AbstractDungeon.player.hb.cX - AbstractDungeon.player.animX,
+                AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2f,
+                "sp+1", new Color(0F, 255F, 255F, 1.0F).cpy()));
+
     }
 }

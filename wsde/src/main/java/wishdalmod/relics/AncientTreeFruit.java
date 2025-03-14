@@ -28,12 +28,14 @@ public class AncientTreeFruit extends CustomRelic {
         return this.DESCRIPTIONS[0];
     }
     public void onEquip() {
+        AbstractDungeon.combatRewardScreen.open(this.DESCRIPTIONS[1]);
         AbstractDungeon.combatRewardScreen.open();
         AbstractDungeon.combatRewardScreen.rewards.clear();
         AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(AbstractDungeon.returnRandomScreenlessRelic(RelicTier.COMMON)));
         AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(AbstractDungeon.returnRandomScreenlessRelic(RelicTier.COMMON)));
         AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(AbstractDungeon.returnRandomScreenlessRelic(RelicTier.COMMON)));
         AbstractDungeon.combatRewardScreen.positionRewards();
+        AbstractDungeon.overlayMenu.proceedButton.setLabel(this.DESCRIPTIONS[2]);
         AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25F;
         this.flash();
     }

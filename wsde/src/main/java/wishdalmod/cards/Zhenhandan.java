@@ -30,7 +30,7 @@ public class Zhenhandan extends CustomCard {
     private static final CardColor COLOR = WISHDALE_RED;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
-    public Zhenhandan() {
+    public Zhenhandan() {   
         super(ID, NAME, IMG_PATH, 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         updateCardAttributes();
     }
