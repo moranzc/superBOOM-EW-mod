@@ -192,7 +192,7 @@
     "NAME": "以血还血",
     "DESCRIPTION": "造成损失血量的伤害 NL 使用三次后 消耗 ",
     "EXTENDED_DESCRIPTION": [
-    "造成已损失的生命值1.5倍的伤害 NL 使用三次后 消耗 "
+    "造成已损失的生命值的伤害 NL 使用三次后 消耗 "
     ]
   },
   "wishdalemod:Zhupaojiwushuzengfudanyuan": {
@@ -298,5 +298,26 @@
   "wishdalemod:Boming": {
     "NAME": "搏命",
     "DESCRIPTION": "固有 NL 将生命值变为 5，获得等量于损失生命值的格挡。获得 !M! 层 残影 NL 消耗"
+  },
+  "wishdalemod:Kuangzhan": {
+    "NAME": "狂战",
+    "DESCRIPTION": "固有 NL 将生命值变为 10,获得等量于损失生命值一半的格挡获得 !M! 层 仪式 NL 消耗"
+  },
+  "wishdalemod:Xuying": {
+    "NAME": "虚影",
+    "DESCRIPTION": "获得 !M! 层 wishdalemod:视觉陷阱 NL 虚无",
+    "UPGRADE_DESCRIPTION": "固有 NL  获得 !M! 层 wishdalemod:视觉陷阱"
+  },
+  "wishdalemod:Fulingkaijia": {
+    "NAME": "附灵铠甲",
+    "DESCRIPTION": " 获得 !M! 层 wishdalemod:附灵铠甲",
+    "UPGRADE_DESCRIPTION": "固有 NL  获得 !M! 层 wishdalemod:附灵铠甲。"
+  },
+  "wishdalemod:Bianyuanxingzhe": {
+    "NAME": "边缘行者",
+    "DESCRIPTION": "将最大生命值提升 !M! NL 获得 1 层 残影、缓冲、 wishdalemod:边缘行者 NL 在 wishdalemod:残血 时才可打出 NL 每受伤一次本牌费用-1",
+    "EXTENDED_DESCRIPTION": [
+      " *萨卡兹粗口    时候未到！"
+    ]
   }
 }

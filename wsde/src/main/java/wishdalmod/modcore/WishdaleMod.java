@@ -109,7 +109,7 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCard(new Meide());//美德
         BaseMod.addCard(new Huandan());//换弹
         BaseMod.addCard(new Boming());//搏命
-        //BaseMod.addCard(new 预设());//预设
+        BaseMod.addCard(new Kuangzhan());//狂战
         //BaseMod.addCard(new 预设());//预设
         //BaseMod.addCard(new 预设());//预设
 
@@ -121,9 +121,9 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCard(new Baolieliming());//爆裂黎明
         BaseMod.addCard(new Yinbi());//隐蔽
         BaseMod.addCard(new Bianxieshibujizhan());//便携式补给站
-        //BaseMod.addCard(new 预设());//预设
-        //BaseMod.addCard(new 预设());//预设
-        //BaseMod.addCard(new 预设());//预设
+        BaseMod.addCard(new Fulingkaijia());//附灵铠甲
+        BaseMod.addCard(new Bianyuanxingzhe());//边缘行者
+        BaseMod.addCard(new Xuying());//虚影
         //BaseMod.addCard(new 预设());//预设
         //BaseMod.addCard(new 预设());//预设
 

@@ -59,7 +59,7 @@ public class Yishanghuanshang extends CustomCard {
     public void applyPowers() {
         if (TypeSelectScreen.getType() == 0) {
             AbstractPlayer p = AbstractDungeon.player;
-            this.baseDamage =(p.maxHealth - p.currentHealth)*3/2;
+            this.baseDamage =p.maxHealth - p.currentHealth;
             super.applyPowers();
             this.rawDescription = CARD_STRINGS.DESCRIPTION;
             this.rawDescription += CARD_STRINGS.UPGRADE_DESCRIPTION;

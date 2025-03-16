@@ -16,13 +16,12 @@ public class ReloadAction extends AbstractGameAction {
         this.startDuration = Settings.ACTION_DUR_FAST;
         this.duration = this.startDuration;
     }
+
     public void update() {
         cardCount = AbstractDungeon.player.hand.size();
         if (cardCount > 0) {
-            this.addToTop(new ExhaustAction(cardCount, true, true));
-        }
-        if (cardCount > 0) {
             this.addToTop(new DrawCardAction(AbstractDungeon.player, cardCount));
+            this.addToTop(new ExhaustAction(cardCount, true, true));
         }
         this.isDone = true;
     }

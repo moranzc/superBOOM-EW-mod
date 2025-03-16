@@ -43,5 +43,23 @@
     "DESCRIPTIONS": [
       "造成的伤害下降50% NL 每有一层所有敌人在回合开始时失去9点生命。"
     ]
+  },
+  "wishdalemod:SpiritArmorPower": {
+    "NAME": "附灵铠甲",
+    "DESCRIPTIONS": [
+      "使每次失去的血量减少 #b1 点"
+    ]
+  },
+  "wishdalemod:ShijuexianjingPower": {
+    "NAME": "视觉陷阱",
+    "DESCRIPTIONS": [
+      "你每打出一张牌，得到 #b1 点 #y格挡 。"
+    ]
+  },
+  "wishdalemod:BianyuanxingzhePower": {
+    "NAME": "边缘行者",
+    "DESCRIPTIONS": [
+      "回合开始和结束时候获得 #b1 格挡，每打出一张牌获得 #b1 格挡，使你从卡牌获得的格挡增加 #b1 点"
+    ]
   }
 }
