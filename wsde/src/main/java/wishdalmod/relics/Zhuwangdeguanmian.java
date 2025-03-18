@@ -76,7 +76,8 @@ public class Zhuwangdeguanmian extends CustomRelic {
                 Guowangdexinqiang.ID,
                 Guowangdeyanshen.ID,
                 Guowangdekaijia.ID,
-                Zhuwangdeguanmian.ID
+                Zhuwangdeguanmian.ID,
+                GuowangdeHujie.ID
         };
         int count = 0;
         for (String relicId : KING_RELICS) {

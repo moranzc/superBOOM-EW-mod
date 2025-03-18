@@ -29,7 +29,7 @@ public class Guowangdekaijia extends CustomRelic {
         int missingHealth = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, missingHealth));
         if (blurStacks > 0) {
-            AbstractDungeon.player.addPower(new BlurPower(AbstractDungeon.player, 2));
+            AbstractDungeon.player.addPower(new BlurPower(AbstractDungeon.player, 1));
             AbstractDungeon.player.addPower(new ArtifactPower(AbstractDungeon.player, blurStacks));
         }
         this.counter = blurStacks;

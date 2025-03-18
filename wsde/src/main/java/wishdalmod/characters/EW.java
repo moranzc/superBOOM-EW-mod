@@ -306,7 +306,6 @@ public class EW extends CustomPlayer {
         public static CardLibrary.LibraryType WISHDALE_RED;
     }
 
-
     //祖宗
     public void removeDeadZuzong(Zuzong zuzong) {
         currentZuzongs.remove(zuzong);

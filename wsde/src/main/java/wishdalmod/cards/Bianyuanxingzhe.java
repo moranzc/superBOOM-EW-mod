@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
+import wishdalmod.helpers.texiao.PersistentFlameEffect;
 import wishdalmod.powers.BianyuanxingzhePower;
 import wishdalmod.helpers.ModHelper;
 
@@ -41,15 +42,16 @@ public class Bianyuanxingzhe extends CustomCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.currentHealth > 10) {
-            p.currentHealth = 10;
+        AbstractDungeon.player.increaseMaxHp(this.magicNumber, true);
+        if (p.currentHealth > 1) {
+            p.currentHealth = 1;
             p.healthBarUpdatedEvent();
         }
         this.addToBot(new ApplyPowerAction(p, p, new BianyuanxingzhePower(p, 1), 1));
         this.addToBot(new ApplyPowerAction(p, p, new BlurPower(p, 1), 1));
         this.addToBot(new ApplyPowerAction(p, p, new BufferPower(p, 1), 1));
         this.addToBot(new GainBlockAction(p, p, 10));
-        AbstractDungeon.player.increaseMaxHp(this.magicNumber, true);
+        AbstractDungeon.effectsQueue.add(new PersistentFlameEffect());
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);

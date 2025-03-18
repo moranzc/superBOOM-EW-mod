@@ -37,6 +37,5 @@ public class BianxieshibujizhanPower extends AbstractPower {
                 AbstractDungeon.player.hb.cX - AbstractDungeon.player.animX,
                 AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2f,
                 "sp+1", new Color(0F, 255F, 255F, 1.0F).cpy()));
-
     }
 }

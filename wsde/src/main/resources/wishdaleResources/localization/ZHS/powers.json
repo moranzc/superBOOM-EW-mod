@@ -61,5 +61,19 @@
     "DESCRIPTIONS": [
       "回合开始和结束时候获得 #b1 格挡，每打出一张牌获得 #b1 格挡，使你从卡牌获得的格挡增加 #b1 点"
     ]
+  },
+  "wishdalemod:HunlingqiyuePower": {
+    "NAME": "魂灵契约",
+    "DESCRIPTIONS": [
+      "所有攻击牌耗能变为0。 NL 所有技能牌在被打出时被消耗。"
+    ]
+  },
+  "wishdalemod:YanchenhuanraoPower": {
+    "NAME": "烟雾缭绕",
+    "DESCRIPTIONS": [
+      "每当有牌被消耗时，所有角色获得 #b%d 点 #y格挡。",
+      "每当有牌被消耗时：",
+      "点 #y格挡 。敌人获得的格挡减半。"
+    ]
   }
 }

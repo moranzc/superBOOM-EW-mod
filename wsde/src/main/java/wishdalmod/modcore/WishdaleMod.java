@@ -39,7 +39,6 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
     public static final String BIG_ORB = "wishdaleResources/images/char/card_orb.png";
     public static final String ENEYGY_ORB = "wishdaleResources/images/char/cost_orb.png";
     public static final Color MY_COLOR = new Color(136.0F / 255.0F, 39.0F / 255.0F, 39.0F / 255.0F, 1.0F);
-
     public void receivePostInitialize() {
         ModConfig.initModConfigMenu();
         ImageHelper.initThis();
@@ -124,8 +123,8 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCard(new Fulingkaijia());//附灵铠甲
         BaseMod.addCard(new Bianyuanxingzhe());//边缘行者
         BaseMod.addCard(new Xuying());//虚影
-        //BaseMod.addCard(new 预设());//预设
-        //BaseMod.addCard(new 预设());//预设
+        BaseMod.addCard(new Hunlingqiyue());//魂灵契约
+        BaseMod.addCard(new Yanchenhuanrao());//烟雾缭绕（烟尘环绕
 
         //特殊
         BaseMod.addCard(new ZhanshiBOM());//展示简单
@@ -177,6 +176,8 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addRelicToCustomPool(new Guowangdekaijia(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new Guowangdeyanshen(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new Zhuwangdeguanmian(), WISHDALE_RED);
+        BaseMod.addRelicToCustomPool(new GuowangdeHujie(), WISHDALE_RED);
+
     }
     public void receiveAddAudio() {
         BaseMod.addAudio("BOOM", "wishdaleResources/audio/BOOM.mp3");
