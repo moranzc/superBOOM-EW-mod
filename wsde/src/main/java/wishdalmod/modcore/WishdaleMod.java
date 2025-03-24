@@ -8,10 +8,12 @@ import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import wishdalmod.actions.BaozhaAction;
 import wishdalmod.cards.*;
 import wishdalmod.characters.EW;
@@ -26,7 +28,7 @@ import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_ZC;
 
 @SpireInitializer
-public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,EditStringsSubscriber,EditCharactersSubscriber,EditRelicsSubscriber,PostInitializeSubscriber,AddAudioSubscriber,EditKeywordsSubscriber{
+public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,EditStringsSubscriber,EditCharactersSubscriber,EditRelicsSubscriber,PostInitializeSubscriber,AddAudioSubscriber,EditKeywordsSubscriber, OnStartBattleSubscriber, OnPlayerTurnStartSubscriber, OnPlayerDamagedSubscriber{
     public static final String MY_CHARACTER_BUTTON = "wishdaleResources/images/char/Character_Button.png";
     public static final String MY_CHARACTER_PORTRAIT = "wishdaleResources/images/char/Character_Portrait.png";
     public static final String BG_ATTACK_512 = "wishdaleResources/images/512/bg_attack_512.png";
@@ -39,6 +41,9 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
     public static final String BIG_ORB = "wishdaleResources/images/char/card_orb.png";
     public static final String ENEYGY_ORB = "wishdaleResources/images/char/cost_orb.png";
     public static final Color MY_COLOR = new Color(136.0F / 255.0F, 39.0F / 255.0F, 39.0F / 255.0F, 1.0F);
+
+    public static boolean damagedLastTurn;
+    public static boolean damagedThisTurn;
     public void receivePostInitialize() {
         ModConfig.initModConfigMenu();
         ImageHelper.initThis();
@@ -189,5 +194,22 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
     public void receiveAddAudio() {
         BaseMod.addAudio("BOOM", "wishdaleResources/audio/BOOM.mp3");
         BaseMod.addAudio("Tutou", "wishdaleResources/audio/Tutou.mp3");
+    }
+
+    public void receiveOnBattleStart(AbstractRoom room) {
+        damagedLastTurn = false;    // TODO: 如果你想第一回合不算的话就写成true
+        damagedThisTurn = false;
+    }
+
+    public void receiveOnPlayerTurnStart() {
+        damagedLastTurn = damagedThisTurn;
+        damagedThisTurn = false;
+    }
+
+    public int receiveOnPlayerDamaged(int damage, DamageInfo info) {
+        if (damage > 0) {
+            damagedThisTurn = true;
+        }
+        return damage;
     }
 }

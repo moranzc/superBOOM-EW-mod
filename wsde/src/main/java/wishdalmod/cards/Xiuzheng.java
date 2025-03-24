@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import wishdalmod.helpers.ModHelper;
+import wishdalmod.modcore.WishdaleMod;
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
@@ -29,9 +30,13 @@ public class Xiuzheng extends CustomCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (!WishdaleMod.damagedLastTurn) {     // TODO: 可以考虑下给个满足条件就glow的说法
             AbstractDungeon.player.increaseMaxHp(this.magicNumber, true);
             this.addToTop(new HealAction(p, p, this.magicNumber));
+        }
     }
+
+
 
     public void upgrade() {
         if (!this.upgraded) {
