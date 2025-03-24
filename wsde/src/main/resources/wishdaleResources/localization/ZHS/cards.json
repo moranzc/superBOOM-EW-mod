@@ -267,7 +267,7 @@
   },
   "wishdalemod:Shunshen": {
     "NAME": "瞬身",
-    "DESCRIPTION": "!B! 防 NL 2 残影(猎宝) ",
+    "DESCRIPTION": "!B! 防 NL 1 残影(猎宝) ",
     "EXTENDED_DESCRIPTION": [
       "获得 !B! 点 格挡 。 NL 你的下一回合开始时 格挡 不会消失。"
     ]
@@ -297,11 +297,11 @@
   },
   "wishdalemod:Boming": {
     "NAME": "搏命",
-    "DESCRIPTION": "固有 NL 将生命值变为 5，获得等量于损失生命值的格挡。获得 !M! 层 残影 NL 消耗"
+    "DESCRIPTION": "固有 NL 将生命值降低至 5，获得等量于损失生命值的格挡。获得 !M! 层 残影 NL 消耗"
   },
   "wishdalemod:Kuangzhan": {
     "NAME": "战意沸腾",
-    "DESCRIPTION": "固有 NL 将生命值变为 10,获得等量于损失生命值一半的格挡获得 !M! 层 仪式 NL 消耗"
+    "DESCRIPTION": "固有 NL 将生命值降低至 10,获得等量于损失生命值一半的格挡获得 !M! 层 仪式 NL 消耗"
   },
   "wishdalemod:Xuying": {
     "NAME": "虚影",
@@ -328,5 +328,76 @@
     "NAME": "烟雾缭绕",
     "DESCRIPTION": "每消耗一张牌，ALL 角色 获得 !M! 点格挡。",
     "UPGRADE_DESCRIPTION": "每消耗一张牌，所有角色获得 !M! 点格挡。 NL 敌人获得的格挡减半。"
+  },
+  "wishdalemod:Goushi": {
+    "NAME": "构史",
+    "DESCRIPTION": "场上所有角色的血量都会在其最大血量范围内进行随机化。",
+    "UPGRADE_DESCRIPTION": "场上所有角色的血量都会在其最大血量范围内进行随机化，敌人随机化范围变为最大血量的一半"
+  },
+  "wishdalemod:Ronglubaixiang": {
+    "NAME": "熔炉百相",
+    "DESCRIPTION": "wishdalemod:抽卡"
+  },
+  "wishdalemod:Hunlingronglu": {
+    "NAME": "魂灵熔炉",
+    "DESCRIPTION": "回收并扣消耗牌相同耗能的血 NL 夜魇  NL 复制品的数值会随机变化",
+    "EXTENDED_DESCRIPTION": [
+      "选择一张牌消耗并获得等同于耗能的 [E] 和扣血 NL 在下一回合，将 !M! 份这张牌的复制品放入你的手牌中 NL 复制品的数值会随机变化 NL 消耗 "
+    ]
+  },
+  "wishdalemod:Xietong": {
+    "NAME": "协同",
+    "DESCRIPTION": "!D! 伤， !M! 血 !M! 防 祖宗",
+    "EXTENDED_DESCRIPTION": [
+      "造成 !D! 点伤害，召唤一个 !M! 点生命值 !M! 点防御的 wishdalemod:魂灵之影"
+    ]
+  },
+  "wishdalemod:Zhanyi": {
+    "NAME": "战意",
+    "DESCRIPTION": "!D! 伤， !M! 血 !M! 力 祖宗",
+    "EXTENDED_DESCRIPTION": [
+      "造成 !D! 点伤害，召唤一个 !M! 点生命值 !M! 点 力量 的 wishdalemod:魂灵之影"
+    ]
+  },
+  "wishdalemod:Laoyin": {
+    "NAME": "烙印",
+    "DESCRIPTION": "!D! 伤， !M! wishdalemod:残影",
+    "EXTENDED_DESCRIPTION": [
+      "造成 !D! 点伤害，给予对方 !M! 层 wishdalemod:残影"
+    ]
+  },
+  "wishdalemod:Qinshi": {
+    "NAME": "侵蚀",
+    "DESCRIPTION": "群攻 !D! 伤， !M!  wishdalemod:残影  X 次",
+    "EXTENDED_DESCRIPTION": [
+      "对所有敌人造成 !D! 点伤害X次 NL 给予对方 !M! 层 wishdalemod:残影 X次"
+    ]
+  },
+  "wishdalemod:Saileiya": {
+    "NAME": "急救",
+    "DESCRIPTION": "群防 !B! ，回 !D! NL 消耗",
+    "EXTENDED_DESCRIPTION": [
+      "给所有友方单位 !B! 点 格挡 NL 回复 !D! 点生命 NL 消耗"
+    ]
+  },
+  "wishdalemod:Houqinbaozhang": {
+    "NAME": "后勤保障",
+    "DESCRIPTION": "每当有一张牌被 消耗、丢弃 或 打出能力牌 时，抽 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": "每当有一张牌被 消耗、丢弃 或 打出能力牌 时，抽 !M! 张牌。"
+  },
+  "wishdalemod:Shengyuheiye": {
+    "NAME": "生于黑夜",
+    "DESCRIPTION": "根据你的消耗堆中牌的数量造成伤害，每张牌造成 3 点伤害。 !D! 伤",
+    "UPGRADE_DESCRIPTION": "根据你的消耗堆中牌的数量造成伤害，每张牌造成  !D! 点伤害。"
+  },
+  "wishdalemod:Xiuzheng": {
+    "NAME": "修整",
+    "DESCRIPTION": "如果你在上回合没有受到伤害，打出后将你的生命值上限提高 !M! 点，并恢复 !M! 点生命值 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "如果你在上回合没有受到伤害，则将你的生命值上限提高 !M! 点，并恢复 !M! 点生命值 NL 消耗"
+  },
+  "wishdalemod:Hunlingwoliu": {
+    "NAME": "魂灵涡流",
+    "DESCRIPTION": "!D! 伤 !B! 防，每有一个祖宗超级加倍",
+    "UPGRADE_DESCRIPTION": "!D! 伤 !B! 防，每有一个祖宗超级加倍"
   }
 }

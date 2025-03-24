@@ -37,7 +37,7 @@ public class Zuzong extends AbstractMonster {
 
     public Zuzong(EW ew, int maxHealth, float x, float y) {
         super(TEXT[0], ID, maxHealth, 0.0F, 0.0F, 150.0F, 150.0F, IMG, 0.0F, 0.0F, true);
-        this.ancestor = ancestor;
+        this.ancestor = ew;
         drawX = AbstractDungeon.player.drawX + x * Settings.scale;
         drawY = AbstractDungeon.player.drawY + y * Settings.scale;
         refreshHitboxLocation();

@@ -72,6 +72,7 @@ public class EW extends CustomPlayer {
     public final Zuzong[] zuzongs = new Zuzong[3];
     // 当前存活的祖宗
     public final ArrayList<Zuzong> currentZuzongs = new ArrayList<>();
+
     // 人物的本地化文本，如卡牌的本地化文本一样，如何书写见下
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("wishdalemod:wishdale");
     public EW(String name) {

@@ -75,5 +75,19 @@
       "每当有牌被消耗时：",
       "点 #y格挡 。敌人获得的格挡减半。"
     ]
+  },
+  "wishdalemod:HunlingrongluPower": {
+    "NAME": "魂灵熔炉",
+    "DESCRIPTIONS": [
+      "在你的下回合开始时，增加 #b",
+      " 到你的手牌中。"
+    ]
+  },
+  "wishdalemod:HouqinbaozhangPower": {
+    "NAME": "后勤保障",
+    "DESCRIPTIONS": [
+      "每当有一张牌被 消耗 或 打出 能力牌 时，抽 ",
+      " 张牌。"
+    ]
   }
 }

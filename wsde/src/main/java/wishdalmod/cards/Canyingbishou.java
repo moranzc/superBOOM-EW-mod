@@ -22,7 +22,7 @@ public class Canyingbishou extends CustomCard {
     private static final String DESCRIPTION = TypeSelectScreen.getType() == 0 ? CARD_STRINGS.DESCRIPTION : CARD_STRINGS.EXTENDED_DESCRIPTION[0];
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardColor COLOR = WISHDALE_RED;
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public Canyingbishou() {

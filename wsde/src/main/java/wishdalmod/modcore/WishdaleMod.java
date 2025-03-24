@@ -62,7 +62,6 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
     public void receiveEditCards() {
         CustomIconHelper.addCustomIcon(BoomIcon.get());
         BaseMod.addCard(new Strike());//打击
-        BaseMod.addCard(new Strike());//打击
         BaseMod.addCard(new Defend());//防御
         BaseMod.addCard(new Sihunlingdeyuxi());//死魂灵的余息
         BaseMod.addCard(new Dindianqingsuan());//定点清算
@@ -84,9 +83,12 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCard(new Zixuechengcai());//自学成才
         BaseMod.addCard(new Dindianqingsuan());//定点清算
         BaseMod.addCard(new Canyingbishou());//残影匕首
-        //BaseMod.addCard(new 预设());//预设
-        //BaseMod.addCard(new 预设());//预设
-        //BaseMod.addCard(new 预设());//预设
+        BaseMod.addCard(new Xietong());//协同
+        BaseMod.addCard(new Zhanyi());//战意
+        BaseMod.addCard(new Laoyin());//烙印
+        BaseMod.addCard(new Qinshi());//侵蚀
+        BaseMod.addCard(new Hunlingwoliu());//魂灵涡流
+        BaseMod.addCard(new Shengyuheiye());//生于黑夜
         //BaseMod.addCard(new 预设());//预设
         //BaseMod.addCard(new 预设());//预设
         //技能
@@ -109,8 +111,11 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCard(new Huandan());//换弹
         BaseMod.addCard(new Boming());//搏命
         BaseMod.addCard(new Kuangzhan());//狂战
-        //BaseMod.addCard(new 预设());//预设
-        //BaseMod.addCard(new 预设());//预设
+        BaseMod.addCard(new Goushi());//构史
+        BaseMod.addCard(new Ronglubaixiang());//熔炉百相
+        BaseMod.addCard(new Hunlingronglu());//魂灵熔炉
+        BaseMod.addCard(new Saileiya());//塞雷娅
+        BaseMod.addCard(new Xiuzheng());//修整
 
         //能力
         BaseMod.addCard(new Hunlingpingzhang());//魂灵屏障
@@ -125,6 +130,8 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCard(new Xuying());//虚影
         BaseMod.addCard(new Hunlingqiyue());//魂灵契约
         BaseMod.addCard(new Yanchenhuanrao());//烟雾缭绕（烟尘环绕
+        BaseMod.addCard(new Houqinbaozhang());//后勤保障
+
 
         //特殊
         BaseMod.addCard(new ZhanshiBOM());//展示简单
@@ -183,5 +190,4 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addAudio("BOOM", "wishdaleResources/audio/BOOM.mp3");
         BaseMod.addAudio("Tutou", "wishdaleResources/audio/Tutou.mp3");
     }
-
 }

@@ -3,9 +3,7 @@ package wishdalmod.cards;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.red.BloodForBlood;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,12 +11,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.powers.BufferPower;
-import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import wishdalmod.helpers.texiao.PersistentFlameEffect;
 import wishdalmod.powers.BianyuanxingzhePower;
 import wishdalmod.helpers.ModHelper;
 
-import java.util.Iterator;
+
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 

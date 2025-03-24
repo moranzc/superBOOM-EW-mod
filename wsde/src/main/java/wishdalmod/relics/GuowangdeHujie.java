@@ -19,30 +19,37 @@ public class GuowangdeHujie extends CustomRelic {
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
     }
+    public void setCounter(int counter) {
+        super.setCounter(counter);
+        this.lostMaxHealth = counter; // 同步丢失的生命值
+    }
     public void onEquip() {
         lostMaxHealth = AbstractDungeon.player.maxHealth - 1;
-        AbstractDungeon.player.maxHealth = 1;
-        AbstractDungeon.player.currentHealth = 1;
+        AbstractDungeon.player.decreaseMaxHealth(lostMaxHealth);
+        AbstractDungeon.player.currentHealth = Math.min(AbstractDungeon.player.currentHealth, 1);
         AbstractDungeon.player.healthBarUpdatedEvent();
         this.counter = lostMaxHealth;
     }
     public void atBattleStart() {
+        if (this.counter <= 0) {
+            this.counter = lostMaxHealth;
+        }
         flash();
-        this.counter = lostMaxHealth;
     }
     public int onLoseHpLast(int damageAmount) {
-        if (AbstractDungeon.player.currentHealth - damageAmount <= 0) {
-            if (counter >= damageAmount) {
-                flash();
-                AbstractDungeon.effectList.add(new TextAboveCreatureEffect(
-                        AbstractDungeon.player.hb.cX,
-                        AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2f,
-                        "护戒生效", Color.GOLD.cpy()));
-                counter -= damageAmount;
-                return 0;
-            } else {
-                return damageAmount;
-            }
+        int currentHp = AbstractDungeon.player.currentHealth;
+        int lethalDamage = damageAmount - (currentHp - 1);
+        if (lethalDamage > 0 && counter > 0) {
+            int actualBlock = Math.min(counter, lethalDamage);
+            flash();
+            AbstractDungeon.effectList.add(new TextAboveCreatureEffect(
+                    AbstractDungeon.player.hb.cX,
+                    AbstractDungeon.player.hb.cY + AbstractDungeon.player.hb.height / 2f,
+                    "护戒生效 (" + actualBlock + ")",
+                    Color.GOLD.cpy()
+            ));
+            counter -= actualBlock;
+            return damageAmount - actualBlock;
         }
         return damageAmount;
     }
@@ -51,6 +58,8 @@ public class GuowangdeHujie extends CustomRelic {
         this.counter = lostMaxHealth;
     }
     public AbstractRelic makeCopy() {
-        return new GuowangdeHujie();
+        GuowangdeHujie relic = new GuowangdeHujie();
+        relic.lostMaxHealth = this.lostMaxHealth;
+        return relic;
     }
 }
