@@ -42,8 +42,18 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
     public static final String ENEYGY_ORB = "wishdaleResources/images/char/cost_orb.png";
     public static final Color MY_COLOR = new Color(136.0F / 255.0F, 39.0F / 255.0F, 39.0F / 255.0F, 1.0F);
 
-    public static boolean damagedLastTurn;
-    public static boolean damagedThisTurn;
+    public static boolean damagedLastTurn = false;
+    public static boolean damagedThisTurn = false;
+    public static void onStartOfTurn() {
+        damagedThisTurn = false;
+    }
+    public static void onEndOfTurn() {
+        damagedLastTurn = damagedThisTurn;
+        damagedThisTurn = false;
+    }
+    public static void onPlayerDamaged() {
+        damagedThisTurn = true;
+    }
     public void receivePostInitialize() {
         ModConfig.initModConfigMenu();
         ImageHelper.initThis();

@@ -1,7 +1,6 @@
 package wishdalmod.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,7 +8,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import wishdalmod.actions.HunlingrongluAction;
 import wishdalmod.helpers.ModHelper;
-import wishdalmod.powers.HunlingrongluPower;
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
@@ -27,6 +25,7 @@ public class Hunlingronglu extends CustomCard {
     public Hunlingronglu() {
         super(ID, NAME, IMG_PATH, 0, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
+//        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

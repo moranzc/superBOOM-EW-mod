@@ -38,7 +38,7 @@ public class Yineisidetou extends CustomCard {
             this.damage = this.baseDamage = 9;
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
-            this.damage = this.baseDamage = 13;
+            this.damage = this.baseDamage = 14;
             this.rawDescription = CARD_STRINGS.DESCRIPTION;
         }
         this.initializeDescription();
@@ -56,7 +56,7 @@ public class Yineisidetou extends CustomCard {
             if (TypeSelectScreen.getType() == 0) {
                 upgradeDamage(2);
             } else {
-                upgradeDamage(4);
+                upgradeDamage(7);
             }
             this.initializeDescription();
         }

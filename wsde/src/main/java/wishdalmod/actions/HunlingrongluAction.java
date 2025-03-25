@@ -63,9 +63,7 @@ public class HunlingrongluAction extends AbstractGameAction {
             power.stackPower(this.amount, card);
         } else {
             AbstractDungeon.actionManager.addToBottom(
-                    new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(
-                            p, p, new HunlingrongluPower(p, this.amount, card), this.amount
-                    )
+                    new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new HunlingrongluPower(p, this.amount, card), this.amount)
             );
         }
     }

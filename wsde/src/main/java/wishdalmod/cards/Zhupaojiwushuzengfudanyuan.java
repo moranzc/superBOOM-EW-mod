@@ -12,10 +12,13 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.SearingBlowEffect;
 import wishdalmod.helpers.ModHelper;
+import wishdalmod.helpers.texiao.Credit;
+
 import java.util.ArrayList;
 import java.util.Random;
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
+@Credit(username = "生吃全部人", link = "https://weibo.com/7034877092/5007749570365010", platform = "微博")
 public class Zhupaojiwushuzengfudanyuan extends CustomCard {
     public static final String ID = ModHelper.makePath("Zhupaojiwushuzengfudanyuan");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);

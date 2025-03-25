@@ -340,7 +340,7 @@
   },
   "wishdalemod:Hunlingronglu": {
     "NAME": "魂灵熔炉",
-    "DESCRIPTION": "回收并扣消耗牌相同耗能的血 NL 夜魇  NL 复制品的数值会随机变化",
+    "DESCRIPTION": "回收并扣消耗牌相同耗能的血 NL 夜魇 !M!  NL 复制品的数值会随机变化 NL 消耗",
     "EXTENDED_DESCRIPTION": [
       "选择一张牌消耗并获得等同于耗能的 [E] 和扣血 NL 在下一回合，将 !M! 份这张牌的复制品放入你的手牌中 NL 复制品的数值会随机变化 NL 消耗 "
     ]

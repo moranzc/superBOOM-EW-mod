@@ -2,7 +2,6 @@ package wishdalmod.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -26,16 +25,17 @@ public class Shengyuheiye extends CustomCard {
 
     public Shengyuheiye() {
         super(ID, NAME, IMG_PATH, 0, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.damage = this.baseDamage = 3;
+        this.baseDamage = 3;
         this.magicNumber = this.baseMagicNumber = 3;
     }
-
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int exhaustedCount = AbstractDungeon.player.exhaustPile.size();
-        this.baseDamage = this.magicNumber * exhaustedCount;
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
     }
-
+    public void applyPowers() {
+        int exhaustedCount = AbstractDungeon.player.exhaustPile.size();
+        this.baseDamage = this.magicNumber * exhaustedCount;
+        super.applyPowers();
+    }
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
