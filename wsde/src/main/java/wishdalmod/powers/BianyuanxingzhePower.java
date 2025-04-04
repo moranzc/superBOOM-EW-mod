@@ -22,7 +22,6 @@ public class BianyuanxingzhePower extends AbstractPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.bufferStacks = 1;
         this.type = PowerType.BUFF;
         String path128 = "wishdaleResources/images/powers/Bianyuanxingzhe84.png";
         String path48 = "wishdaleResources/images/powers/Bianyuanxingzhe32.png";
@@ -47,6 +46,7 @@ public class BianyuanxingzhePower extends AbstractPower {
         addToBot(new GainBlockAction(owner, owner, 1));
     }
     public void stackPower(int stackAmount) {
-        this.bufferStacks += stackAmount;
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
     }
 }

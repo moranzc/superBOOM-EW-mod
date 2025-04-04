@@ -44,6 +44,7 @@ public class Laoyin extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
         AbstractDungeon.actionManager.addToBottom(new CanyingAction(m, p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new CanyingAction(m, p, 0));
     }
     public void upgrade() {
         if (!this.upgraded) {

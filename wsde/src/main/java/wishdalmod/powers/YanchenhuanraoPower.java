@@ -46,7 +46,7 @@ public class YanchenhuanraoPower extends AbstractPower {
     }
     public void updateDescription() {
         this.description = isUpgraded ?
-                powerStrings.DESCRIPTIONS[1] + this.amount + powerStrings.DESCRIPTIONS[2] :
+                powerStrings.DESCRIPTIONS[0] + this.amount + powerStrings.DESCRIPTIONS[1] :
                 powerStrings.DESCRIPTIONS[0] + this.amount + powerStrings.DESCRIPTIONS[2];
     }
     public void onExhaust(AbstractCard card) {

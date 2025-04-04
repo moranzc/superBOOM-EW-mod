@@ -40,7 +40,7 @@ public class Yigongdaishou extends CustomCard {
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[1];
         } else {
             this.baseDamage = 25;
-            this.baseBlock = 7;
+            this.block = this.baseBlock = 7;
             this.rawDescription = CARD_STRINGS.DESCRIPTION;
         }
         this.initializeDescription();

@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -19,6 +20,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.HbBlockBrokenEffect;
 import com.megacrit.cardcrawl.vfx.combat.StrikeEffect;
 import wishdalmod.powers.Canying;
+import wishdalmod.powers.ZuzongPower;
 
 
 public class Zuzong extends AbstractMonster {
@@ -47,6 +49,7 @@ public class Zuzong extends AbstractMonster {
         nameBgColor = new Color(0.0F, 0.0F, 0.0F, 0.0F);
         healthBarUpdatedEvent();
     }
+
     public void damage(DamageInfo info) {
         if (isDead || isDying) return;
         if (info.output > 0 && hasPower("IntangiblePlayer")) {
@@ -97,6 +100,8 @@ public class Zuzong extends AbstractMonster {
         isDead = true;
         if (ancestor != null) {
             ancestor.removeDeadZuzong(this);
+            addToTop(new ApplyPowerAction(ancestor, ancestor,
+                    new ZuzongPower(ancestor, -1)));
         }
     }
     public int calculateDmg(float dmg) {

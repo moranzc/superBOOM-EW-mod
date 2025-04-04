@@ -24,15 +24,14 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import wishdalmod.cards.Strike;
 import wishdalmod.helpers.CanyingXiaoguo;
 import wishdalmod.modcore.WishdaleMod;
+import wishdalmod.powers.ZuzongPower;
 import wishdalmod.relics.Wishdalebadge;
 import wishdalmod.screen.TypeSelectScreen;
 
@@ -331,46 +330,67 @@ public class EW extends CustomPlayer {
         }
     }
 
-
     public void summonZuzong(int maxHealth, int strength, int block) {
         if (maxHealth <= 0) maxHealth = 1;
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++) {
             if (zuzongs[i] == null || zuzongs[i].isDead) {
                 zuzongs[i] = new Zuzong(this, maxHealth, POSX[i], POSY[i]);
                 zuzongs[i].showHealthBar();
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this, this,
+                        new ZuzongPower(this, 1), 1));
+
                 if (block > 0) {
                     AbstractDungeon.actionManager.addToTop(new GainBlockAction(zuzongs[i], block));
                 }
                 if (strength > 0) {
-                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(zuzongs[i], this, new StrengthPower(zuzongs[i], strength)));
+                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(zuzongs[i], this,
+                            new StrengthPower(zuzongs[i], strength)));
                 }
                 currentZuzongs.add(zuzongs[i]);
                 return;
             }
+        }
     }
-    public void die() {
-        isDead = true;
-    }
+//    public void summonZuzong(int maxHealth, int strength, int block) {
+//        if (maxHealth <= 0) maxHealth = 1;
+//        for (int i = 0; i < 3; i++)
+//            if (zuzongs[i] == null || zuzongs[i].isDead) {
+//                zuzongs[i] = new Zuzong(this, maxHealth, POSX[i], POSY[i]);
+//                zuzongs[i].showHealthBar();
+//                if (block > 0) {
+//                    AbstractDungeon.actionManager.addToTop(new GainBlockAction(zuzongs[i], block));
+//                }
+//                if (strength > 0) {
+//                    AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(zuzongs[i], this, new StrengthPower(zuzongs[i], strength)));
+//                }
+//                currentZuzongs.add(zuzongs[i]);
+//                return;
+//            }
+//    }
+    public void die() {isDead = true;}
     public void damage(DamageInfo info) {
-        currentZuzongs.removeIf(r -> r.isDead);
-        if (info.type == DamageInfo.DamageType.NORMAL && !currentZuzongs.isEmpty()) {
-            currentZuzongs.get(currentZuzongs.size() - 1).damage(info);
-            for (AbstractRelic r : relics) r.onAttackedToChangeDamage(info, 0);
-            for (AbstractPower p : powers) p.onAttackedToChangeDamage(info, 0);
-            if (info.owner != null) {
-                for (AbstractPower p : powers) p.onAttacked(info, 0);
-                for (AbstractRelic r : relics) r.onAttacked(info, 0);
-            }
-            for (AbstractRelic r : relics)  r.onLoseHpLast(0);
-        }
-        else {
-            super.damage(info);
-        }
-        if (this.currentHealth <= 0)
-        {
-            die();
-            }
+        super.damage(info);
     }
+//    public void damage(DamageInfo info) {
+//        currentZuzongs.removeIf(r -> r.isDead);
+//        if (info.type == DamageInfo.DamageType.NORMAL && !currentZuzongs.isEmpty()) {
+//            currentZuzongs.get(currentZuzongs.size() - 1).damage(info);
+//            for (AbstractRelic r : relics) r.onAttackedToChangeDamage(info, 0);
+//            for (AbstractPower p : powers) p.onAttackedToChangeDamage(info, 0);
+//            if (info.owner != null) {
+//                for (AbstractPower p : powers) p.onAttacked(info, 0);
+//                for (AbstractRelic r : relics) r.onAttacked(info, 0);
+//            }
+//            for (AbstractRelic r : relics)  r.onLoseHpLast(0);
+//        }
+//        else {
+//            super.damage(info);
+//        }
+//        if (this.currentHealth <= 0)
+//        {
+//            die();
+//            }
+//    }
 
     public void onVictory() {
         super.onVictory();
@@ -380,4 +400,5 @@ public class EW extends CustomPlayer {
         currentZuzongs.clear();
         this.state.addAnimation(0, "Idle", true, 0.0F);
     }
+
 }
