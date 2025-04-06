@@ -20,18 +20,17 @@ public class Laoyin extends CustomCard {
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = ModHelper.getCardImagePath("Laoyin");
     private static final String DESCRIPTION = TypeSelectScreen.getType() == 0 ? CARD_STRINGS.DESCRIPTION : CARD_STRINGS.EXTENDED_DESCRIPTION[0];
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardType TYPE = TypeSelectScreen.getType() == 0 ? CardType.SKILL : CardType.ATTACK;
     private static final CardColor COLOR = WISHDALE_RED;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public Laoyin() {
-        super(ID, NAME, IMG_PATH, 1, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 2 : 1, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         updateCardAttributes();
     }
     private void updateCardAttributes() {
         if (TypeSelectScreen.getType() == 0) {
-            this.baseDamage = 1;
             this.magicNumber = this.baseMagicNumber = 7;
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {

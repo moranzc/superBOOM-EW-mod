@@ -32,7 +32,7 @@ public class Canyingbishou extends CustomCard {
     private void updateCardAttributes() {
         if (TypeSelectScreen.getType() == 0) {
             this.baseDamage = 6;
-            this.magicNumber = this.baseMagicNumber = 4;
+            this.magicNumber = this.baseMagicNumber = 3;
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
             this.baseDamage = 9;
@@ -44,6 +44,7 @@ public class Canyingbishou extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
         AbstractDungeon.actionManager.addToBottom(new CanyingAction(m, p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new CanyingAction(m, p, 0));
     }
     public void upgrade() {
         if (!this.upgraded) {

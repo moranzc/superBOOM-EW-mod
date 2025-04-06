@@ -39,7 +39,6 @@ public class Qinshi extends CustomCard {
             energySpent += 2;
             p.getRelic("Chemical X").flash();
         }
-
         if (energySpent > 0) {
             for (int i = 0; i < energySpent; i++) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));

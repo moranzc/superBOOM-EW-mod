@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AfterImagePower;
 import wishdalmod.helpers.ModHelper;
 import wishdalmod.powers.ShijuexianjingPower;
+import wishdalmod.screen.TypeSelectScreen;
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
@@ -27,17 +28,33 @@ public class Xuying extends CustomCard {
     public Xuying() {
         super(ID, NAME, IMG_PATH, 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 1;
-        this.magicNumber = this.baseMagicNumber;
-        this.isEthereal = true;
+        updateCardAttributes();
     }
+    private void updateCardAttributes() {
+        if (TypeSelectScreen.getType() == 0) {
+            this.magicNumber = this.baseMagicNumber;
+            this.isEthereal = true;
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            this.magicNumber = this.baseMagicNumber;
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        }
+        this.initializeDescription();
+    }
+
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new ShijuexianjingPower(p, this.magicNumber), this.magicNumber));
     }
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.isInnate = true;
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            if (TypeSelectScreen.getType() == 0) {
+                this.isEthereal = false;
+                this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[1];
+            } else {
+                this.isInnate = true;
+                this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            }
             this.initializeDescription();
         }
     }

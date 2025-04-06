@@ -40,13 +40,11 @@ public class Saileiya extends CustomCard {
         this.addToBot(new GainBlockAction(p, p, this.block));
         if (p instanceof EW) {
             Iterator<Zuzong> var3 = ((EW)p).currentZuzongs.iterator();
-
             while(var3.hasNext()) {
                 Zuzong ancestor = var3.next();
                 this.addToBot(new GainBlockAction(ancestor, p, this.block));
             }
         }
-
         this.addToBot(new HealAction(p, p, this.damage));
     }
     public void upgrade() {

@@ -48,12 +48,23 @@ public class Gedang extends CustomCard {
         }
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainBlockAction(p, p, this.block));
-        this.useTimes++;
-        if (this.useTimes == 3) {
-            this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
+        if (TypeSelectScreen.getType() == 0) {
+            this.addToBot(new GainBlockAction(p, p, this.block));
+            this.useTimes++;
+            if (this.useTimes == 3) {
+                this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
+            }
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            this.addToBot(new GainBlockAction(p, p, this.block));
+            this.useTimes++;
+            if (this.useTimes % 3 == 0) {
+                this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
+            }
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
         }
     }
+
 
     public void upgrade() {
         if (!this.upgraded) {

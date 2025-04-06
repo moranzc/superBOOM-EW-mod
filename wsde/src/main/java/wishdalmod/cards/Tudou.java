@@ -24,7 +24,7 @@ public class Tudou extends CustomCard {
     private static final CardTarget TARGET = CardTarget.NONE;
 
     public Tudou() {
-        super(ID, NAME, IMG_PATH, 2, DESCRIPTION,TYPE,COLOR,RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 1 : 2, DESCRIPTION,TYPE,COLOR,RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
         this.exhaust = true;
         this.cardsToPreview = new Yineisidetou();

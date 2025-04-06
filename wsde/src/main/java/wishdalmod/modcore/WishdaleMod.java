@@ -188,6 +188,7 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
     }
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new Wishdalebadge(), WISHDALE_RED);
+        BaseMod.addRelicToCustomPool(new WishdalebadgePingheng(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new AncestralLauncher(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new GoldBoneDice(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new RoaringHand(), WISHDALE_RED);

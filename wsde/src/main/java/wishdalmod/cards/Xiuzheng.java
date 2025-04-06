@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import wishdalmod.helpers.ModHelper;
 import wishdalmod.modcore.WishdaleMod;
+import wishdalmod.screen.TypeSelectScreen;
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
@@ -31,9 +32,22 @@ public class Xiuzheng extends CustomCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.magicNumber = this.baseMagicNumber = WishdaleMod.damagedLastTurn ? 2 : 5;;
-        AbstractDungeon.player.increaseMaxHp(this.magicNumber, true);
-        this.addToTop(new HealAction(p, p, this.magicNumber));
+        if (TypeSelectScreen.getType() == 0) {
+            this.initializeDescription();
+            this.magicNumber = this.baseMagicNumber = WishdaleMod.damagedLastTurn ? 2 : 5;;
+            this.upgradeBaseCost(WishdaleMod.damagedLastTurn ? 2 : 0);
+            AbstractDungeon.player.increaseMaxHp(this.magicNumber, true);
+            this.addToTop(new HealAction(p, p, this.magicNumber));
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        } else {
+            this.initializeDescription();
+            this.magicNumber = this.baseMagicNumber = WishdaleMod.damagedLastTurn ? 2 : 5;;
+            this.upgradeBaseCost(WishdaleMod.damagedLastTurn ? 2 : 0);
+            AbstractDungeon.player.increaseMaxHp(this.magicNumber, true);
+            this.addToTop(new HealAction(p, p, this.magicNumber));
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        }
+
     }
 
     public void triggerOnGlowCheck() {
@@ -45,8 +59,7 @@ public class Xiuzheng extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
-            this.upgradeBaseCost(1);
+            this.upgradeMagicNumber(2);
             this.initializeDescription();
         }
     }

@@ -8,8 +8,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import wishdalmod.helpers.ModHelper;
+import wishdalmod.screen.TypeSelectScreen;
+
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
 public class Shefu extends CustomCard {
@@ -24,23 +27,46 @@ public class Shefu extends CustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public Shefu() {
-        super(ID, NAME, IMG_PATH, 5, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = 3;
+        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 4 : 5, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber;
         this.selfRetain = true;
+        updateCardAttributes();
+    }
+    private void updateCardAttributes() {
+        if (TypeSelectScreen.getType() == 0) {
+            this.baseMagicNumber = 1;
+            this.block = this.baseBlock = 50;
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            this.baseMagicNumber = 4;
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        }
+        this.initializeDescription();
     }
     public void onRetained() {
         this.addToBot(new ReduceCostAction(this));
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
+        if (TypeSelectScreen.getType() == 0) {
+            this.addToBot(new ApplyPowerAction(p, p, new BlurPower(p, this.magicNumber), this.magicNumber));
+            this.addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            this.addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        }
+        this.initializeDescription();
     }
-
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.isInnate = true;
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            if (TypeSelectScreen.getType() == 0) {
+                this.isInnate = true;
+                this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[1];
+            } else {
+                this.isInnate = true;
+                this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            }
             this.initializeDescription();
         }
     }

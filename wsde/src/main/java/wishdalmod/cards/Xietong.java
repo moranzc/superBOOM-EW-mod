@@ -22,21 +22,21 @@ public class Xietong extends CustomCard {
     private static final String DESCRIPTION = TypeSelectScreen.getType() == 0 ? CARD_STRINGS.DESCRIPTION : CARD_STRINGS.EXTENDED_DESCRIPTION[0];
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardColor COLOR = WISHDALE_RED;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = TypeSelectScreen.getType() == 0 ? CardRarity.COMMON : CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public Xietong() {
-        super(ID, NAME, IMG_PATH, 1, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 3 : 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         updateCardAttributes();
     }
     private void updateCardAttributes() {
         if (TypeSelectScreen.getType() == 0) {
             this.baseDamage = 6;
-            this.magicNumber = this.baseMagicNumber = 4;
+            this.magicNumber = this.baseMagicNumber = 6;
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
             this.baseDamage = 9;
-            this.magicNumber = this.baseMagicNumber = 7;
+            this.magicNumber = this.baseMagicNumber = 17;
             this.rawDescription = CARD_STRINGS.DESCRIPTION;
         }
         this.initializeDescription();

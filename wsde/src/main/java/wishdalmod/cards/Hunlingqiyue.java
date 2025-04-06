@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -17,8 +16,9 @@ import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import wishdalmod.helpers.ModHelper;
-import wishdalmod.helpers.texiao.PersistentFlameEffect;
+import wishdalmod.powers.HunlingqiyuePinghengPower;
 import wishdalmod.powers.HunlingqiyuePower;
+import wishdalmod.screen.TypeSelectScreen;
 
 import java.util.Iterator;
 
@@ -30,7 +30,7 @@ public class Hunlingqiyue extends CustomCard {
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = ModHelper.getCardImagePath("Hunlingqiyue");
-    private static final int COST = 4;
+    private static final int COST = TypeSelectScreen.getType() == 0 ? 4 : 3;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.POWER;
     private static final CardColor COLOR = WISHDALE_RED;
@@ -65,29 +65,53 @@ public class Hunlingqiyue extends CustomCard {
         this.addToBot(new VFXAction(
                 new VerticalAuraEffect(Color.SKY, p.hb.cX, p.hb.cY),
                 0.3F));
-        boolean powerExists = false;
-        Iterator var4 = p.powers.iterator();
-        while (var4.hasNext()) {
-            AbstractPower pow = (AbstractPower)var4.next();
-            if (pow.ID.equals ("wishdalemod:Hunlingqiyue")) {
-                powerExists = true;
-                break;
+        if (TypeSelectScreen.getType() == 0) {
+            boolean powerExists = false;
+            Iterator var4 = p.powers.iterator();
+            while (var4.hasNext()) {
+                AbstractPower pow = (AbstractPower)var4.next();
+                if (pow.ID.equals ("wishdalemod:HunlingqiyuePinghengPower")) {
+                    powerExists = true;
+                    break;
+                }
             }
+            if (!powerExists) {
+                addToBot(new ApplyPowerAction(p, p, new HunlingqiyuePinghengPower(p)));
+            }
+            if (!p.hasPower(HunlingqiyuePinghengPower.POWER_ID)) {
+                this.addToBot(new ApplyPowerAction(p, p, new HunlingqiyuePinghengPower(p)));
+            }
+            this.addToBot(new LoseHPAction(p, p, 3));
+        } else {
+            boolean powerExists = false;
+            Iterator var4 = p.powers.iterator();
+            while (var4.hasNext()) {
+                AbstractPower pow = (AbstractPower)var4.next();
+                if (pow.ID.equals ("wishdalemod:HunlingqiyuePower")) {
+                    powerExists = true;
+                    break;
+                }
+            }
+            if (!powerExists) {
+                addToBot(new ApplyPowerAction(p, p, new HunlingqiyuePower(p)));
+            }
+            if (!p.hasPower(HunlingqiyuePower.POWER_ID)) {
+                this.addToBot(new ApplyPowerAction(p, p, new HunlingqiyuePower(p)));
+            }
+            int hpLoss = Math.max(0, (int)(p.currentHealth * 0.1f));
+            this.addToBot(new LoseHPAction(p, p, hpLoss));
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
         }
-        if (!powerExists) {
-            addToBot(new ApplyPowerAction(p, p, new HunlingqiyuePower(p)));
-        }
-        if (!p.hasPower(HunlingqiyuePower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new HunlingqiyuePower(p)));
-        }
-        int hpLoss = Math.max(0, (int)(p.currentHealth * 0.1f));
-        this.addToBot(new LoseHPAction(p, p, hpLoss));
     }
     public void upgrade() {
         if (!this.upgraded) {
-            upgradeName();
-            upgradeBaseCost(3);
-            initializeDescription();
+            this.upgradeName();
+            if (TypeSelectScreen.getType() == 0) {
+                upgradeBaseCost(3);
+            } else {
+                upgradeBaseCost(2);
+            }
+            this.initializeDescription();
         }
     }
     public AbstractCard makeCopy() {

@@ -1,5 +1,5 @@
 package wishdalmod.cards;
-
+//让伤害在下下回合才收到
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -40,6 +40,11 @@ public class Mositima extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            if (TypeSelectScreen.getType() == 0) {
+                this.upgradeBaseCost(1);
+            } else {
+                this.upgradeBaseCost(0);
+            }
             this.initializeDescription();
         }
     }

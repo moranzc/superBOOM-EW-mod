@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import wishdalmod.cards.Baolieliming;
 import wishdalmod.cards.Shefu;
+import wishdalmod.cards.Zhupaojiwushuzengfudanyuan;
 
 import java.util.ArrayList;
 
@@ -38,5 +39,6 @@ public class RandomizeDrawCardCostAction
     static {
         cardsExcept.add(Shefu.ID);
         cardsExcept.add(Baolieliming.ID);
+        cardsExcept.add(Zhupaojiwushuzengfudanyuan.ID);
     }
 }

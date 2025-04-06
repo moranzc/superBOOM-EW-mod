@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.powers.RitualPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import wishdalmod.helpers.ModHelper;
+import wishdalmod.screen.TypeSelectScreen;
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
@@ -26,9 +27,19 @@ public class Kuangzhan extends CustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     public Kuangzhan() {
         super(ID, NAME, IMG_PATH, 1, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.isInnate = true;
         this.exhaust = true;
         this.baseMagicNumber = this.magicNumber = 2;
+        updateCardAttributes();
+    }
+    private void updateCardAttributes() {
+        if (TypeSelectScreen.getType() == 0) {
+            this.selfRetain = true;
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            this.isInnate = true;
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        }
+        this.initializeDescription();
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
         int initialLostHp = p.maxHealth - p.currentHealth;

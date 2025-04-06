@@ -12,7 +12,6 @@
     "EXTENDED_DESCRIPTION": [
       "获得 !B! 点 格挡 "
     ]
-
   },
   "wishdalemod:Zhishixuebao": {
     "NAME": "知识学爆",
@@ -77,7 +76,11 @@
   "wishdalemod:Shefu": {
     "NAME": "设伏",
     "DESCRIPTION": " 保留 NL 获得 !M! 层 无实体 NL 保留一次耗能减1 ",
-    "UPGRADE_DESCRIPTION": " 固有  NL 保留 NL 获得 !M! 层 无实体  NL 保留一次耗能减1"
+    "UPGRADE_DESCRIPTION": " 固有  NL 保留 NL 获得 !M! 层 无实体  NL 这张卡每保留一次其耗能减1",
+    "EXTENDED_DESCRIPTION": [
+      " 保留 NL 获得 !M! 层 无实体  NL !B! 点 格挡 NL 这张卡每保留一次其耗能减1",
+      " 固有  NL 保留 NL 获得 !M! 层 无实体 NL !B! 点 格挡 NL 这张卡每保留一次其耗能减1"
+    ]
   },
   "wishdalemod:Baohedaji": {
     "NAME": "饱和打击",
@@ -175,7 +178,10 @@
   },
   "wishdalemod:Zhanshuguihua": {
     "NAME": "战术规划",
-    "DESCRIPTION": "选择并打出 !M! 张手牌"
+    "DESCRIPTION": "保留 选择打出 !M! 张手牌",
+    "EXTENDED_DESCRIPTION": [
+      "选择并打出 !M! 张手牌"
+    ]
   },
   "wishdalemod:Buwendingbuji": {
     "NAME": "不稳定补给",
@@ -197,7 +203,10 @@
   },
   "wishdalemod:Zhupaojiwushuzengfudanyuan": {
     "NAME": "主炮级巫术增幅单元",
-    "DESCRIPTION": "对所有敌人造成 !D! 点 伤害 !M! 次 NL 能被多次修复 (升级) 。 NL (随机提升一项属性)"
+    "DESCRIPTION": "群攻 !D! 伤 !M! 次 NL 无限敲  NL (随机提升一项属性)",
+    "EXTENDED_DESCRIPTION": [
+      "对所有敌人造成 !D! 点 伤害 !M! 次 NL 能被多次升级 。 NL 每次升级随机提升一项属性 NL 并使耗能增加一点"
+    ]
   },
   "wishdalemod:Diedai": {
     "NAME": "迭代",
@@ -234,7 +243,10 @@
   "wishdalemod:Bianxieshibujizhan": {
     "NAME": "便携式补给站",
     "DESCRIPTION": "每次洗牌时获得 [E] NL 虚无 ",
-    "UPGRADE_DESCRIPTION": "每次洗牌时获得 [E]  "
+    "UPGRADE_DESCRIPTION": "每次洗牌时获得 [E]  ",
+    "EXTENDED_DESCRIPTION": [
+      "每3回合获得 !M! 点 *能量"
+    ]
   },
   "wishdalemod:Dindianqingsuan": {
     "NAME": "定点清算",
@@ -274,7 +286,7 @@
   },
   "wishdalemod:Gedang": {
     "NAME": "格挡",
-    "DESCRIPTION": "!B! 防 NL 在3次后得 1 敏捷 ",
+    "DESCRIPTION": "!B! 防 NL 每 3 次得 1 敏 ",
     "EXTENDED_DESCRIPTION": [
       "获得 !B! 点 格挡 。 NL 在第三次打出后获得 1 敏捷"
     ]
@@ -297,16 +309,26 @@
   },
   "wishdalemod:Boming": {
     "NAME": "搏命",
-    "DESCRIPTION": "固有 NL 将生命值降低至 5，获得等量于损失生命值的格挡。获得 !M! 层 残影 NL 消耗"
+    "DESCRIPTION": "固有 NL 将生命值降低至 5，获得等量于损失生命值的格挡。获得 !M! 层 残影 NL 消耗",
+    "EXTENDED_DESCRIPTION": [
+      "保留 NL 将生命值降低至 5，获得等量于损失生命值的格挡。获得 !M! 层 残影 NL 消耗"
+    ]
   },
   "wishdalemod:Kuangzhan": {
     "NAME": "战意沸腾",
-    "DESCRIPTION": "固有 NL 将生命值降低至 10,获得等量于损失生命值一半的格挡获得 !M! 层 仪式 NL 消耗"
+    "DESCRIPTION": "固有 NL 将生命值降低至 10,获得等量于损失生命值一半的格挡获得 !M! 层 仪式 NL 消耗",
+    "EXTENDED_DESCRIPTION": [
+      "保留 NL 将生命值降低至 10,获得等量于损失生命值一半的格挡获得 !M! 层 仪式 NL 消耗"
+    ]
   },
   "wishdalemod:Xuying": {
     "NAME": "虚影",
-    "DESCRIPTION": "获得 !M! 层 wishdalemod:视觉陷阱 NL 虚无",
-    "UPGRADE_DESCRIPTION": "固有 NL  获得 !M! 层 wishdalemod:视觉陷阱"
+    "DESCRIPTION": "!M! 层 wishdalemod:视觉陷阱",
+    "UPGRADE_DESCRIPTION": "固有 NL !M! 层 wishdalemod:视觉陷阱",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !M! 层 wishdalemod:视觉陷阱 NL 虚无",
+      "获得 !M! 层 wishdalemod:视觉陷阱"
+    ]
   },
   "wishdalemod:Fulingkaijia": {
     "NAME": "附灵铠甲",
@@ -315,14 +337,18 @@
   },
   "wishdalemod:Bianyuanxingzhe": {
     "NAME": "边缘行者",
-    "DESCRIPTION": "将最大生命值提升 !M! NL 获得 1 层 残影、缓冲、 wishdalemod:边缘行者 NL 在 wishdalemod:残血 时才可打出 NL 每受伤一次本牌费用-1",
+    "DESCRIPTION": "+ !M! 血上限 NL 获得 1 层 残影、缓冲、 wishdalemod:边缘行者 NL 在 wishdalemod:残血 时才可打出 NL 每受伤一次本牌费用-1",
     "EXTENDED_DESCRIPTION": [
-      " *萨卡兹粗口    时候未到！"
+      " *萨卡兹粗口  老子还没死！",
+      "提高 5 点生命值上限 NL 获得 3 点力量和敏捷，获得 !B! 点 格挡  NL 你在接下来 !M! 回合内无法再从卡牌中获得格挡 NL 在 wishdalemod:残血 时才可打出 NL 每受伤一次本牌费用-1"
     ]
   },
   "wishdalemod:Hunlingqiyue": {
     "NAME": "魂灵契约",
-    "DESCRIPTION": "失去当前10%的生命，获得 wishdalemod:魂灵契约  NL 虚无。"
+    "DESCRIPTION": "失去当前10%的生命，获得 wishdalemod:魂灵契约  NL 虚无。",
+    "EXTENDED_DESCRIPTION": [
+      "失去3点生命值，所有攻击牌耗能变为0。 NL 所有攻击牌在被打出时被 消耗   NL 虚无。"
+    ]
   },
   "wishdalemod:Yanchenhuanrao": {
     "NAME": "烟雾缭绕",
@@ -331,8 +357,12 @@
   },
   "wishdalemod:Goushi": {
     "NAME": "构史",
-    "DESCRIPTION": "场上所有角色的血量都会在其最大血量范围内进行随机化。",
-    "UPGRADE_DESCRIPTION": "场上所有角色的血量都会在其最大血量范围内进行随机化，敌人随机化范围变为最大血量的一半"
+    "DESCRIPTION": "随机所有角色的血量 NL 虚无",
+    "UPGRADE_DESCRIPTION": "随机血量，敌人从一半开始随机 NL 虚无",
+    "EXTENDED_DESCRIPTION": [
+      "场上所有角色的格挡会在其最大范围内进行随机化。 NL 虚无",
+      "场上所有角色的格挡会在其最大范围内进行随机化，敌人随机化范围变为一半 NL 虚无"
+    ]
   },
   "wishdalemod:Ronglubaixiang": {
     "NAME": "熔炉百相",
@@ -354,16 +384,16 @@
   },
   "wishdalemod:Zhanyi": {
     "NAME": "战意",
-    "DESCRIPTION": "!D! 伤， !M! 血 !M! 力 祖宗",
+    "DESCRIPTION": "!D! 伤， !M! 血 10 力 祖宗",
     "EXTENDED_DESCRIPTION": [
-      "造成 !D! 点伤害，召唤一个 !M! 点生命值 !M! 点 力量 的 wishdalemod:魂灵之影"
+      "造成 !D! 点伤害，召唤一个 !M! 点生命值 10 点 力量 的 wishdalemod:魂灵之影"
     ]
   },
   "wishdalemod:Laoyin": {
     "NAME": "烙印",
     "DESCRIPTION": "!D! 伤， !M! wishdalemod:残影",
     "EXTENDED_DESCRIPTION": [
-      "造成 !D! 点伤害，给予对方 !M! 层 wishdalemod:残影"
+      "给予对方 !M! 层 wishdalemod:残影"
     ]
   },
   "wishdalemod:Qinshi": {
@@ -392,8 +422,11 @@
   },
   "wishdalemod:Xiuzheng": {
     "NAME": "修整",
-    "DESCRIPTION": "如果你在上回合没有受到伤害，打出后将你的生命值上限提高 !M! 点，并恢复 !M! 点生命值 NL 消耗。",
-    "UPGRADE_DESCRIPTION": "如果你在上回合没有受到伤害，则将你的生命值上限提高 !M! 点，并恢复 !M! 点生命值 NL 消耗"
+    "DESCRIPTION": "无伤加血回血 !M! NL  消耗",
+    "UPGRADE_DESCRIPTION": "如果看到了这个说明有bug，或者你解包了，记得反馈1019713682",
+    "EXTENDED_DESCRIPTION": [
+      "如果你在上回合没有受到伤害，则将你的生命值上限提高 !M! 点，并恢复 !M! 点生命值 NL 并且其耗能变成0 NL 消耗"
+    ]
   },
   "wishdalemod:Hunlingwoliu": {
     "NAME": "魂灵涡流",

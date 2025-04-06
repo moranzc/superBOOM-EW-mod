@@ -29,7 +29,7 @@ public void upgrade() {
         }
     }
 
-    TypeSelectScreen.getType() == 0 ? 3 : 2
+TypeSelectScreen.getType() == 0 ? 3 : 2
 造成 !D! 点伤害。
 随机对敌人造成 !D! 点伤害 !M! 次。
 对敌人造成 !D! 点伤害 !M! 次。

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import wishdalmod.helpers.ModHelper;
 import wishdalmod.powers.SpiritArmorPower;
+import wishdalmod.screen.TypeSelectScreen;
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
@@ -24,7 +25,7 @@ public class Fulingkaijia extends CustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public Fulingkaijia() {
-        super(ID, NAME, IMG_PATH, 3, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 3 : 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }
@@ -34,11 +35,21 @@ public class Fulingkaijia extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(2);
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            if (TypeSelectScreen.getType() == 0) {
+                this.upgradeName();
+                this.upgradeBaseCost(2);
+                this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+                this.initializeDescription();
+            } else {
+                this.upgradeName();
+                this.upgradeBaseCost(1);
+                this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+                this.initializeDescription();
+            }
             this.initializeDescription();
         }
     }
+
     public AbstractCard makeCopy() {
         return new Fulingkaijia();
     }

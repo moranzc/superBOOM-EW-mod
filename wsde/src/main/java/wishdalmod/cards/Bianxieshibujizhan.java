@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import wishdalmod.helpers.ModHelper;
+import wishdalmod.powers.BianxieshibujizhanPinghengPower;
 import wishdalmod.powers.BianxieshibujizhanPower;
 import wishdalmod.screen.TypeSelectScreen;
 
@@ -28,7 +29,15 @@ public class Bianxieshibujizhan extends CustomCard {
         this.baseMagicNumber = this.magicNumber = 1;
         this.isEthereal = true;
     }
-    public void use(AbstractPlayer p, AbstractMonster m) { addToBot(new ApplyPowerAction(p, p, new BianxieshibujizhanPower(p, this.magicNumber))); }
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if (TypeSelectScreen.getType() == 0) {
+            addToBot(new ApplyPowerAction(p, p, new BianxieshibujizhanPinghengPower(p, this.magicNumber)));
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            addToBot(new ApplyPowerAction(p, p, new BianxieshibujizhanPower(p, this.magicNumber)));
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        }
+    }
 
     public void upgrade() {
         if (!this.upgraded) {

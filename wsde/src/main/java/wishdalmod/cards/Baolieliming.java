@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import wishdalmod.actions.SummonZuzongAction;
 import wishdalmod.helpers.ModHelper;
 import wishdalmod.powers.BaolielimingPower;
+import wishdalmod.screen.TypeSelectScreen;
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
@@ -26,7 +27,7 @@ public class Baolieliming extends CustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public Baolieliming() {
-        super(ID, NAME, IMG_PATH, 5, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 5 : 1, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 6;
         this.magicNumber = this.baseMagicNumber;
         this.cardsToPreview = new Sihunling();
@@ -50,7 +51,12 @@ public class Baolieliming extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(4);
+            if (TypeSelectScreen.getType() == 0) {
+                this.upgradeBaseCost(0);
+            } else {
+                this.upgradeBaseCost(4);
+            }
+            this.initializeDescription();
         }
     }
 

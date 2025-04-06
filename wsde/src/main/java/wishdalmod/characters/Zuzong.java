@@ -100,8 +100,6 @@ public class Zuzong extends AbstractMonster {
         isDead = true;
         if (ancestor != null) {
             ancestor.removeDeadZuzong(this);
-            addToTop(new ApplyPowerAction(ancestor, ancestor,
-                    new ZuzongPower(ancestor, -1)));
         }
     }
     public int calculateDmg(float dmg) {

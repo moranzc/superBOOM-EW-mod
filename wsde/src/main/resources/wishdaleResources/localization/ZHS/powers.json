@@ -26,6 +26,13 @@
       "点 *能量"
     ]
   },
+  "wishdalemod:BianxieshibujizhanPinghengPower": {
+    "NAME": "便携式补给站",
+    "DESCRIPTIONS": [
+      "每3回合获得 #b",
+      "点 *能量"
+    ]
+  },
   "wishdalemod:Lei": {
     "NAME": "累",
     "DESCRIPTIONS": [
@@ -66,6 +73,12 @@
     "NAME": "魂灵契约",
     "DESCRIPTIONS": [
       "所有攻击牌耗能变为0。 NL 所有技能牌在被打出时被消耗。"
+    ]
+  },
+  "wishdalemod:HunlingqiyuePinghengPower": {
+    "NAME": "魂灵契约",
+    "DESCRIPTIONS": [
+      "所有攻击牌耗能变为0。 NL 所有攻击牌在被打出时被 消耗 。"
     ]
   },
   "wishdalemod:YanchenhuanraoPower": {

@@ -9,12 +9,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.BlurPower;
-import com.megacrit.cardcrawl.powers.BufferPower;
+import com.megacrit.cardcrawl.powers.*;
 import wishdalmod.helpers.texiao.PersistentFlameEffect;
 import wishdalmod.powers.BianyuanxingzhePower;
 import wishdalmod.helpers.ModHelper;
-
+import wishdalmod.screen.TypeSelectScreen;
 
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
@@ -36,19 +35,44 @@ public class Bianyuanxingzhe extends CustomCard {
     public Bianyuanxingzhe() {
         super(ID, NAME, IMG_PATH, 3, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = 5;
+        updateCardAttributes();
     }
-
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.player.increaseMaxHp(this.magicNumber, true);
-        if (p.currentHealth > 1) {
-            p.currentHealth = 1;
-            p.healthBarUpdatedEvent();
+    private void updateCardAttributes() {
+        if (TypeSelectScreen.getType() == 0) {
+            this.baseMagicNumber = this.magicNumber = 2;
+            this.block = this.baseBlock = 2;
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[1];
+        } else {
+            this.baseMagicNumber = this.magicNumber = 5;
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
         }
-        this.addToBot(new ApplyPowerAction(p, p, new BianyuanxingzhePower(p, 1), 1));
-        this.addToBot(new ApplyPowerAction(p, p, new BlurPower(p, 1), 1));
-        this.addToBot(new ApplyPowerAction(p, p, new BufferPower(p, 1), 1));
-        this.addToBot(new GainBlockAction(p, p, 10));
-        AbstractDungeon.effectsQueue.add(new PersistentFlameEffect());
+        this.initializeDescription();
+    }
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if (TypeSelectScreen.getType() == 0) {
+            AbstractDungeon.player.increaseMaxHp(5, true);
+            if (p.currentHealth > 1) {
+                p.currentHealth = 1;
+                p.healthBarUpdatedEvent();
+            }
+            this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 3), 3));
+            this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 3), 3));
+            this.addToBot(new ApplyPowerAction(p, p, new BufferPower(p, 1), 1));
+            this.addToBot(new GainBlockAction(p, p, this.block));
+            this.addToBot(new ApplyPowerAction(p, p, new NoBlockPower(p, this.magicNumber, false), this.magicNumber));
+            AbstractDungeon.effectsQueue.add(new PersistentFlameEffect());
+        } else {
+            AbstractDungeon.player.increaseMaxHp(this.magicNumber, true);
+            if (p.currentHealth > 1) {
+                p.currentHealth = 1;
+                p.healthBarUpdatedEvent();
+            }
+            this.addToBot(new ApplyPowerAction(p, p, new BianyuanxingzhePower(p, 1), 1));
+            this.addToBot(new ApplyPowerAction(p, p, new BlurPower(p, 1), 1));
+            this.addToBot(new ApplyPowerAction(p, p, new BufferPower(p, 1), 1));
+            this.addToBot(new GainBlockAction(p, p, 10));
+            AbstractDungeon.effectsQueue.add(new PersistentFlameEffect());
+        }
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);
@@ -64,18 +88,36 @@ public class Bianyuanxingzhe extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            if (this.cost < 4) {
-                this.upgradeBaseCost(this.cost - 1);
-                if (this.cost < 0) {
-                    this.cost = 0;
+            if (TypeSelectScreen.getType() == 0) {
+                if (!this.upgraded) {
+                    this.upgradeName();
+                    if (this.cost < 4) {
+                        this.upgradeBaseCost(this.cost - 1);
+                        if (this.cost < 0) {
+                            this.cost = 0;
+                        }
+                    } else {
+                        this.upgradeBaseCost(2);
+                    }
+                    this.upgradeBlock(10);
+                    this.upgradeMagicNumber(-1);
                 }
             } else {
-                this.upgradeBaseCost(2);
+                if (!this.upgraded) {
+                    this.upgradeName();
+                    if (this.cost < 4) {
+                        this.upgradeBaseCost(this.cost - 1);
+                        if (this.cost < 0) {
+                            this.cost = 0;
+                        }
+                    } else {
+                        this.upgradeBaseCost(2);
+                    }
+                    this.upgradeMagicNumber(2);
+                }
             }
-
-            this.upgradeMagicNumber(2);
+            this.initializeDescription();
         }
-
     }
     public AbstractCard makeCopy() {
         AbstractCard tmp = new Bianyuanxingzhe();

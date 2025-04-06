@@ -7,7 +7,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import wishdalmod.actions.GoushiAction;
+import wishdalmod.actions.GoushiPinghengAction;
 import wishdalmod.helpers.ModHelper;
+import wishdalmod.screen.TypeSelectScreen;
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
@@ -23,20 +25,32 @@ public class Goushi extends CustomCard {
     private static final CardTarget TARGET = CardTarget.ALL;
 
     public Goushi() {
-        super(ID, NAME, IMG_PATH, 3, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 4 : 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
         this.isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GoushiAction(p, upgraded));
+        if (TypeSelectScreen.getType() == 0) {
+            AbstractDungeon.actionManager.addToBottom(new GoushiPinghengAction(p, upgraded));
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new GoushiAction(p, upgraded));
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        }
+        this.initializeDescription();
     }
-
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            if (TypeSelectScreen.getType() == 0) {
+                this.upgradeBaseCost(3);
+                this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[1];
+            } else {
+                this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            }
             this.initializeDescription();
         }
     }
+
 }

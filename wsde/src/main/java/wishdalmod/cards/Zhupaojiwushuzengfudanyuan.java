@@ -13,12 +13,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.SearingBlowEffect;
 import wishdalmod.helpers.ModHelper;
 import wishdalmod.helpers.texiao.Credit;
+import wishdalmod.screen.TypeSelectScreen;
 
 import java.util.ArrayList;
 import java.util.Random;
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
-@Credit(username = "生吃全部人", link = "https://weibo.com/7034877092/5007749570365010", platform = "微博")
+@Credit(username = "1", link = "2", platform = "3")
 public class Zhupaojiwushuzengfudanyuan extends CustomCard {
     public static final String ID = ModHelper.makePath("Zhupaojiwushuzengfudanyuan");
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -35,59 +36,89 @@ public class Zhupaojiwushuzengfudanyuan extends CustomCard {
     public Zhupaojiwushuzengfudanyuan() { this(0); }
     
     public Zhupaojiwushuzengfudanyuan(int upgrades) {
-        super(ID, NAME, IMG_PATH, 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.damage = this.baseDamage = 5;
-        this.magicNumber = this.baseMagicNumber = 2;
+        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 0 : 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.timesUpgraded = upgrades;
-        this.isMultiDamage = true;
+        updateCardAttributes();
     }
-
+    private void updateCardAttributes() {
+        if (TypeSelectScreen.getType() == 0) {
+            this.isMultiDamage = true;
+            this.damage = this.baseDamage = 5;
+            this.magicNumber = this.baseMagicNumber = 2;
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            this.damage = this.baseDamage = 5;
+            this.magicNumber = this.baseMagicNumber = 2;
+            this.isMultiDamage = true;
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        }
+        this.initializeDescription();
+    }
     public void use(AbstractPlayer p, AbstractMonster m) {
             for (AbstractMonster m3 : AbstractDungeon.getMonsters().monsters) {
                 if (!m3.isDeadOrEscaped()) {
                         addToBot(new VFXAction(new SearingBlowEffect(m3.hb.cX, m3.hb.cY, this.timesUpgraded), 0.2F));
                 }
-
             }
             for (int i = 0; i < this.magicNumber; i++) {
                 this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
             }
     }
     public void upgrade() {
-        if (AbstractDungeon.player != null) {
-            int rng;
-            if (this.cost == 0) {
-                rng = AbstractDungeon.miscRng.random(1);
-            } else {
-                rng = AbstractDungeon.miscRng.random(2);
-            }
-
-            if (this.timesUpgraded == RNGS.size()) {
-                RNGS.add(Integer.valueOf(rng));
-            }
-
-            switch (((Integer)RNGS.get(this.timesUpgraded)).intValue()) {
-                case 0:
-                    int damageIncrease = 5 + this.timesUpgraded;
-                    upgradeDamage(damageIncrease);
-                    break;
-                case 1:
+        if (!this.upgraded) {
+            this.upgradeName();
+            if (TypeSelectScreen.getType() == 0) {
+                if (AbstractDungeon.player != null) {
+                    while (this.timesUpgraded >= RNGS.size()) {
+                        RNGS.add(AbstractDungeon.miscRng.random(1));
+                    }
+                    switch (RNGS.get(this.timesUpgraded)) {
+                        case 0:
+                            upgradeDamage(5);
+                            break;
+                        case 1:
+                            upgradeMagicNumber(1);
+                            break;
+                    }
+                    this.timesUpgraded++;
+                    this.upgraded = true;
+                    this.name = NAME + "+" + this.timesUpgraded;
+                    initializeTitle();
+                    this.upgradeBaseCost(this.timesUpgraded);
+                } else {
+                    upgradeDamage(2);
                     upgradeMagicNumber(1);
-                    break;
-                case 2:
-                    upgradeBaseCost(this.cost - 1);
-                    break;
+                }
+            } else {
+                if (AbstractDungeon.player != null) {
+                    while (this.timesUpgraded >= RNGS.size()) {
+                        RNGS.add(this.cost == 0 ? AbstractDungeon.miscRng.random(1) : AbstractDungeon.miscRng.random(2));
+                    }
+                    switch (RNGS.get(this.timesUpgraded)) {
+                        case 0:
+                            upgradeDamage(5 + this.timesUpgraded);
+                            break;
+                        case 1:
+                            upgradeMagicNumber(1);
+                            break;
+                        case 2:
+                            upgradeBaseCost(this.cost - 1);
+                            break;
+                    }
+                    this.timesUpgraded++;
+                    this.upgraded = true;
+                    this.name = NAME + "+" + this.timesUpgraded;
+                    initializeTitle();
+                } else {
+                    upgradeBaseCost(1);
+                    upgradeDamage(2);
+                    upgradeMagicNumber(1);
+                }
             }
-            this.timesUpgraded++;
-            this.upgraded = true;
-            this.name = NAME + "+" + this.timesUpgraded;
-            initializeTitle();
-        } else {
-            upgradeBaseCost(1);
-            upgradeDamage(2);
-            upgradeMagicNumber(1);
+            this.initializeDescription();
         }
     }
+
 
     public boolean canUpgrade() { return true; }
 

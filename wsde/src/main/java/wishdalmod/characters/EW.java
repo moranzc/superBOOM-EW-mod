@@ -33,6 +33,7 @@ import wishdalmod.helpers.CanyingXiaoguo;
 import wishdalmod.modcore.WishdaleMod;
 import wishdalmod.powers.ZuzongPower;
 import wishdalmod.relics.Wishdalebadge;
+import wishdalmod.relics.WishdalebadgePingheng;
 import wishdalmod.screen.TypeSelectScreen;
 
 
@@ -168,9 +169,15 @@ public class EW extends CustomPlayer {
     }
     // 初始遗物的ID
     public ArrayList<String> getStartingRelics() {
-        ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Wishdalebadge.ID);
-        return retVal;
+        if (TypeSelectScreen.getType() == 0) {
+            ArrayList<String> retVal = new ArrayList<>();
+            retVal.add(WishdalebadgePingheng.ID);
+            return retVal;
+        } else {
+            ArrayList<String> retVal = new ArrayList<>();
+            retVal.add(Wishdalebadge.ID);
+            return retVal;
+        }
     }
     public CharSelectInfo getLoadout() {
         if (TypeSelectScreen.getType() == 0) {
@@ -189,8 +196,8 @@ public class EW extends CustomPlayer {
             );
         } else {
             return new CharSelectInfo(
-                    characterStrings.NAMES[0], // 人物名字
-                    characterStrings.TEXT[0], // 人物介绍
+                    characterStrings.NAMES[1], // 人物名字
+                    characterStrings.TEXT[1], // 人物介绍
                     79, // 当前血量
                     79, // 最大血量
                     0, // 初始充能球栏位

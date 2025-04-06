@@ -6,6 +6,13 @@
       "每回合第一张攻击牌造成两次伤害，第二次的伤害降低至攻击力的一半"
     ]
   },
+  "wishdalemod:WishdalebadgePingheng": {
+    "NAME": "维什戴尔证章",
+    "FLAVOR": "干员行使投掷手职责。特发此证。以兹证明。",
+    "DESCRIPTIONS": [
+      "每场战斗的第一张攻击牌造成两次伤害，第二次的伤害降低至攻击力的一半"
+    ]
+  },
   "wishdalemod:AncestralLauncher": {
     "NAME": "“祖宗发射器”",
     "FLAVOR": "去吧，炸得更猛烈些！",

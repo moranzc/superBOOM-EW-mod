@@ -32,7 +32,7 @@ public class Sihunling extends CustomCard {
     }
     private void updateCardAttributes() {
         if (TypeSelectScreen.getType() == 0) {
-            this.baseDamage = 13;
+            this.baseDamage = 6;
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
             this.baseDamage = 9;
