@@ -49,7 +49,6 @@ public class Wishdalebadge extends CustomRelic {
             tmp.purgeOnUse = true;
             tmp.baseDamage = tmp.baseDamage / 2;
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, (AbstractMonster) target, card.energyOnUse, true, true), true);
-
             this.pulse = false;
         }
     }

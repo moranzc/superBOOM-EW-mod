@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import wishdalmod.helpers.ModHelper;
 
 public class Guowangdexinqiang extends CustomRelic {
@@ -20,10 +21,11 @@ public class Guowangdexinqiang extends CustomRelic {
     private boolean isActive = false;
 
     public Guowangdexinqiang() {
-        super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.HEAVY);
+        super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL),
+                AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.HEAVY);
     }
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0] + 5 + this.DESCRIPTIONS[1];
+        return this.DESCRIPTIONS[0] + DEX_AMOUNT + this.DESCRIPTIONS[1];
     }
     public void atBattleStart() {
         this.isActive = false;
@@ -36,6 +38,10 @@ public class Guowangdexinqiang extends CustomRelic {
         checkAndApplyDexterity();
     }
     private void checkAndApplyDexterity() {
+        if (AbstractDungeon.getCurrRoom() == null ||
+                AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
+            return;
+        }
         AbstractPlayer p = AbstractDungeon.player;
         boolean conditionMet = p.currentHealth <= p.maxHealth * HP_THRESHOLD || p.currentHealth <= ABSOLUTE_THRESHOLD;
         if (!isActive && conditionMet) {
@@ -44,19 +50,15 @@ public class Guowangdexinqiang extends CustomRelic {
             deactivateEffect(p);
         }
     }
-
     private void activateEffect(AbstractPlayer p) {
         this.flash();
         this.pulse = true;
         this.addToBot(new RelicAboveCreatureAction(p, this));
-        this.addToBot(new ApplyPowerAction(p, p,
-                new DexterityPower(p, DEX_AMOUNT), DEX_AMOUNT));
+        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, DEX_AMOUNT), DEX_AMOUNT));
         isActive = true;
     }
-
     private void deactivateEffect(AbstractPlayer p) {
-        this.addToBot(new ApplyPowerAction(p, p,
-                new DexterityPower(p, -DEX_AMOUNT), -DEX_AMOUNT));
+        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, -DEX_AMOUNT), -DEX_AMOUNT));
         this.stopPulse();
         isActive = false;
     }

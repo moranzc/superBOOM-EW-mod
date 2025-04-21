@@ -84,10 +84,10 @@ public class Zhupaojiwushuzengfudanyuan extends CustomCard {
                     this.upgraded = true;
                     this.name = NAME + "+" + this.timesUpgraded;
                     initializeTitle();
-                    this.upgradeBaseCost(this.timesUpgraded);
+                    upgradeBaseCost(1);
                 } else {
                     upgradeDamage(2);
-                    upgradeMagicNumber(1);
+                upgradeMagicNumber(1);
                 }
             } else {
                 if (AbstractDungeon.player != null) {
@@ -110,7 +110,6 @@ public class Zhupaojiwushuzengfudanyuan extends CustomCard {
                     this.name = NAME + "+" + this.timesUpgraded;
                     initializeTitle();
                 } else {
-                    upgradeBaseCost(1);
                     upgradeDamage(2);
                     upgradeMagicNumber(1);
                 }

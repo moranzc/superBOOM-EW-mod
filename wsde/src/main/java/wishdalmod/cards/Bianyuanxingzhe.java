@@ -31,7 +31,6 @@ public class Bianyuanxingzhe extends CustomCard {
     public void tookDamage() {
         this.updateCost(-1);
     }
-
     public Bianyuanxingzhe() {
         super(ID, NAME, IMG_PATH, 3, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = 5;
@@ -87,34 +86,27 @@ public class Bianyuanxingzhe extends CustomCard {
     }
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeName();
             if (TypeSelectScreen.getType() == 0) {
-                if (!this.upgraded) {
-                    this.upgradeName();
-                    if (this.cost < 4) {
-                        this.upgradeBaseCost(this.cost - 1);
-                        if (this.cost < 0) {
-                            this.cost = 0;
-                        }
-                    } else {
-                        this.upgradeBaseCost(2);
+                if (this.cost < 4) {
+                    this.upgradeBaseCost(this.cost - 1);
+                    if (this.cost < 0) {
+                        this.cost = 0;
                     }
-                    this.upgradeBlock(10);
-                    this.upgradeMagicNumber(-1);
+                } else {
+                    this.upgradeBaseCost(2);
                 }
+                this.upgradeBlock(10);
+                this.upgradeMagicNumber(-1);
             } else {
-                if (!this.upgraded) {
-                    this.upgradeName();
-                    if (this.cost < 4) {
-                        this.upgradeBaseCost(this.cost - 1);
-                        if (this.cost < 0) {
-                            this.cost = 0;
-                        }
-                    } else {
-                        this.upgradeBaseCost(2);
+                if (this.cost < 4) {
+                    this.upgradeBaseCost(this.cost - 1);
+                    if (this.cost < 0) {
+                        this.cost = 0;
                     }
-                    this.upgradeMagicNumber(2);
+                } else {
+                    this.upgradeBaseCost(2);
                 }
+                this.upgradeMagicNumber(2);
             }
             this.initializeDescription();
         }

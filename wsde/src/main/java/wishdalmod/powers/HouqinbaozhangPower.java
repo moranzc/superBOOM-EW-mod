@@ -29,7 +29,7 @@ public class HouqinbaozhangPower extends AbstractPower {
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(TEXTURE_32), 0, 0, 32, 32);
         updateDescription();
     }
-    public void updateDescription() { this.description = DESCRIPTIONS[0]; }
+    public void updateDescription() { this.description = DESCRIPTIONS[0]+amount+DESCRIPTIONS[1]; }
     public void onExhaust(AbstractCard card) {
         this.flash();
         this.addToBot(new DrawCardAction(this.owner, this.amount));

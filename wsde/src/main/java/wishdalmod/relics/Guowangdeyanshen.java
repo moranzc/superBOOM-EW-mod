@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.TextAboveCreatureEffect;
 import wishdalmod.helpers.ModHelper;
 
@@ -21,7 +22,8 @@ public class Guowangdeyanshen extends CustomRelic {
     private static final int ENERGY_AMT = 1;
 
     public Guowangdeyanshen() {
-        super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.HEAVY);
+        super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL),
+                AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.HEAVY);
         this.counter = 0;
     }
     public String getUpdatedDescription() {
@@ -31,6 +33,10 @@ public class Guowangdeyanshen extends CustomRelic {
         this.counter = 0;
     }
     public void atTurnStart() {
+        if (AbstractDungeon.getCurrRoom() == null ||
+                AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
+            return;
+        }
         if (isBelowThreshold()) {
             if (this.counter == -1) {
                 this.counter += 2;

@@ -28,6 +28,7 @@ public class AncientTreeFruit extends CustomRelic {
         return this.DESCRIPTIONS[0];
     }
     public void onEquip() {
+        AbstractDungeon.getCurrRoom().rewardPopOutTimer = 2F;
         AbstractDungeon.combatRewardScreen.open(this.DESCRIPTIONS[1]);
         AbstractDungeon.combatRewardScreen.open();
         AbstractDungeon.combatRewardScreen.rewards.clear();

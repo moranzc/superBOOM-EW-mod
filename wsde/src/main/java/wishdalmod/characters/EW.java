@@ -28,6 +28,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import wishdalmod.cards.Dindianqingsuan;
 import wishdalmod.cards.Strike;
 import wishdalmod.helpers.CanyingXiaoguo;
 import wishdalmod.modcore.WishdaleMod;
@@ -224,7 +225,7 @@ public class EW extends CustomPlayer {
     }
     // 翻牌事件出现的你的职业牌
     public AbstractCard getStartCardForEvent() {
-        return new Strike();
+        return new Dindianqingsuan();
     }
     // 卡牌轨迹颜色
     public com.badlogic.gdx.graphics.Color getCardTrailColor() {
@@ -275,7 +276,7 @@ public class EW extends CustomPlayer {
     // 第三章面对心脏说的话
     
     public String getSpireHeartText() {
-        return characterStrings.TEXT[1];
+        return characterStrings.TEXT[2];
     }
 
     // 打心脏的颜色，不是很明显

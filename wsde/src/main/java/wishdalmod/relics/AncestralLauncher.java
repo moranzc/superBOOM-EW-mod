@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import wishdalmod.helpers.ModHelper;
+import wishdalmod.screen.TypeSelectScreen;
 
 public class AncestralLauncher extends CustomRelic {
     public static final String ID = ModHelper.makePath("AncestralLauncher");
@@ -23,7 +24,11 @@ public class AncestralLauncher extends CustomRelic {
         super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.FLAT);
     }
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        if (TypeSelectScreen.getType() == 0) {
+            return this.DESCRIPTIONS[0] + this.DESCRIPTIONS[2];
+        } else {
+            return this.DESCRIPTIONS[0] + this.DESCRIPTIONS[1];
+        }
     }
     public boolean canSpawn() {
         return AbstractDungeon.player.hasRelic(Wishdalebadge.ID);
@@ -42,29 +47,45 @@ public class AncestralLauncher extends CustomRelic {
             super.obtain();
         }
     }
-
-
     public void atBattleStart() {
         super.atBattleStart();
         this.activated = true;
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.type == AbstractCard.CardType.ATTACK && this.activated){
-            this.activated = false;
-            this.flash();
-            AbstractCreature target = action.target;
-            AbstractCard tmp = card.makeSameInstanceOf();
-            tmp.current_x = card.current_x;
-            tmp.current_y = card.current_y;
-            tmp.target_x = (float)Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
-            tmp.target_y = (float)Settings.HEIGHT / 2.0F;
-            tmp.applyPowers();
-            tmp.purgeOnUse = true;
-            tmp.baseDamage = tmp.baseDamage / 2;
-            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, (AbstractMonster) target, card.energyOnUse, true, true), true);
-            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, (AbstractMonster) target, card.energyOnUse, true, true), true);
-            this.pulse = false;
+        if (TypeSelectScreen.getType() == 0) {
+            if (card.type == AbstractCard.CardType.ATTACK && this.activated){
+                this.activated = false;
+                this.flash();
+                AbstractCreature target = action.target;
+                AbstractCard tmp = card.makeSameInstanceOf();
+                tmp.current_x = card.current_x;
+                tmp.current_y = card.current_y;
+                tmp.target_x = (float)Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+                tmp.target_y = (float)Settings.HEIGHT / 2.0F;
+                tmp.applyPowers();
+                tmp.purgeOnUse = true;
+                tmp.baseDamage = tmp.baseDamage / 2;
+                AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, (AbstractMonster) target, card.energyOnUse, true, true), true);
+                this.pulse = false;
+            }
+        } else {
+            if (card.type == AbstractCard.CardType.ATTACK && this.activated){
+                this.activated = false;
+                this.flash();
+                AbstractCreature target = action.target;
+                AbstractCard tmp = card.makeSameInstanceOf();
+                tmp.current_x = card.current_x;
+                tmp.current_y = card.current_y;
+                tmp.target_x = (float)Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+                tmp.target_y = (float)Settings.HEIGHT / 2.0F;
+                tmp.applyPowers();
+                tmp.purgeOnUse = true;
+                tmp.baseDamage = tmp.baseDamage / 2;
+                AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, (AbstractMonster) target, card.energyOnUse, true, true), true);
+                AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, (AbstractMonster) target, card.energyOnUse, true, true), true);
+                this.pulse = false;
+            }
         }
     }
     public void atTurnStart() {

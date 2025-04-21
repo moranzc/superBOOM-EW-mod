@@ -49,16 +49,28 @@ public class Zhuwangdeguanmian extends CustomRelic {
         }
     }
     public void atTurnStart() {
+        if (AbstractDungeon.getCurrRoom() == null ||
+                AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
+            return;
+        }
         checkActivation();
     }
     public void onLoseHp(int damageAmount) {
+        if (AbstractDungeon.getCurrRoom() == null ||
+                AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
+            return;
+        }
         checkActivation();
     }
     public void atBattleStart() {
+        if (AbstractDungeon.getCurrRoom() == null ||
+                AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
+            return;
+        }
         checkActivation();
     }
     private void activateRelic(AbstractPlayer player) {
-        int strengthAmount = hasFullSet() ? 15 : 5;
+        int strengthAmount = hasFullSet() ? FULL_SET_STRENGTH : BASE_STRENGTH;
         addToBot(new ApplyPowerAction(player, player, new StrengthPower(player, strengthAmount), strengthAmount));
         addToBot(new RelicAboveCreatureAction(player, this));
         flash();
@@ -66,7 +78,7 @@ public class Zhuwangdeguanmian extends CustomRelic {
         isActive = true;
     }
     private void deactivateRelic(AbstractPlayer player) {
-        int strengthAmount = hasFullSet() ? 15 : 5;
+        int strengthAmount = hasFullSet() ? FULL_SET_STRENGTH : BASE_STRENGTH;
         addToBot(new ApplyPowerAction(player, player, new StrengthPower(player, -strengthAmount), -strengthAmount));
         stopPulse();
         isActive = false;

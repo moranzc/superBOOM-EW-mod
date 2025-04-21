@@ -333,14 +333,14 @@
   "wishdalemod:Fulingkaijia": {
     "NAME": "附灵铠甲",
     "DESCRIPTION": " 获得 !M! 层 wishdalemod:附灵铠甲",
-    "UPGRADE_DESCRIPTION": "固有 NL  获得 !M! 层 wishdalemod:附灵铠甲。"
+    "UPGRADE_DESCRIPTION": "固有 NL  获得 !M! 层 wishdalemod:附灵铠甲 。"
   },
   "wishdalemod:Bianyuanxingzhe": {
     "NAME": "边缘行者",
-    "DESCRIPTION": "+ !M! 血上限 NL 获得 1 层 残影、缓冲、 wishdalemod:边缘行者 NL 在 wishdalemod:残血 时才可打出 NL 每受伤一次本牌费用-1",
+    "DESCRIPTION": "+ !M! 血上限 NL 获得 1 层 残影、缓冲、 wishdalemod:边缘行者 NL 在 wishdalemod:残血 时才可打出，打出后将血量变为1 NL 每受伤一次本牌费用-1",
     "EXTENDED_DESCRIPTION": [
       " *萨卡兹粗口  老子还没死！",
-      "提高 5 点生命值上限 NL 获得 3 点力量和敏捷，获得 !B! 点 格挡  NL 你在接下来 !M! 回合内无法再从卡牌中获得格挡 NL 在 wishdalemod:残血 时才可打出 NL 每受伤一次本牌费用-1"
+      "提高 5 点生命值上限 NL 获得 3 点力量和敏捷，获得 !B! 点 格挡  NL 你在接下来 !M! 回合内无法再从卡牌中获得格挡 NL 在 wishdalemod:残血 时才可打出，打出后将血量变为1 NL 每受伤一次本牌费用-1"
     ]
   },
   "wishdalemod:Hunlingqiyue": {

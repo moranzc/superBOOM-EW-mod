@@ -34,7 +34,6 @@ public class Fulingkaijia extends CustomCard {
     }
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeName();
             if (TypeSelectScreen.getType() == 0) {
                 this.upgradeName();
                 this.upgradeBaseCost(2);
