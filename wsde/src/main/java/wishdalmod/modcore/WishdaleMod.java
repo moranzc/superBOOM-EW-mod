@@ -104,7 +104,7 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCard(new Qinshi());//侵蚀
         BaseMod.addCard(new Hunlingwoliu());//魂灵涡流
         BaseMod.addCard(new Shengyuheiye());//生于黑夜
-        //BaseMod.addCard(new 预设());//预设
+        BaseMod.addCard(new Baohefuchou());//饱和复仇
         //BaseMod.addCard(new 预设());//预设
         //技能
         BaseMod.addCard(new Kunanchenshuzhe());//苦难陈述者
@@ -151,7 +151,10 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         //特殊
         BaseMod.addCard(new ZhanshiBOM());//展示简单
         BaseMod.addCard(new ZhanshiBOOM());//展示呆滞
-        BaseMod.addCard(new Sihunling());//死魂灵（爆裂黎明）
+        BaseMod.addCard(new BaohefuchouGuozai());//过载饱和复仇
+        BaseMod.addCard(new Chushijili());//初始极力
+
+
     }
 
     public void receiveEditCharacters() {

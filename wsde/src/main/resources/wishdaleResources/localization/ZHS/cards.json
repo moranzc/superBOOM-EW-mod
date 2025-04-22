@@ -98,7 +98,7 @@
     "NAME": "死魂灵的余息",
     "DESCRIPTION": "召唤一个魂灵之影",
     "EXTENDED_DESCRIPTION": [
-      "召唤一个15点 生命值 的 wishdalemod:魂灵之影"
+      "召唤一个35点 生命值 的 wishdalemod:魂灵之影  NL  固有 保留 NL 消耗"
     ]
   },
   "wishdalemod:Shouliudan": {
@@ -136,7 +136,7 @@
     "NAME": "爆裂黎明",
     "DESCRIPTION": " *丨 wishdalemod:丨 [wishdalmod:tietuIcon] boom [wishdalmod:tietuIcon] wishdalemod:丨丨",
     "EXTENDED_DESCRIPTION": [
-      "超模"
+      "爆裂黎明"
     ]
   },
   "wishdalemod:Sihunling": {
@@ -252,12 +252,12 @@
     "NAME": "定点清算",
     "DESCRIPTION": " !D! X 2，给 !M! 层 wishdalemod:残影",
     "EXTENDED_DESCRIPTION": [
-      "对敌人造成 !D! 点伤害 2 次 NL 给予 !M! 层 wishdalemod:残影"
+      "对敌人造成 !D! 点伤害 2 次 NL 给予 !M! 层 wishdalemod:残影  NL  固有 保留"
     ]
   },
   "wishdalemod:ZhanshiBOM": {
     "NAME": "手法干员",
-    "DESCRIPTION": "原汁原味的塔"
+    "DESCRIPTION": "原汁原味的粥？"
   },
   "wishdalemod:ZhanshiBOOM": {
     "NAME": "目光呆滞",
@@ -432,5 +432,19 @@
     "NAME": "魂灵涡流",
     "DESCRIPTION": "!D! 伤 !B! 防，每有一个祖宗超级加倍",
     "UPGRADE_DESCRIPTION": "!D! 伤 !B! 防，每有一个祖宗超级加倍"
+  },
+  "wishdalemod:Baohefuchou": {
+    "NAME": "饱和复仇 ",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害 2 次，之后将 *饱和复仇：过载 加入手牌 NL  固有 保留 NL 打出不耗能"
+  },
+  "wishdalemod:BaohefuchouGuozai": {
+    "NAME": "饱和复仇：过载",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害4次 NL 消耗",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害4次 NL 消耗"
+  },
+  "wishdalemod:Chushijili": {
+    "NAME": "初始技力",
+    "DESCRIPTION": "获得15费 NL 消耗",
+    "UPGRADE_DESCRIPTION": "获得10费"
   }
 }

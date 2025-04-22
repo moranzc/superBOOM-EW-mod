@@ -25,6 +25,8 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.relics.IceCream;
+import com.megacrit.cardcrawl.relics.SingingBowl;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
@@ -82,15 +84,29 @@ public class EW extends CustomPlayer {
         this.dialogX = (this.drawX + 0.0F * Settings.scale);
         this.dialogY = (this.drawY + 150.0F * Settings.scale);
         // 初始化你的人物，如果你的人物只有一张图，那么第一个参数填写你人物图片的路径。
-        this.initializeClass(
-                "wishdaleResources/images/char/character.png", // 人物图片
-                WISHDALE_ZC_SHOULDER_2, WISHDALE_ZC_SHOULDER_1,
-                CORPSE_IMAGE, // 人物死亡图像
-                this.getLoadout(),
-                0.0F, 0.0F,
-                200.0F, 220.0F, // 人物碰撞箱大小，越大的人物模型这个越大
-                new EnergyManager(3) // 初始每回合的能量
-        );
+        if (TypeSelectScreen.getType() == 0) {
+            this.initializeClass(
+                    "wishdaleResources/images/char/character.png", // 人物图片
+                    WISHDALE_ZC_SHOULDER_2, WISHDALE_ZC_SHOULDER_1,
+                    CORPSE_IMAGE, // 人物死亡图像
+                    this.getLoadout(),
+                    0.0F, 0.0F,
+                    200.0F, 220.0F, // 人物碰撞箱大小，越大的人物模型这个越大
+                    new EnergyManager(8) // 初始每回合的能量
+            );
+
+        } else {
+            this.initializeClass(
+                    "wishdaleResources/images/char/character.png", // 人物图片
+                    WISHDALE_ZC_SHOULDER_2, WISHDALE_ZC_SHOULDER_1,
+                    CORPSE_IMAGE, // 人物死亡图像
+                    this.getLoadout(),
+                    0.0F, 0.0F,
+                    200.0F, 220.0F, // 人物碰撞箱大小，越大的人物模型这个越大
+                    new EnergyManager(3) // 初始每回合的能量
+            );
+
+        }
 
         // 小人动画
         this.loadAnimation("wishdaleResources/images/char/char_1035_wisdel.atlas",
@@ -155,24 +171,40 @@ public class EW extends CustomPlayer {
 
     // 初始卡组的ID，可直接写或引用变量
     public ArrayList<String> getStartingDeck() {
-        ArrayList<String> retVal = new ArrayList<>();
-        retVal.add("wishdalemod:Strike");
-        retVal.add("wishdalemod:Strike");
-        retVal.add("wishdalemod:Strike");
-        retVal.add("wishdalemod:Strike");
-        retVal.add("wishdalemod:Strike");
-        retVal.add("wishdalemod:Defend");
-        retVal.add("wishdalemod:Defend");
-        retVal.add("wishdalemod:Defend");
-        retVal.add("wishdalemod:Dindianqingsuan");
-        retVal.add("wishdalemod:Sihunlingdeyuxi");
-        return retVal;
+        if (TypeSelectScreen.getType() == 0) {
+            ArrayList<String> retVal = new ArrayList<>();
+            retVal.add("wishdalemod:Strike");
+            retVal.add("wishdalemod:Strike");
+            retVal.add("wishdalemod:Strike");
+            retVal.add("wishdalemod:Strike");
+            retVal.add("wishdalemod:Strike");
+            retVal.add("wishdalemod:Baohefuchou");
+            retVal.add("wishdalemod:Dindianqingsuan");
+            retVal.add("wishdalemod:Sihunlingdeyuxi");
+            retVal.add("wishdalemod:Baolieliming");
+            return retVal;
+        } else {
+            ArrayList<String> retVal = new ArrayList<>();
+            retVal.add("wishdalemod:Strike");
+            retVal.add("wishdalemod:Strike");
+            retVal.add("wishdalemod:Strike");
+            retVal.add("wishdalemod:Strike");
+            retVal.add("wishdalemod:Strike");
+            retVal.add("wishdalemod:Defend");
+            retVal.add("wishdalemod:Defend");
+            retVal.add("wishdalemod:Defend");
+            retVal.add("wishdalemod:Dindianqingsuan");
+            retVal.add("wishdalemod:Sihunlingdeyuxi");
+            return retVal;
+        }
     }
     // 初始遗物的ID
     public ArrayList<String> getStartingRelics() {
         if (TypeSelectScreen.getType() == 0) {
             ArrayList<String> retVal = new ArrayList<>();
             retVal.add(WishdalebadgePingheng.ID);
+            retVal.add(IceCream.ID);
+            retVal.add(SingingBowl.ID);
             return retVal;
         } else {
             ArrayList<String> retVal = new ArrayList<>();
