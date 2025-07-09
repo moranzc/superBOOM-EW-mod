@@ -38,14 +38,14 @@ public class Xiuzheng extends CustomCard {
             this.upgradeBaseCost(WishdaleMod.damagedLastTurn ? 2 : 0);
             AbstractDungeon.player.increaseMaxHp(this.magicNumber, true);
             this.addToTop(new HealAction(p, p, this.magicNumber));
-            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
             this.initializeDescription();
             this.magicNumber = this.baseMagicNumber = WishdaleMod.damagedLastTurn ? 2 : 5;;
             this.upgradeBaseCost(WishdaleMod.damagedLastTurn ? 2 : 0);
             AbstractDungeon.player.increaseMaxHp(this.magicNumber, true);
             this.addToTop(new HealAction(p, p, this.magicNumber));
-            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
         }
 
     }

@@ -423,7 +423,7 @@
   "wishdalemod:Xiuzheng": {
     "NAME": "修整",
     "DESCRIPTION": "无伤加血回血 !M! NL  消耗",
-    "UPGRADE_DESCRIPTION": "如果看到了这个说明有bug，或者你解包了，记得反馈1019713682",
+    "UPGRADE_DESCRIPTION": "阿巴巴巴，阿巴阿巴，好多 bug",
     "EXTENDED_DESCRIPTION": [
       "如果你在上回合没有受到伤害，则将你的生命值上限提高 !M! 点，并恢复 !M! 点生命值 NL 并且其耗能变成0 NL 消耗"
     ]

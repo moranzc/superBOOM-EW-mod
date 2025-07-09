@@ -27,7 +27,7 @@ public class Baolieliming extends CustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public Baolieliming() {
-        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 5 : 1, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 5 : 4, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 6;
         this.magicNumber = this.baseMagicNumber;
         this.cardsToPreview = new Sihunling();
@@ -52,7 +52,7 @@ public class Baolieliming extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             if (TypeSelectScreen.getType() == 0) {
-                this.upgradeBaseCost(0);
+                this.upgradeBaseCost(3);
             } else {
                 this.upgradeBaseCost(4);
             }

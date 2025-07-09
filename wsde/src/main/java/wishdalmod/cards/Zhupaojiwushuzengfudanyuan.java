@@ -36,7 +36,7 @@ public class Zhupaojiwushuzengfudanyuan extends CustomCard {
     public Zhupaojiwushuzengfudanyuan() { this(0); }
     
     public Zhupaojiwushuzengfudanyuan(int upgrades) {
-        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 0 : 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.timesUpgraded = upgrades;
         updateCardAttributes();
     }
@@ -65,31 +65,6 @@ public class Zhupaojiwushuzengfudanyuan extends CustomCard {
             }
     }
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            if (TypeSelectScreen.getType() == 0) {
-                if (AbstractDungeon.player != null) {
-                    while (this.timesUpgraded >= RNGS.size()) {
-                        RNGS.add(AbstractDungeon.miscRng.random(1));
-                    }
-                    switch (RNGS.get(this.timesUpgraded)) {
-                        case 0:
-                            upgradeDamage(5);
-                            break;
-                        case 1:
-                            upgradeMagicNumber(1);
-                            break;
-                    }
-                    this.timesUpgraded++;
-                    this.upgraded = true;
-                    this.name = NAME + "+" + this.timesUpgraded;
-                    initializeTitle();
-                    upgradeBaseCost(1);
-                } else {
-                    upgradeDamage(2);
-                upgradeMagicNumber(1);
-                }
-            } else {
                 if (AbstractDungeon.player != null) {
                     while (this.timesUpgraded >= RNGS.size()) {
                         RNGS.add(this.cost == 0 ? AbstractDungeon.miscRng.random(1) : AbstractDungeon.miscRng.random(2));
@@ -113,9 +88,7 @@ public class Zhupaojiwushuzengfudanyuan extends CustomCard {
                     upgradeDamage(2);
                     upgradeMagicNumber(1);
                 }
-            }
             this.initializeDescription();
-        }
     }
 
 
