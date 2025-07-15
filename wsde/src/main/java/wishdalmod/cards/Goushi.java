@@ -28,15 +28,22 @@ public class Goushi extends CustomCard {
         super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 4 : 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
         this.isEthereal = true;
+        updateCardAttributes();
+    }
+    private void updateCardAttributes() {
+        if (TypeSelectScreen.getType() == 0) {
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        }
+        this.initializeDescription();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (TypeSelectScreen.getType() == 0) {
             AbstractDungeon.actionManager.addToBottom(new GoushiPinghengAction(p, upgraded));
-            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
             AbstractDungeon.actionManager.addToBottom(new GoushiAction(p, upgraded));
-            this.rawDescription = CARD_STRINGS.DESCRIPTION;
         }
         this.initializeDescription();
     }

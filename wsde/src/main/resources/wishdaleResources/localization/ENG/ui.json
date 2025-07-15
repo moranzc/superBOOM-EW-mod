@@ -1,15 +1,22 @@
 {
   "wishdalemod:Enabled": {
     "TEXT": [
-      "Mod Settings"
+      "模组设置"
+    ]
+  },
+  "wishdalemod:Types": {
+    "TEXT": [
+      "选择",
+      "手法干员",
+      "目光呆滞"
     ]
   },
   "wishdalemod:Zuzong": {
     "TEXT": [
-      "Soul Shadow",
-      "Replaces Wishdale when attacked. At the start of each turn, deal #b",
-      " points of damage to a random enemy, and grant #b",
-      " layers of #yResidual Image."
+      "魂灵之影",
+      "代替维什戴尔受到攻击。回合开始时，对随机敌人造成 #b",
+      " 点伤害，并给予 #b",
+      " 层 #y残影 。"
     ]
   }
 }

@@ -24,7 +24,7 @@ public class Boom extends CustomCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     public Boom() {
-        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 2 : 3, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber;
         updateCardAttributes();
     }

@@ -40,6 +40,15 @@ public class Hunlingqiyue extends CustomCard {
     public Hunlingqiyue() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.isEthereal = true;
+        updateCardAttributes();
+    }
+    private void updateCardAttributes() {
+        if (TypeSelectScreen.getType() == 0) {
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        }
+        this.initializeDescription();
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
         //试一下超帅的特效

@@ -29,6 +29,15 @@ public class Xiuzheng extends CustomCard {
         super(ID, NAME, IMG_PATH, 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
         this.magicNumber = this.baseMagicNumber = 2;
+        updateCardAttributes();
+    }
+    private void updateCardAttributes() {
+        if (TypeSelectScreen.getType() == 0) {
+            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
+        } else {
+            this.rawDescription = CARD_STRINGS.DESCRIPTION;
+        }
+        this.initializeDescription();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

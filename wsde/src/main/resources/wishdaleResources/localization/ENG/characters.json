@@ -1,11 +1,13 @@
 {
   "wishdalemod:wishdale": {
     "NAMES": [
-      "Wishdale"
+      "维什戴尔",
+      "维什戴尔大人"
     ],
     "TEXT": [
-      "Dare to speak to me like that? Were your ancestors sold in bulk?",
-      "So you're the heart? How pathetic, today's your unlucky day."
+      "今天又轮到谁粉身碎骨了呢？",
+      "敢跟我这么说话，你的祖宗是批发的吗",
+      "“你就是心脏？真可怜，今天轮到你倒霉。”"
     ]
   }
 }

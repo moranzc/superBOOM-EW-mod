@@ -10,10 +10,10 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 public class DarkenScreenEffect extends AbstractGameEffect {
     private float intensity;
     private boolean battleEnded = false;
-    private float fadeOutTimer = 7.0f;
+    private float fadeOutTimer = 1.0f;
 
     public DarkenScreenEffect(int triggerCount) {
-        this.intensity = Math.min(0.7f, triggerCount * 0.05f);
+        this.intensity = Math.min(0.7f, triggerCount * 0.02f);
         this.color = new Color(0, 0, 0, intensity);
         this.duration = -1.0f;
     }
@@ -35,7 +35,7 @@ public class DarkenScreenEffect extends AbstractGameEffect {
         if (fadeOutTimer > 0) {
             fadeOutTimer -= deltaTime;
         } else if (intensity > 0) {
-            intensity -= deltaTime * 0.1f;
+            intensity -= deltaTime * 0.5f;
             color.a = intensity;
         }
 

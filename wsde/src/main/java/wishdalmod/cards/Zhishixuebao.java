@@ -44,8 +44,8 @@ public class Zhishixuebao extends CustomCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.baseMagicNumber), this.baseMagicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.baseMagicNumber), this.baseMagicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new Lei(p), 2));
     }
     public void upgrade() {

@@ -1,34 +1,70 @@
 [
   {
     "NAMES": ["累"],
-    "DESCRIPTION": "Each turn, lose 2 energy. NL Oh no, I don't want to learn to pronounce!"
+    "DESCRIPTION": "每回合减少2点能量。 NL 口也，我不要学习口牙!"
   },
   {
     "NAMES": ["银银银银银"],
-    "DESCRIPTION": "Gain a random gold card, its cost for this turn is 8."
+    "DESCRIPTION": "获得一张随机金卡，其本回合耗能为0"
   },
   {
     "NAMES": ["金金金金金"],
-    "DESCRIPTION": "Gain a random gold card, its cost for this turn is 8."
+    "DESCRIPTION": "获得一张随机金卡，其本回合耗能为0"
   },
   {
     "NAMES": ["门"],
-    "DESCRIPTION": "Gain the Blessing of the Sea Cat, power is inevitable."
+    "DESCRIPTION": "超模!!但来自法老的馈赠，强是必然的"
   },
   {
     "NAMES": ["终焉"],
-    "DESCRIPTION": "Can only be played when both the draw pile and discard pile are empty."
+    "DESCRIPTION": "只有当抽牌堆、弃牌堆中都没有牌时才能打出"
   },
   {
     "NAMES": ["丨丨"],
-    "DESCRIPTION": "BOOM! NL Staring blankly now."
+    "DESCRIPTION": "BOOM! NL 目光呆滞吧"
   },
   {
     "NAMES": ["丨"],
-    "DESCRIPTION": "Summon 2 Soul Shadows, Attack +516%, and at the beginning of each turn, add a *Aged Soul to your hand."
+    "DESCRIPTION": "召唤2个魂灵之影，攻击力+516%，在每回合开始时，将一张 *年长的死魂灵 加入你的手牌"
   },
   {
     "NAMES": ["爆炸"],
-    "DESCRIPTION": "Remove from deck before the battle ends, causing 1 damage to all enemies upon removal."
+    "DESCRIPTION": "在战斗结束前移出卡组，移出时对所有敌人造成1点伤害"
+  },
+  {
+    "NAMES": ["自爆"],
+    "DESCRIPTION": "如果这张牌在回合结束时仍然在你的手牌中，它将爆炸。爆炸的牌在战斗结束前移出卡组，移出时对所有敌人造成1点伤害"
+  },
+  {
+    "NAMES": ["残影"],
+    "DESCRIPTION": "累计 #y7 点时，获得 #y好礼 并清除 #y残影 NL #y好礼 NL 造成的伤害大幅下降 NL 每有一层所有敌人失夫9点生命。"
+  },
+  {
+    "NAMES": ["魂灵之影"],
+    "DESCRIPTION": "代替维什戴尔受到攻击 NL 回合开始时，对随机敌人造成 3 点伤害，并给予 3 层 #y残影 "
+  },
+  {
+    "NAMES": ["残血"],
+    "DESCRIPTION": "生命值少于等于 10 或 10% "
+  },
+  {
+    "NAMES": ["边缘行者"],
+    "DESCRIPTION": "增加5点最大生命，将生命设为 #b1，获得 #b10 格挡， 在回合开始和结束时候获得 #b1 格挡，每打出一张牌获得 #b1 格挡，使你从卡牌获得的格挡增加 #b1 点"
+  },
+  {
+    "NAMES": ["附灵铠甲"],
+    "DESCRIPTION": "使每次失去的血量减少 #b1 点"
+  },
+  {
+    "NAMES": ["视觉陷阱"],
+    "DESCRIPTION": "你每打出一张牌，得到 #b1 点 #y格挡 。"
+  },
+  {
+    "NAMES": ["魂灵契约"],
+    "DESCRIPTION": "所有攻击牌耗能变为0 NL 所有技能牌在被打出时被消耗"
+  },
+  {
+    "NAMES": ["抽卡"],
+    "DESCRIPTION": "白：30% NL 蓝：40% NL 金20% NL 敲过的金卡7% NL 66血祖宗：2% NL 隐藏：1%"
   }
 ]

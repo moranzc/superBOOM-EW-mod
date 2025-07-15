@@ -205,7 +205,7 @@
     "NAME": "主炮级巫术增幅单元",
     "DESCRIPTION": "群攻 !D! 伤 !M! 次 NL 无限敲  NL (随机提升一项属性)",
     "EXTENDED_DESCRIPTION": [
-      "对所有敌人造成 !D! 点 伤害 !M! 次 NL 能被多次升级 。 NL 每次升级随机提升一项属性 NL 并使耗能增加一点"
+      "对所有敌人造成 !D! 点 伤害 !M! 次 NL 能被多次升级 。 NL 每次升级随机提升一项属性 "
     ]
   },
   "wishdalemod:Diedai": {

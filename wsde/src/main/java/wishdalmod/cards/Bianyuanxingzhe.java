@@ -15,7 +15,6 @@ import wishdalmod.powers.BianyuanxingzhePower;
 import wishdalmod.helpers.ModHelper;
 import wishdalmod.screen.TypeSelectScreen;
 
-
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
 public class Bianyuanxingzhe extends CustomCard {
@@ -28,14 +27,17 @@ public class Bianyuanxingzhe extends CustomCard {
     private static final CardColor COLOR = WISHDALE_RED;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
+
     public void tookDamage() {
         this.updateCost(-1);
     }
+
     public Bianyuanxingzhe() {
         super(ID, NAME, IMG_PATH, 3, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = 5;
         updateCardAttributes();
     }
+
     private void updateCardAttributes() {
         if (TypeSelectScreen.getType() == 0) {
             this.baseMagicNumber = this.magicNumber = 2;
@@ -47,6 +49,7 @@ public class Bianyuanxingzhe extends CustomCard {
         }
         this.initializeDescription();
     }
+
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (TypeSelectScreen.getType() == 0) {
             AbstractDungeon.player.increaseMaxHp(5, true);
@@ -73,19 +76,25 @@ public class Bianyuanxingzhe extends CustomCard {
             AbstractDungeon.effectsQueue.add(new PersistentFlameEffect());
         }
     }
+
+    @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);
-        if (!canUse) {return false;}
-        else {
-            if (p.currentHealth > 10 && p.currentHealth > p.maxHealth * 0.1f){
+        if (!canUse) {
+            return false;
+        } else {
+            if (p.currentHealth > 10 && p.currentHealth > p.maxHealth * 0.1f) {
                 canUse = false;
                 this.cantUseMessage = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
             }
         }
         return canUse;
     }
+
+    @Override
     public void upgrade() {
         if (!this.upgraded) {
+            this.upgradeName();
             if (TypeSelectScreen.getType() == 0) {
                 if (this.cost < 4) {
                     this.upgradeBaseCost(this.cost - 1);
@@ -108,13 +117,21 @@ public class Bianyuanxingzhe extends CustomCard {
                 }
                 this.upgradeMagicNumber(2);
             }
+            this.upgraded = true;
             this.initializeDescription();
         }
     }
+
+    @Override
+    public boolean canUpgrade() {
+        return !this.upgraded;
+    }
+
+    @Override
     public AbstractCard makeCopy() {
         AbstractCard tmp = new Bianyuanxingzhe();
         if (AbstractDungeon.player != null) {
-            ((AbstractCard)tmp).updateCost(-AbstractDungeon.player.damagedThisCombat);
+            tmp.updateCost(-AbstractDungeon.player.damagedThisCombat);
         }
         return tmp;
     }

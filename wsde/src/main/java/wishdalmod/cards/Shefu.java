@@ -2,6 +2,7 @@ package wishdalmod.cards;
 //得不变费用
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -27,7 +28,7 @@ public class Shefu extends CustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public Shefu() {
-        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 4 : 5, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 6 : 5, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber;
         this.selfRetain = true;
         updateCardAttributes();
@@ -35,7 +36,7 @@ public class Shefu extends CustomCard {
     private void updateCardAttributes() {
         if (TypeSelectScreen.getType() == 0) {
             this.baseMagicNumber = 1;
-            this.block = this.baseBlock = 50;
+            this.block = this.baseBlock = 40;
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
             this.baseMagicNumber = 4;
@@ -50,6 +51,7 @@ public class Shefu extends CustomCard {
         if (TypeSelectScreen.getType() == 0) {
             this.addToBot(new ApplyPowerAction(p, p, new BlurPower(p, this.magicNumber), this.magicNumber));
             this.addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
+            this.addToBot(new GainBlockAction(p, p, this.block));
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
             this.addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));

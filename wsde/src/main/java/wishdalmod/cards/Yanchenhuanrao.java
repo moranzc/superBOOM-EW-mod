@@ -27,8 +27,7 @@ public class Yanchenhuanrao extends CustomCard {
         this.baseMagicNumber = this.magicNumber = 7;
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p,
-                new YanchenhuanraoPower(p, this.baseMagicNumber, this.upgraded), this.baseMagicNumber));
+        addToBot(new ApplyPowerAction(p, p,new YanchenhuanraoPower(p, this.baseMagicNumber, this.upgraded), this.baseMagicNumber));
     }
     public void upgrade() {
         if (!this.upgraded) {
