@@ -37,6 +37,7 @@ public class Houqinbaozhang extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(1);
+            this.upgradeMagicNumber(1);
             this.initializeDescription();
         }
     }

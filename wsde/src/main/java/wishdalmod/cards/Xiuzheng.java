@@ -25,51 +25,67 @@ public class Xiuzheng extends CustomCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
+    private boolean lastDamagedState;
+    private int conditionCost;
     public Xiuzheng() {
         super(ID, NAME, IMG_PATH, 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
-        this.magicNumber = this.baseMagicNumber = 2;
-        updateCardAttributes();
+        this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber;
+        this.lastDamagedState = WishdaleMod.damagedLastTurn;
+        this.conditionCost = WishdaleMod.damagedLastTurn ? 2 : 0;
+
+        updateCardState();
     }
-    private void updateCardAttributes() {
+    public int getCost() {
+        return conditionCost;
+    }
+    private void updateCardState() {
+        this.conditionCost = WishdaleMod.damagedLastTurn ? 2 : 0;
+        this.baseMagicNumber = WishdaleMod.damagedLastTurn ? (upgraded ? 4 : 2) : (upgraded ? 7 : 5);
+        this.magicNumber = this.baseMagicNumber;
+        this.upgradeBaseCost(WishdaleMod.damagedLastTurn ? 2 : 0);
         if (TypeSelectScreen.getType() == 0) {
             this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
         } else {
             this.rawDescription = CARD_STRINGS.DESCRIPTION;
         }
-        this.initializeDescription();
+        this.glowColor = WishdaleMod.damagedLastTurn ?
+                AbstractCard.BLUE_BORDER_GLOW_COLOR :
+                AbstractCard.GOLD_BORDER_GLOW_COLOR;
+
+        initializeDescription();
     }
 
+    public void update() {
+        super.update();
+        if (this.lastDamagedState != WishdaleMod.damagedLastTurn) {
+            this.lastDamagedState = WishdaleMod.damagedLastTurn;
+            updateCardState();
+        }
+    }
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (TypeSelectScreen.getType() == 0) {
-            this.initializeDescription();
-            this.magicNumber = this.baseMagicNumber = WishdaleMod.damagedLastTurn ? 2 : 5;;
-            this.upgradeBaseCost(WishdaleMod.damagedLastTurn ? 2 : 0);
-            AbstractDungeon.player.increaseMaxHp(this.magicNumber, true);
-            this.addToTop(new HealAction(p, p, this.magicNumber));
-            this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[0];
-        } else {
-            this.initializeDescription();
-            this.magicNumber = this.baseMagicNumber = WishdaleMod.damagedLastTurn ? 2 : 5;;
-            this.upgradeBaseCost(WishdaleMod.damagedLastTurn ? 2 : 0);
-            AbstractDungeon.player.increaseMaxHp(this.magicNumber, true);
-            this.addToTop(new HealAction(p, p, this.magicNumber));
-            this.rawDescription = CARD_STRINGS.DESCRIPTION;
-        }
-
+        AbstractDungeon.player.increaseMaxHp(this.magicNumber, true);
+        addToTop(new HealAction(p, p, this.magicNumber));
     }
-
     public void triggerOnGlowCheck() {
         this.glowColor = WishdaleMod.damagedLastTurn ?
                 AbstractCard.BLUE_BORDER_GLOW_COLOR :
                 AbstractCard.GOLD_BORDER_GLOW_COLOR;
     }
-
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(2);
             this.initializeDescription();
         }
+    }
+    public void displayUpgrades() {
+        super.displayUpgrades();
+        updateCardState();
+    }
+    public void applyPowers() {
+        super.applyPowers();
+        updateCardState();
     }
 }

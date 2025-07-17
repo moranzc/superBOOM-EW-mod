@@ -107,13 +107,12 @@
     "EXTENDED_DESCRIPTION": [
       "对所有敌人造成 !D! 点伤害2次"
     ]
-
   },
   "wishdalemod:Kunanchenshuzhe": {
     "NAME": "苦难陈述者",
-    "DESCRIPTION": "ALL 99层 易伤 和 虚弱 NL 消耗 NL  [#ffd700]ALL[] wishdalemod:门",
+    "DESCRIPTION": "ALL 99层 易伤 和 虚弱 NL 消耗 ",
     "EXTENDED_DESCRIPTION": [
-      "给予所有敌人99层 易伤 和99层 虚弱 NL 消耗 NL [#ffd700]ALL[] wishdalemod:门"
+      "给予所有敌人99层 易伤 和99层 虚弱 NL 消耗 "
     ]
   },
   "wishdalemod:Hunlingpingzhang": {
@@ -422,10 +421,9 @@
   },
   "wishdalemod:Xiuzheng": {
     "NAME": "修整",
-    "DESCRIPTION": "无伤加血回血 !M! NL  消耗",
-    "UPGRADE_DESCRIPTION": "阿巴巴巴，阿巴阿巴，好多 bug",
+    "DESCRIPTION": "提高 !M! 點最大生命，並回復等量生命。",
     "EXTENDED_DESCRIPTION": [
-      "将你的生命值上限提高 !M! 点，并恢复 !M! 点生命值 NL 如果你在上回合没有受到伤害将增加提高和回复量 并且其耗能变成0 NL 消耗"
+      "若你在上回合未受傷，生命上限 +5，回復 5 點生命值，且本回合費用為 0。否則提升 2 點最大生命與生命，費用為 2。"
     ]
   },
   "wishdalemod:Hunlingwoliu": {

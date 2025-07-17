@@ -1,0 +1,104 @@
+{
+  "wishdalemod:Wishdalebadge": {
+    "NAME": "维什戴尔证章",
+    "FLAVOR": "干员行使投掷手职责。特发此证。以兹证明。",
+    "DESCRIPTIONS": [
+      "每回合第一张攻击牌打出两次，第二次的伤害降低至攻击力的一半"
+    ]
+  },
+  "wishdalemod:WishdalebadgePingheng": {
+    "NAME": "维什戴尔证章",
+    "FLAVOR": "干员行使投掷手职责。特发此证。以兹证明。",
+    "DESCRIPTIONS": [
+      "每场战斗的第一张攻击牌打出两次，第二次的伤害降低至攻击力的一半"
+    ]
+  },
+  "wishdalemod:AncestralLauncher": {
+    "NAME": "“祖宗发射器”",
+    "FLAVOR": "去吧，炸得更猛烈些！",
+    "DESCRIPTIONS": [
+      "替换 #g维什戴尔证章 ",
+      "每回合第一张攻击牌打出三次，后两次的伤害降低至攻击力的一半",
+      "每回合第一张攻击牌打出两次，第二次的伤害降低至攻击力的一半"
+    ]
+  },
+  "wishdalemod:GoldBoneDice": {
+    "NAME": "“镶金骨骰”",
+    "FLAVOR": "镶金的骨骰只有一面刻着代表生存的印记，至于其他十九面......",
+    "DESCRIPTIONS": [
+      "所有敌人生命减少 #b",
+      "% 。"
+    ]
+  },
+  "wishdalemod:RoaringHand": {
+      "NAME": "轰鸣之手",
+    "FLAVOR": "命中标的，撼动大地。",
+    "DESCRIPTIONS": [
+      "每连续出攻击牌就使自身获得从1递增的 临时力量，最高15点。某回合不出攻击牌则使清空加成"
+    ]
+  },
+  "wishdalemod:AncientTreeFruit": {
+    "NAME": "古地树实",
+    "FLAVOR": "萨米之裔祈愿于树种，埋于皑雪。俟木实，采其前四实，留其至微者遗嗣以续愿，余果为贡，诣萨米求答焉",
+    "DESCRIPTIONS": [
+      "立即获得三件随机的小玩意",
+      "树枝摇曳……",
+      "迷失其中",
+      "关闭"
+    ]
+  },
+  "wishdalemod:Ruozhitutou": {
+    "NAME": "若只兔头",
+    "FLAVOR": "辣鸡！",
+    "DESCRIPTIONS": [
+      "你是什么杯？",
+      "@相信武魂真身！@ NL @全军出击@ NL @我咬死你！@"
+    ]
+  },
+  "wishdalemod:HotWaterBottle": {
+    "NAME": "热水壶",
+    "FLAVOR": "罗德岛办公室里的同款热水壶，有人经常大半夜用热水壶煮速食面吃，这种生活习惯不是很健康……",
+    "DESCRIPTIONS": [
+      "拾起时，将你的最大生命值提升 2 获得 15 #y金币"
+    ]
+  },
+  "wishdalemod:Guowangdexinqiang": {
+    "NAME": "国王的新枪",
+    "FLAVOR": "绝境下的美好祈愿能带给人希望，即使那并不是真相。",
+    "DESCRIPTIONS": [
+      "当你的生命值等于或低于 #b10% 或 #b10时， 你获得额外 #b",
+      " 点 #y敏捷。"
+    ]
+  },
+  "wishdalemod:Guowangdekaijia": {
+    "NAME": "国王的铠甲",
+    "FLAVOR": "宫门广场，昔陈金龛，列四方奇珍以飨众。今追思犹伤神，呜呼哀哉！",
+    "DESCRIPTIONS": [
+      "战斗开始时获得损失的生命值等量的格挡和 #b1层 #y残影 ，在战斗结束后使生命值-3(不致死) #y人工制品 层数+1"
+    ]
+  },
+  "wishdalemod:Guowangdeyanshen": {
+    "NAME": "国王的延伸",
+    "FLAVOR": "成长，认清现实，用坚韧与笃定武装自己，用包容与慈恩武装朋友。",
+    "DESCRIPTIONS": [
+      "当你的生命值等于或低于 #b10% 或 #b10时，每 #b",
+      " 个回合，获得 [E] 。"
+    ]
+  },
+  "wishdalemod:Zhuwangdeguanmian": {
+    "NAME": "诸王的冠冕",
+    "FLAVOR": "无名的诸王啊，纵使王国毁灭，仍愿您护佑伊比利亚。",
+    "DESCRIPTIONS": [
+      "当你的生命值等于或低于 #b10% 或 #b10 时， 你获得额外 #b",
+      " 点 #y力量 ,集齐3件及以上国王收藏品后变为获得",
+      " 点 #y力量"
+    ]
+  },
+  "wishdalemod:GuowangdeHujie": {
+    "NAME": "国王的护戒",
+    "FLAVOR": "深海教众非一日可成，久踞海陆之交，潜谋后世谓之“大静谧”之劫。",
+    "DESCRIPTIONS": [
+      "生命上限变为 #b1 ，记录减少量。受到 #r致命 伤时，消耗计数抵消。战斗开始重置计数。"
+    ]
+  }
+}
