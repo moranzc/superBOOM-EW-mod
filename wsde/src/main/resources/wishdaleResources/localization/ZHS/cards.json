@@ -44,11 +44,11 @@
   },
   "wishdalemod:Lingguangyishan": {
     "NAME": "灵光一闪",
-    "DESCRIPTION": " wishdalemod:银银银银银 NL [#ffd700]ALL[] wishdalemod:门 NL 虚无 NL 消耗  ",
-    "UPGRADE_DESCRIPTION": " wishdalemod:金金金金金 NL [#ffd700]ALL[] wishdalemod:门 NL 消耗 ",
+    "DESCRIPTION": " wishdalemod:银银银银银 NL  wishdalemod:门 NL 虚无 NL 消耗  ",
+    "UPGRADE_DESCRIPTION": " wishdalemod:金金金金金 NL  wishdalemod:门 NL 消耗 ",
     "EXTENDED_DESCRIPTION": [
-      " 增加一张随机金卡到你的手牌。 NL 这张牌在本回合耗能变为0 NL [#ffd700]ALL[] wishdalemod:门 NL 虚无 NL 消耗 NL 我们保留了抽卡的乐趣这样你才知道你玩的是EWmod ",
-      " 增加一张随机金卡到你的手牌。 NL 这张牌在本回合耗能变为0 NL [#ffd700]ALL[] wishdalemod:门 NL 消耗 NL 我们保留了抽卡的乐趣这样你才知道你玩的是维什戴尔mod"
+      " 增加一张随机金卡到你的手牌。 NL 这张牌在本回合耗能变为0 NL  wishdalemod:门 NL 虚无 NL 消耗 NL 我们保留了抽卡的乐趣这样你才知道你玩的是EWmod ",
+      " 增加一张随机金卡到你的手牌。 NL 这张牌在本回合耗能变为0 NL  wishdalemod:门 NL 消耗 NL 我们保留了抽卡的乐趣这样你才知道你玩的是维什戴尔mod"
     ]
   },
   "wishdalemod:Yigongdaishou": {
@@ -111,9 +111,9 @@
   },
   "wishdalemod:Kunanchenshuzhe": {
     "NAME": "苦难陈述者",
-    "DESCRIPTION": "ALL 99层 易伤 和 虚弱 NL 消耗 NL  [#ffd700]ALL[] wishdalemod:门",
+    "DESCRIPTION": "群体给 99层 易伤 、 虚弱 NL 消耗 NL   wishdalemod:门",
     "EXTENDED_DESCRIPTION": [
-      "给予所有敌人99层 易伤 和99层 虚弱 NL 消耗 NL [#ffd700]ALL[] wishdalemod:门"
+      "给予所有敌人99层 易伤 和99层 虚弱 NL 消耗 NL  wishdalemod:门"
     ]
   },
   "wishdalemod:Hunlingpingzhang": {

@@ -1,22 +1,22 @@
 {
   "wishdalemod:Enabled": {
     "TEXT": [
-      "模组设置"
+      "Mod Settings"
     ]
   },
   "wishdalemod:Types": {
     "TEXT": [
-      "选择",
-      "手法干员",
-      "目光呆滞"
+      "Select",
+      "Tactical Operator",
+      "Blank Stare"
     ]
   },
   "wishdalemod:Zuzong": {
     "TEXT": [
-      "魂灵之影",
-      "代替维什戴尔受到攻击。回合开始时，对随机敌人造成 #b",
-      " 点伤害，并给予 #b",
-      " 层 #y残影 。"
+      "Spirit Shadow",
+      "Takes attacks in place of Vishdal. At the start of turn, deals #b",
+      " damage to a random enemy and applies #b",
+      " stacks of #yAfterimage."
     ]
   }
 }

@@ -55,6 +55,7 @@ public class Kunanchenshuzhe extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(0);
+            this.initializeDescription();
         }
 
     }

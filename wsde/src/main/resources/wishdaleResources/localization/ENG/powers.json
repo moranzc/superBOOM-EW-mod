@@ -1,112 +1,112 @@
 {
   "wishdalemod:Yishujiushibaozha": {
-    "NAME": "落幕",
+    "NAME": "Curtain Call",
     "DESCRIPTIONS": [
-      "所有敌人在 #b",
-      "回合后爆炸。"
+      "All enemies explode after #b",
+      " turns."
     ]
   },
   "wishdalemod:BaolielimingPower": {
-    "NAME": "爆裂黎明",
+    "NAME": "Explosive Dawn",
     "DESCRIPTIONS": [
-      "攻击力+516%，在回合开始时在手牌中加入",
-      " 张 #y年长的死魂灵 。"
+      "Attack increased by 516%. At the start of turn, add ",
+      " #yAncient Wraith to your hand."
     ]
   },
   "wishdalemod:YinbiPower": {
-    "NAME": "隐蔽",
+    "NAME": "Concealment",
     "DESCRIPTIONS": [
-      "打出攻击牌时失去所有 #y无实体 "
+      "Lose all #yIntangible when playing an Attack card"
     ]
   },
   "wishdalemod:BianxieshibujizhanPower": {
-    "NAME": "便携式补给站",
+    "NAME": "Portable Supply Station",
     "DESCRIPTIONS": [
-      "每次洗牌获得 #b",
-      "点 *能量"
+      "Gain #b",
+      " *Energy each time you shuffle your draw pile"
     ]
   },
   "wishdalemod:BianxieshibujizhanPinghengPower": {
-    "NAME": "便携式补给站",
+    "NAME": "Portable Supply Station",
     "DESCRIPTIONS": [
-      "每3回合获得 #b",
-      "点 *能量"
+      "Gain #b",
+      " *Energy every 3 turns"
     ]
   },
   "wishdalemod:Lei": {
-    "NAME": "累",
+    "NAME": "Exhaustion",
     "DESCRIPTIONS": [
-      "每回合减少2点能量"
+      "Lose 2 energy per turn"
     ]
   },
   "wishdalemod:Canying": {
-    "NAME": "残影",
+    "NAME": "Afterimage",
     "DESCRIPTIONS": [
-      "累计 #y7 点时，获得 #y好礼 并清除 #y残影 NL #y好礼 NL 造成的伤害大幅下降 NL 每有一层所有敌人失去9点生命。"
+      "When accumulated to #y7 points, receive #ySpecial Gift and clear #yAfterimage. NL #ySpecial Gift: Significantly reduced damage dealt. For each stack, all enemies lose 9 HP."
     ]
   },
   "wishdalemod:Haoli": {
-    "NAME": "好礼",
+    "NAME": "Special Gift",
     "DESCRIPTIONS": [
-      "造成的伤害下降50% NL 每有一层所有敌人在回合开始时失去9点生命。"
+      "Deal 50% less damage. NL At the start of each turn, for each stack, all enemies lose 9 HP."
     ]
   },
   "wishdalemod:SpiritArmorPower": {
-    "NAME": "附灵铠甲",
+    "NAME": "Soulbound Armor",
     "DESCRIPTIONS": [
-      "使每次失去的血量减少 #b1 点"
+      "Reduces each instance of HP loss by #b1"
     ]
   },
   "wishdalemod:ShijuexianjingPower": {
-    "NAME": "视觉陷阱",
+    "NAME": "Visual Trap",
     "DESCRIPTIONS": [
-      "你每打出一张牌，得到 #b1 点 #y格挡 。"
+      "Whenever you play a card, gain #b1 #yBlock."
     ]
   },
   "wishdalemod:BianyuanxingzhePower": {
-    "NAME": "边缘行者",
+    "NAME": "Edgewalker",
     "DESCRIPTIONS": [
-      "回合开始和结束时候获得 #b1 格挡，每打出一张牌获得 #b1 格挡，使你从卡牌获得的格挡增加 #b1 点"
+      "At the start and end of turn, gain #b1 Block. Whenever you play a card, gain #b1 Block. Increase Block gained from cards by #b1"
     ]
   },
   "wishdalemod:HunlingqiyuePower": {
-    "NAME": "魂灵契约",
+    "NAME": "Spirit Contract",
     "DESCRIPTIONS": [
-      "所有攻击牌耗能变为0。 NL 所有技能牌在被打出时被消耗。"
+      "All Attack cards cost 0. NL All Skill cards are Exhausted when played."
     ]
   },
   "wishdalemod:HunlingqiyuePinghengPower": {
-    "NAME": "魂灵契约",
+    "NAME": "Spirit Contract",
     "DESCRIPTIONS": [
-      "所有攻击牌耗能变为0。 NL 所有攻击牌在被打出时被 消耗 。"
+      "All Attack cards cost 0. NL All Attack cards are Exhausted when played."
     ]
   },
   "wishdalemod:YanchenhuanraoPower": {
-    "NAME": "烟雾缭绕",
+    "NAME": "Smoke Screen",
     "DESCRIPTIONS": [
-      "每当有牌被消耗时，所有角色获得 #b",
-      "点 #y格挡",
-      "点 #y格挡 。敌人获得的格挡减半。"
+      "Whenever a card is exhausted, all characters gain #b",
+      " #yBlock",
+      ". Enemies gain half the Block."
     ]
   },
   "wishdalemod:HunlingrongluPower": {
-    "NAME": "魂灵熔炉",
+    "NAME": "Spirit Forge",
     "DESCRIPTIONS": [
-      "在你的下回合开始时，增加 #b",
-      " 到你的手牌中。"
+      "At the start of your next turn, add #b",
+      " to your hand."
     ]
   },
   "wishdalemod:HouqinbaozhangPower": {
-    "NAME": "后勤保障",
+    "NAME": "Logistical Support",
     "DESCRIPTIONS": [
-      "每当有一张牌被 消耗 或 打出 能力牌 时，抽 ",
-      " 张牌。"
+      "Whenever a card is Exhausted or a Power card is played, draw ",
+      " cards."
     ]
   },
   "wishdalemod:ZuzongPower": {
-    "NAME": "迷彩",
+    "NAME": "Camouflage",
     "DESCRIPTIONS": [
-      "当你受到伤害时，优先消耗你的格挡，然后由祖宗承受剩余伤害"
+      "When you take damage, your Block is consumed first, then the ancestor takes the remaining damage"
     ]
   }
 }

@@ -158,16 +158,15 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCharacter(new EW(CardCrawlGame.playerName), MY_CHARACTER_BUTTON, MY_CHARACTER_PORTRAIT, WISHDALE_ZC);
 
     }
+
     public void receiveEditKeywords() {
         Gson gson = new Gson();
-        String langPath = "ENG";
-        if (language == Settings.GameLanguage.ZHS) {
-            langPath = "ZHS";
-        } else if (language == Settings.GameLanguage.ZHT) {
-            langPath = "ZHT";
+        String lang = "ZHS";
+        if (language == Settings.GameLanguage.ENG) {
+            lang = "ENG";
         }
 
-        String json = Gdx.files.internal("wishdaleResources/localization/" + langPath + "/keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal("wishdaleResources/localization/" + lang + "/keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Keyword[] keywords = gson.fromJson(json, Keyword[].class);
         if (keywords != null) {
             for (Keyword keyword : keywords) {
@@ -176,20 +175,17 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         }
     }
     public void receiveEditStrings() {
-        String langPath;
-        if (Settings.language == Settings.GameLanguage.ZHS) {
-            langPath = "ZHS";
-        } else if (Settings.language == Settings.GameLanguage.ZHT) {
-            langPath = "ZHT";
+        String lang;
+        if (Settings.language == Settings.GameLanguage.ENG) {
+            lang = "ENG";
         } else {
-            langPath = "ENG";
+            lang = "ZHS";
         }
-
-        BaseMod.loadCustomStringsFile(CardStrings.class, "wishdaleResources/localization/" + langPath + "/cards.json");
-        BaseMod.loadCustomStringsFile(CharacterStrings.class, "wishdaleResources/localization/" + langPath + "/characters.json");
-        BaseMod.loadCustomStringsFile(RelicStrings.class, "wishdaleResources/localization/" + langPath + "/relics.json");
-        BaseMod.loadCustomStringsFile(PowerStrings.class, "wishdaleResources/localization/" + langPath + "/powers.json");
-        BaseMod.loadCustomStringsFile(UIStrings.class, "wishdaleResources/localization/" + langPath + "/ui.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, "wishdaleResources/localization/" + lang + "/cards.json");
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, "wishdaleResources/localization/" + lang + "/characters.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, "wishdaleResources/localization/" + lang + "/relics.json");
+        BaseMod.loadCustomStringsFile(PowerStrings.class, "wishdaleResources/localization/" + lang + "/powers.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class, "wishdaleResources/localization/" + lang + "/ui.json");
     }
 
     public void receiveEditRelics() {

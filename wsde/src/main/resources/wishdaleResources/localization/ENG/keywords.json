@@ -1,70 +1,70 @@
 [
   {
-    "NAMES": ["累"],
-    "DESCRIPTION": "每回合减少2点能量。 NL 口也，我不要学习口牙!"
+    "NAMES": ["Exhaustion"],
+    "DESCRIPTION": "Lose 2 energy per turn. NL Ugh, I don't want to study anymore!"
   },
   {
-    "NAMES": ["银银银银银"],
-    "DESCRIPTION": "获得一张随机金卡，其本回合耗能为0"
+    "NAMES": ["Silver Silver Silver Silver Silver"],
+    "DESCRIPTION": "Gain a random Gold card that costs 0 this turn"
   },
   {
-    "NAMES": ["金金金金金"],
-    "DESCRIPTION": "获得一张随机金卡，其本回合耗能为0"
+    "NAMES": ["Gold Gold Gold Gold Gold"],
+    "DESCRIPTION": "Gain a random Gold card that costs 0 this turn"
   },
   {
-    "NAMES": ["门"],
-    "DESCRIPTION": "超模!!但来自法老的馈赠，强是必然的"
+    "NAMES": ["Gate"],
+    "DESCRIPTION": "Overpowered!! But it's a gift from the Pharaoh, so its strength is inevitable"
   },
   {
-    "NAMES": ["终焉"],
-    "DESCRIPTION": "只有当抽牌堆、弃牌堆中都没有牌时才能打出"
+    "NAMES": ["The End"],
+    "DESCRIPTION": "Can only be played when there are no cards in your draw pile or discard pile"
   },
   {
     "NAMES": ["丨丨"],
-    "DESCRIPTION": "BOOM! NL 目光呆滞吧"
+    "DESCRIPTION": "BOOM! NL Stare blankly now"
   },
   {
     "NAMES": ["丨"],
-    "DESCRIPTION": "召唤2个魂灵之影，攻击力+516%，在每回合开始时，将一张 *年长的死魂灵 加入你的手牌"
+    "DESCRIPTION": "Summon 2 Spirit Shadows with 516% increased attack. At the start of each turn, add a *Ancient Wraith to your hand"
   },
   {
-    "NAMES": ["爆炸"],
-    "DESCRIPTION": "在战斗结束前移出卡组，移出时对所有敌人造成1点伤害"
+    "NAMES": ["Explosion"],
+    "DESCRIPTION": "Removed from your deck until combat ends. When removed, deals 1 damage to all enemies"
   },
   {
-    "NAMES": ["自爆"],
-    "DESCRIPTION": "如果这张牌在回合结束时仍然在你的手牌中，它将爆炸。爆炸的牌在战斗结束前移出卡组，移出时对所有敌人造成1点伤害"
+    "NAMES": ["Self-Destruct"],
+    "DESCRIPTION": "If this card remains in your hand at the end of your turn, it will explode. Exploded cards are removed from your deck until combat ends, dealing 1 damage to all enemies when removed"
   },
   {
-    "NAMES": ["残影"],
-    "DESCRIPTION": "累计 #y7 点时，获得 #y好礼 并清除 #y残影 NL #y好礼 NL 造成的伤害大幅下降 NL 每有一层所有敌人失夫9点生命。"
+    "NAMES": ["Afterimage"],
+    "DESCRIPTION": "When accumulated to #y7 points, receive #ySpecial Gift and clear #yAfterimage NL #ySpecial Gift NL Significantly reduced damage dealt NL For each stack, all enemies lose 9 HP."
   },
   {
-    "NAMES": ["魂灵之影"],
-    "DESCRIPTION": "代替维什戴尔受到攻击 NL 回合开始时，对随机敌人造成 3 点伤害，并给予 3 层 #y残影 "
+    "NAMES": ["Spirit Shadow"],
+    "DESCRIPTION": "Takes attacks in place of Vishdal NL At the start of turn, deals 3 damage to a random enemy and applies 3 stacks of #yAfterimage"
   },
   {
-    "NAMES": ["残血"],
-    "DESCRIPTION": "生命值少于等于 10 或 10% "
+    "NAMES": ["Critical Health"],
+    "DESCRIPTION": "When HP is 10 or below, or at 10% or less"
   },
   {
-    "NAMES": ["边缘行者"],
-    "DESCRIPTION": "增加5点最大生命，将生命设为 #b1，获得 #b10 格挡， 在回合开始和结束时候获得 #b1 格挡，每打出一张牌获得 #b1 格挡，使你从卡牌获得的格挡增加 #b1 点"
+    "NAMES": ["Edgewalker"],
+    "DESCRIPTION": "Increase Max HP by 5, set HP to #b1, gain #b10 Block. At the start and end of turn, gain #b1 Block. Whenever you play a card, gain #b1 Block. Increase Block gained from cards by #b1"
   },
   {
-    "NAMES": ["附灵铠甲"],
-    "DESCRIPTION": "使每次失去的血量减少 #b1 点"
+    "NAMES": ["Soulbound Armor"],
+    "DESCRIPTION": "Reduces each instance of HP loss by #b1"
   },
   {
-    "NAMES": ["视觉陷阱"],
-    "DESCRIPTION": "你每打出一张牌，得到 #b1 点 #y格挡 。"
+    "NAMES": ["Visual Trap"],
+    "DESCRIPTION": "Whenever you play a card, gain #b1 #yBlock."
   },
   {
-    "NAMES": ["魂灵契约"],
-    "DESCRIPTION": "所有攻击牌耗能变为0 NL 所有技能牌在被打出时被消耗"
+    "NAMES": ["Spirit Contract"],
+    "DESCRIPTION": "All Attack cards cost 0 NL All Skill cards are Exhausted when played"
   },
   {
-    "NAMES": ["抽卡"],
-    "DESCRIPTION": "白：30% NL 蓝：40% NL 金20% NL 敲过的金卡7% NL 66血祖宗：2% NL 隐藏：1%"
+    "NAMES": ["Draw Card"],
+    "DESCRIPTION": "White: 30% NL Blue: 40% NL Gold: 20% NL Upgraded Gold: 7% NL 66 HP Ancestor: 2% NL Hidden: 1%"
   }
 ]

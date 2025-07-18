@@ -1,436 +1,433 @@
 {
   "wishdalemod:Strike": {
-    "NAME": "打击",
-    "DESCRIPTION": " !D! 伤",
+    "NAME": "Strike",
+    "DESCRIPTION": " !D! DMG",
     "EXTENDED_DESCRIPTION": [
-      "造成 !D! 点 伤害"
+      "Deal !D! damage."
     ]
   },
   "wishdalemod:Defend": {
-    "NAME": "防御",
-    "DESCRIPTION": " !B! 防",
+    "NAME": "Defend",
+    "DESCRIPTION": " !B! BLK",
     "EXTENDED_DESCRIPTION": [
-      "获得 !B! 点 格挡 "
+      "Gain !B! Block."
     ]
   },
   "wishdalemod:Zhishixuebao": {
-    "NAME": "知识学爆",
-    "DESCRIPTION": " !M! 力  NL  !M! 敏  NL  wishdalemod:累 ",
+    "NAME": "Knowledge Overload",
+    "DESCRIPTION": " !M! Str  NL  !M! Dex  NL  wishdalemod:Fatigue ",
     "EXTENDED_DESCRIPTION": [
-    "获得 !M! 点 力量  NL 获得 !M! 敏捷  NL wishdalemod:累 "
+      "Gain !M! Strength. NL Gain !M! Dexterity. NL wishdalemod:Fatigue."
     ]
   },
   "wishdalemod:Dailizhihui": {
-    "NAME": "代理指挥",
-    "DESCRIPTION": "随机打出手中所有牌",
+    "NAME": "Proxy Command",
+    "DESCRIPTION": "Play all cards in your hand randomly.",
     "EXTENDED_DESCRIPTION": [
-      "失去 6 点生命 NL 获得 3 层 再生 NL 你在本回合内不能再抽牌 NL 随机打出手中所有牌"
+      "Lose 6 HP. NL Gain 3 Regeneration. NL You cannot draw cards this turn. NL Play all cards in your hand randomly."
     ]
   },
   "wishdalemod:Boom": {
-    "NAME": "BOOM！",
-    "DESCRIPTION": "2回合后，造成 !M! 点群伤",
+    "NAME": "BOOM!",
+    "DESCRIPTION": "After 2 turns, deal !M! AoE DMG",
     "EXTENDED_DESCRIPTION": [
-      "在2回合结束后，对所有敌人造成 !M! 点伤害"
+      "After 2 turns, deal !M! damage to ALL enemies."
     ]
-
   },
   "wishdalemod:Zhenhandan": {
-    "NAME": "震撼弹",
-    "DESCRIPTION": "给群怪 !M! 层 虚弱 和 易伤 NL !D! 伤 NL 获得未被格挡伤害相等的 格挡 ",
+    "NAME": "Concussive Grenade",
+    "DESCRIPTION": "Apply !M! Weak and Vulnerable to ALL enemies NL !D! DMG NL Gain Block equal to unblocked damage dealt",
     "EXTENDED_DESCRIPTION": [
-    "造成 !D! 点伤害 NL 获得与所造成的未被格挡的伤害相等的 格挡 NL 给所有敌人 !M! 层 虚弱"
+      "Deal !D! damage. NL Gain Block equal to unblocked damage dealt. NL Apply !M! Weak to ALL enemies."
     ]
   },
   "wishdalemod:Lingguangyishan": {
-    "NAME": "灵光一闪",
-    "DESCRIPTION": " wishdalemod:银银银银银 NL [#ffd700]ALL[] wishdalemod:门 NL 虚无 NL 消耗  ",
-    "UPGRADE_DESCRIPTION": " wishdalemod:金金金金金 NL [#ffd700]ALL[] wishdalemod:门 NL 消耗 ",
+    "NAME": "Flash of Insight",
+    "DESCRIPTION": " wishdalemod:Silver Silver Silver Silver Silver NL ZHS wishdalemod:Gates NL Ethereal NL Exhaust  ",
+    "UPGRADE_DESCRIPTION": " wishdalemod:Gold Gold Gold Gold Gold NL ZHS wishdalemod:Gates NL Exhaust ",
     "EXTENDED_DESCRIPTION": [
-      " 增加一张随机金卡到你的手牌。 NL 这张牌在本回合耗能变为0 NL [#ffd700]ALL[] wishdalemod:门 NL 虚无 NL 消耗 NL 我们保留了抽卡的乐趣这样你才知道你玩的是EWmod ",
-      " 增加一张随机金卡到你的手牌。 NL 这张牌在本回合耗能变为0 NL [#ffd700]ALL[] wishdalemod:门 NL 消耗 NL 我们保留了抽卡的乐趣这样你才知道你玩的是维什戴尔mod"
+      "Add a random Gold card to your hand. NL This card costs 0 this turn. NL ZHS wishdalemod:Gates NL Ethereal NL Exhaust NL We kept the fun of drawing cards so you know you're playing the EWmod.",
+      "Add a random Gold card to your hand. NL This card costs 0 this turn. NL ZHS wishdalemod:Gates NL Exhaust NL We kept the fun of drawing cards so you know you're playing the Wishdale mod."
     ]
   },
   "wishdalemod:Yigongdaishou": {
-    "NAME": "以攻代守",
-    "DESCRIPTION": "手牌全为攻击牌才能打 NL  !D! 伤",
+    "NAME": "Offense as Defense",
+    "DESCRIPTION": "Can only be played if ALL cards in hand are Attacks NL  !D! DMG",
     "EXTENDED_DESCRIPTION": [
-      "我手中还 *萨卡兹粗口 有非攻击牌你眼瞎吗?",
-      "只有在手牌每一张牌都是攻击牌时才能被打出。 NL 造成 !D! 点伤害。获得 !B! 点 格挡"
-      ]
+      "*Sarkaz Expletive* You still have non-Attack cards in hand, are you blind?",
+      "Can only be played if every card in your hand is an Attack. NL Deal !D! damage. Gain !B! Block."
+    ]
   },
   "wishdalemod:Zidongsheji": {
-    "NAME": "自动射击",
-    "DESCRIPTION": "不能被打出  NL 抽到自动随机 !D! 伤并 丢弃 ",
+    "NAME": "Auto-Fire",
+    "DESCRIPTION": "Unplayable  NL When drawn, randomly deal !D! DMG and discard.",
     "EXTENDED_DESCRIPTION": [
-      "不能被打出  NL 抽到时随机对敌人造成 !D! 点 伤害并 丢弃 "
+      "Unplayable. NL When drawn, randomly deal !D! damage to an enemy and discard this card."
     ]
   },
   "wishdalemod:Wuxianhuoli": {
-    "NAME": "无限火力",
-    "DESCRIPTION": " !D! X !M!  NL 复制一张到弃牌堆 NL 消耗 ",
+    "NAME": "Unlimited Firepower",
+    "DESCRIPTION": " !D! X !M!  NL Add a copy to discard pile NL Exhaust ",
     "EXTENDED_DESCRIPTION": [
-      "对敌人造成 !D! 点伤害 !M! 次 NL 在弃牌堆放入一张此牌的复制品"
+      "Deal !D! damage to an enemy !M! times. NL Add a copy of this card to your discard pile."
     ]
   },
   "wishdalemod:Shefu": {
-    "NAME": "设伏",
-    "DESCRIPTION": " 保留 NL 获得 !M! 层 无实体 NL 保留一次耗能减1 ",
-    "UPGRADE_DESCRIPTION": " 固有  NL 保留 NL 获得 !M! 层 无实体  NL 这张卡每保留一次其耗能减1",
+    "NAME": "Ambush",
+    "DESCRIPTION": " Retain NL Gain !M! Intangible NL Retain: Cost reduced by 1 ",
+    "UPGRADE_DESCRIPTION": " Innate  NL Retain NL Gain !M! Intangible  NL This card's cost is reduced by 1 each time it is Retained.",
     "EXTENDED_DESCRIPTION": [
-      " 保留 NL 获得 !M! 层 无实体  NL !B! 点 格挡 NL 这张卡每保留一次其耗能减1",
-      " 固有  NL 保留 NL 获得 !M! 层 无实体 NL !B! 点 格挡 NL 这张卡每保留一次其耗能减1"
+      " Retain NL Gain !M! Intangible  NL Gain !B! Block NL This card's cost is reduced by 1 each time it is Retained.",
+      " Innate  NL Retain NL Gain !M! Intangible NL Gain !B! Block NL This card's cost is reduced by 1 each time it is Retained."
     ]
   },
   "wishdalemod:Baohedaji": {
-    "NAME": "饱和打击",
-    "DESCRIPTION": "群攻 NL  !D! X 5",
+    "NAME": "Saturation Strike",
+    "DESCRIPTION": "AoE NL  !D! X 5",
     "EXTENDED_DESCRIPTION": [
-      "对所有敌人造成 !D! 点 伤害5次。"
+      "Deal !D! damage to ALL enemies 5 times."
     ]
   },
   "wishdalemod:Zhongyanluomu": {
-    "NAME": "终焉落幕",
-    "DESCRIPTION": "wishdalemod:终焉 NL 让敌人在 !M! 回合后爆炸 NL 消耗 ",
-    "UPGRADE_DESCRIPTION": "我的抽弃牌堆必须是 *萨卡兹粗口 的 #r空的!"
+    "NAME": "Final Curtain",
+    "DESCRIPTION": "wishdalemod:Finale NL Cause enemy to explode after !M! turns NL Exhaust ",
+    "UPGRADE_DESCRIPTION": "My draw/discard pile must be *Sarkaz Expletive* empty!"
   },
   "wishdalemod:Sihunlingdeyuxi": {
-    "NAME": "死魂灵的余息",
-    "DESCRIPTION": "召唤一个魂灵之影",
+    "NAME": "Echo of the Death Spirit",
+    "DESCRIPTION": "Summon a Spirit Shadow.",
     "EXTENDED_DESCRIPTION": [
-      "召唤一个15点 生命值 的 wishdalemod:魂灵之影"
+      "Summon a 15 HP wishdalemod:Spirit_Shadow."
     ]
   },
   "wishdalemod:Shouliudan": {
-    "NAME": "手榴弹",
-    "DESCRIPTION": "群攻 NL  !D! X 2",
+    "NAME": "Hand Grenade",
+    "DESCRIPTION": "AoE NL  !D! X 2",
     "EXTENDED_DESCRIPTION": [
-      "对所有敌人造成 !D! 点伤害2次"
+      "Deal !D! damage to ALL enemies twice."
     ]
-
   },
   "wishdalemod:Kunanchenshuzhe": {
-    "NAME": "苦难陈述者",
-    "DESCRIPTION": "ALL 99层 易伤 和 虚弱 NL 消耗 NL  [#ffd700]ALL[] wishdalemod:门",
+    "NAME": "Suffering Narrator",
+    "DESCRIPTION": "enemies gain 99 Vulnerable and 99 Weak NL Exhaust NL  ZHS wishdalemod:Gates",
     "EXTENDED_DESCRIPTION": [
-      "给予所有敌人99层 易伤 和99层 虚弱 NL 消耗 NL [#ffd700]ALL[] wishdalemod:门"
+      "Apply 99 Vulnerable and 99 Weak to ALL enemies. NL Exhaust. NL ZHS wishdalemod:Gates"
     ]
   },
   "wishdalemod:Hunlingpingzhang": {
-    "NAME": "魂灵屏障",
-    "DESCRIPTION": " !M! 层缓冲",
+    "NAME": "Spirit Barrier",
+    "DESCRIPTION": " !M! Buffer",
     "EXTENDED_DESCRIPTION": [
-      "阻止下 !M! 次你受到的生命值损伤"
+      "Prevent the next !M! times you would lose HP."
     ]
-
   },
   "wishdalemod:Zhanhouxiuzheng": {
-    "NAME": "战后修整",
-    "DESCRIPTION": "在战斗结束时，回复 !M! 点生命"
+    "NAME": "Post-Battle Recovery",
+    "DESCRIPTION": "At the end of combat, heal !M! HP."
   },
   "wishdalemod:Chufaqianyanjiang": {
-    "NAME": "出发前演讲",
-    "DESCRIPTION": "固有 NL 获得 [E] [E] NL 消耗 "
+    "NAME": "Pre-Mission Speech",
+    "DESCRIPTION": "Innate NL Gain [E] [E] NL Exhaust "
   },
   "wishdalemod:Baolieliming": {
-    "NAME": "爆裂黎明",
+    "NAME": "Blazing Dawn",
     "DESCRIPTION": " *丨 wishdalemod:丨 [wishdalmod:tietuIcon] boom [wishdalmod:tietuIcon] wishdalemod:丨丨",
     "EXTENDED_DESCRIPTION": [
-      "超模"
+      "Overpowered"
     ]
   },
   "wishdalemod:Sihunling": {
-    "NAME": "起飞的年长的死魂灵",
-    "DESCRIPTION": "保留 。 NL 群攻 !D! 伤 NL 消耗 ",
+    "NAME": "Aged Death Spirit Takes Flight",
+    "DESCRIPTION": "Retain. NL AoE !D! DMG NL Exhaust ",
     "EXTENDED_DESCRIPTION": [
-      "保留 NL 对所有敌人造成 !D! 点伤害 NL 消耗 "
+      "Retain. NL Deal !D! damage to ALL enemies. NL Exhaust."
     ]
   },
   "wishdalemod:Muguangdaizhi": {
-    "NAME": "目光呆滞",
-    "DESCRIPTION": "抽 !M! 张牌 NL 混乱抽到牌的耗能"
+    "NAME": "Vacant Stare",
+    "DESCRIPTION": "Draw !M! cards NL Randomize the cost of drawn cards."
   },
   "wishdalemod:Fangshouyibo": {
-    "NAME": "放手一搏",
-    "DESCRIPTION": " 消耗 你的抽牌堆 NL 消耗 "
+    "NAME": "All or Nothing",
+    "DESCRIPTION": "Exhaust your draw pile NL Exhaust "
   },
   "wishdalemod:Guozaimoshi": {
-    "NAME": "过载模式",
-    "DESCRIPTION": " !D! 伤, 抽 1 , 抽到攻击牌重复效果 ",
+    "NAME": "Overload Mode",
+    "DESCRIPTION": " !D! DMG, Draw 1, If Attack card drawn, repeat effect ",
     "EXTENDED_DESCRIPTION": [
-      "造成 !D! 点伤害 NL 抽 1 张牌 NL 如果这张牌是攻击牌，重复一次"
+      "Deal !D! damage. NL Draw 1 card. NL If the drawn card is an Attack, repeat this effect."
     ]
   },
   "wishdalemod:Yinbi": {
-    "NAME": "隐蔽",
-    "DESCRIPTION": " 获得 !M! 层 无实体  NL 打出攻击牌后失去所有 无实体 。"
+    "NAME": "Concealment",
+    "DESCRIPTION": " Gain !M! Intangible  NL Lose all Intangible after playing an Attack card."
   },
   "wishdalemod:Shanguangdan": {
-    "NAME": "闪光弹",
-    "DESCRIPTION": "群体降 !M! 力量 NL 消耗 NL 光敏性癫痫提示",
+    "NAME": "Flashbang",
+    "DESCRIPTION": "ALL enemies lose !M! Strength NL Exhaust NL Photosensitive epilepsy warning",
     "EXTENDED_DESCRIPTION": [
-      "所有敌人失去 !M! 力量 1回合。 NL 消耗 NL 光敏性癫痫提示"
+      "ALL enemies lose !M! Strength for 1 turn. NL Exhaust. NL Photosensitive epilepsy warning."
     ]
   },
   "wishdalemod:Yinbao": {
-    "NAME": "音爆",
-    "DESCRIPTION": "群攻 !D! 伤 NL 使其本回合失去 !M! 力 X 次"
+    "NAME": "Sonic Boom",
+    "DESCRIPTION": "AoE !D! DMG NL Target loses !M! Strength this turn X times"
   },
   "wishdalemod:Zhanshuguihua": {
-    "NAME": "战术规划",
-    "DESCRIPTION": "保留 选择打出 !M! 张手牌",
+    "NAME": "Tactical Planning",
+    "DESCRIPTION": "Retain. Choose to play !M! cards from hand.",
     "EXTENDED_DESCRIPTION": [
-      "选择并打出 !M! 张手牌"
+      "Choose and play !M! cards from your hand."
     ]
   },
   "wishdalemod:Buwendingbuji": {
-    "NAME": "不稳定补给",
-    "DESCRIPTION": "50%概率获得 [E]  NL 触发 !M! 次 NL 有50%概率 消耗 ",
+    "NAME": "Unstable Supply",
+    "DESCRIPTION": "50% chance to gain [E]  NL Trigger !M! times NL 50% chance to Exhaust ",
     "EXTENDED_DESCRIPTION": [
-      "触发 !M! 次 NL 50%概率获得 [E]  NL 有50%概率 消耗 "
+      "Trigger !M! times. NL 50% chance to gain [E]. NL 50% chance to Exhaust."
     ]
   },
   "wishdalemod:Yizhanyangzhan": {
-    "NAME": "以战养战",
-    "DESCRIPTION": "造成 !D! 点 伤害 。击杀时获得持续2回合的目标最大生命值的 格挡 "
+    "NAME": "Sustain Through Combat",
+    "DESCRIPTION": "Deal !D! damage. If this kills the target, gain Block equal to its Max HP for 2 turns."
   },
   "wishdalemod:Yishanghuanshang": {
-    "NAME": "以血还血",
-    "DESCRIPTION": "造成损失血量的伤害 NL 使用三次后 消耗 ",
+    "NAME": "Blood for Blood",
+    "DESCRIPTION": "Deal damage equal to missing HP NL Exhaust after 3 uses",
     "EXTENDED_DESCRIPTION": [
-    "造成已损失的生命值的伤害 NL 使用三次后 消耗 "
+      "Deal damage equal to your missing HP. NL Exhaust after 3 uses."
     ]
   },
   "wishdalemod:Zhupaojiwushuzengfudanyuan": {
-    "NAME": "主炮级巫术增幅单元",
-    "DESCRIPTION": "群攻 !D! 伤 !M! 次 NL 无限敲  NL (随机提升一项属性)",
+    "NAME": "Main Cannon-Grade Sorcery Amplifier Unit",
+    "DESCRIPTION": "AoE !D! DMG !M! times NL Infinitely Upgradable  NL (Randomly upgrade one attribute)",
     "EXTENDED_DESCRIPTION": [
-      "对所有敌人造成 !D! 点 伤害 !M! 次 NL 能被多次升级 。 NL 每次升级随机提升一项属性 "
+      "Deal !D! damage to ALL enemies !M! times. NL Can be upgraded multiple times. NL Each upgrade randomly improves one attribute."
     ]
   },
   "wishdalemod:Diedai": {
-    "NAME": "迭代",
-    "DESCRIPTION": " !D! 伤, 所有 *迭代 伤害提升 !M!  NL 每打出一次耗能减1",
+    "NAME": "Iteration",
+    "DESCRIPTION": " !D! DMG, Increase damage of all *Iteration by !M!  NL Cost reduced by 1 each time played",
     "EXTENDED_DESCRIPTION": [
-      "造成 !D! 点伤害 NL 这张牌每被打出一次 NL 在本场战斗中其伤害增加 !M! NL 耗能减少1"
+      "Deal !D! damage. NL Each time this card is played during combat, increase its damage by !M! and reduce its cost by 1."
     ]
   },
   "wishdalemod:Chongzu": {
-    "NAME": "重组",
-    "DESCRIPTION": " !B! 防  抽 !M! NL 变攻击 ",
-    "UPGRADE_DESCRIPTION": " !D! 伤  抽 !M! NL 变防御 ",
+    "NAME": "Restructure",
+    "DESCRIPTION": " !B! BLK  Draw !M! NL Transform into Attack ",
+    "UPGRADE_DESCRIPTION": " !D! DMG  Draw !M! NL Transform into Skill ",
     "EXTENDED_DESCRIPTION": [
-      "获得 !B! 点 格挡 NL 抽 !M! 张牌 NL 打出后切换为攻击牌 ",
-      "造成 !D! 点 伤害 NL 抽 !M! 张牌 NL 打出后切换为技能牌 "
+      "Gain !B! Block. NL Draw !M! cards. NL After playing, this card becomes an Attack.",
+      "Deal !D! damage. NL Draw !M! cards. NL After playing, this card becomes a Skill."
     ]
   },
   "wishdalemod:Tudou": {
-    "NAME": "土豆，土豆",
-    "DESCRIPTION": "将一张 *伊内丝的头 洗入抽牌堆 NL 消耗 ",
-    "UPGRADE_DESCRIPTION":"将一张 *伊内丝的头+ 洗入抽牌堆 NL 消耗 "
+    "NAME": "Potatoes, Potatoes",
+    "DESCRIPTION": "Shuffle a *Irene's Head into draw pile NL Exhaust ",
+    "UPGRADE_DESCRIPTION": "Shuffle a *Irene's Head+ into draw pile NL Exhaust "
   },
   "wishdalemod:Yineisidetou": {
-    "NAME": "伊内丝的头",
-    "DESCRIPTION": "不能被打出 NL 抽到自动 群攻 !D! 伤 并 丢弃 ",
+    "NAME": "Irene's Head",
+    "DESCRIPTION": "Unplayable  NL When drawn, deal AoE !D! DMG and discard ",
     "EXTENDED_DESCRIPTION": [
-      "不能被打出 NL 抽到时对所有敌人造成 !D! 点 伤害并 丢弃 "
+      "Unplayable. NL When drawn, deal !D! damage to ALL enemies and discard this card."
     ]
   },
   "wishdalemod:Zixuechengcai": {
-    "NAME": "自学成才",
-    "DESCRIPTION": " !D! 伤 NL 斩杀 时， 升级 你牌组中的两张随机牌 NL 剩 !M! 次"
+    "NAME": "Self-Taught",
+    "DESCRIPTION": " !D! DMG NL If Fatal, Upgrade two random cards in your deck NL !M! uses left"
   },
   "wishdalemod:Bianxieshibujizhan": {
-    "NAME": "便携式补给站",
-    "DESCRIPTION": "每次洗牌时获得 [E] NL 虚无 ",
-    "UPGRADE_DESCRIPTION": "每次洗牌时获得 [E]  ",
+    "NAME": "Portable Supply Station",
+    "DESCRIPTION": "Gain [E] each time you shuffle NL Ethereal ",
+    "UPGRADE_DESCRIPTION": "Gain [E] each time you shuffle  ",
     "EXTENDED_DESCRIPTION": [
-      "每3回合获得 !M! 点 *能量"
+      "Gain !M! *Energy every 3 turns."
     ]
   },
   "wishdalemod:Dindianqingsuan": {
-    "NAME": "定点清算",
-    "DESCRIPTION": " !D! X 2，给 !M! 层 wishdalemod:残影",
+    "NAME": "Targeted Settlement",
+    "DESCRIPTION": " !D! X 2, apply !M! wishdalemod:Phantom_Mark",
     "EXTENDED_DESCRIPTION": [
-      "对敌人造成 !D! 点伤害 2 次 NL 给予 !M! 层 wishdalemod:残影"
+      "Deal !D! damage twice. NL Apply !M! wishdalemod:Phantom_Mark."
     ]
   },
   "wishdalemod:ZhanshiBOM": {
-    "NAME": "手法干员",
-    "DESCRIPTION": "原汁原味的塔"
+    "NAME": "Technical Operator",
+    "DESCRIPTION": "Authentic Tower"
   },
   "wishdalemod:ZhanshiBOOM": {
-    "NAME": "目光呆滞",
-    "DESCRIPTION": "大脑被爆裂黎明所替换"
+    "NAME": "Vacant Stare",
+    "DESCRIPTION": "Brain replaced by Blazing Dawn"
   },
   "wishdalemod:Canyingbishou": {
-    "NAME": "残影匕首",
-    "DESCRIPTION": " !D! 伤 NL !M! 层 wishdalemod:残影",
+    "NAME": "Phantom Dagger",
+    "DESCRIPTION": " !D! DMG NL !M! wishdalemod:Phantom_Mark",
     "EXTENDED_DESCRIPTION": [
-      "对敌人造成 !D! 点伤害 NL 给予 !M! 层 wishdalemod:残影"
+      "Deal !D! damage. NL Apply !M! wishdalemod:Phantom_Mark."
     ]
   },
   "wishdalemod:Mositima": {
-    "NAME": "助战:莫斯提马",
-    "DESCRIPTION": "腾跃",
+    "NAME": "Assist: Mostima",
+    "DESCRIPTION": "Leap",
     "EXTENDED_DESCRIPTION": [
-      "在本回合结束后，额外获得一回合。 NL 结束你的回合。 NL 消耗 。"
+      "After this turn ends, gain an additional turn. NL End your turn. NL Exhaust."
     ]
   },
   "wishdalemod:Shunshen": {
-    "NAME": "瞬身",
-    "DESCRIPTION": "!B! 防 NL 1 残影(猎宝) ",
+    "NAME": "Blink",
+    "DESCRIPTION": "!B! BLK NL 1 Phantom (Treasure Hunt) ",
     "EXTENDED_DESCRIPTION": [
-      "获得 !B! 点 格挡 。 NL 你的下一回合开始时 格挡 不会消失。"
+      "Gain !B! Block. NL Block does not disappear at the start of your next turn."
     ]
   },
   "wishdalemod:Gedang": {
-    "NAME": "格挡",
-    "DESCRIPTION": "!B! 防 NL 每 3 次得 1 敏 ",
+    "NAME": "Parry",
+    "DESCRIPTION": "!B! BLK NL Gain 1 Dex every 3rd use ",
     "EXTENDED_DESCRIPTION": [
-      "获得 !B! 点 格挡 。 NL 在第三次打出后获得 1 敏捷"
+      "Gain !B! Block. NL On the third use, gain 1 Dexterity."
     ]
   },
   "wishdalemod:Meide": {
-    "NAME": "美德",
-    "DESCRIPTION": "消耗诅咒、状态牌 NL 每张获得 !B! 点 格挡",
+    "NAME": "Virtue",
+    "DESCRIPTION": "Exhaust Curses and Status cards NL Gain !B! Block per card",
     "EXTENDED_DESCRIPTION": [
-      "消耗 抽牌堆、弃牌堆和手牌中的所有诅咒牌和状态牌，每张获得 !B! 点 格挡"
+      "Exhaust ALL Curse and Status cards in your draw pile, discard pile, and hand. Gain !B! Block per card exhausted."
     ]
   },
   "wishdalemod:Huandan": {
-    "NAME": "换弹",
-    "DESCRIPTION": "消耗手牌 NL 抽等量牌",
+    "NAME": "Reload",
+    "DESCRIPTION": "Exhaust hand NL Draw equal number of cards",
     "EXTENDED_DESCRIPTION": [
-      "消耗所有手牌。 NL 然后抽相同数量张牌。 NL 消耗 。",
-      "消耗所有手牌。 NL 然后抽相同数量张牌。",
-      "消耗手牌 NL 抽等量牌 NL 获得 [E] "
+      "Exhaust ALL cards in your hand. NL Then draw that many cards. NL Exhaust.",
+      "Exhaust ALL cards in your hand. NL Then draw that many cards.",
+      "Exhaust hand NL Draw equal number of cards NL Gain [E] "
     ]
   },
   "wishdalemod:Boming": {
-    "NAME": "搏命",
-    "DESCRIPTION": "固有 NL 将生命值降低至 5，获得等量于损失生命值的格挡。获得 !M! 层 残影 NL 消耗",
+    "NAME": "Life or Death",
+    "DESCRIPTION": "Innate NL Reduce HP to 5, gain Block equal to HP lost. Gain !M! Phantom Mark NL Exhaust",
     "EXTENDED_DESCRIPTION": [
-      "保留 NL 将生命值降低至 5，获得等量于损失生命值的格挡。获得 !M! 层 残影 NL 消耗"
+      "Retain. NL Reduce HP to 5, gain Block equal to HP lost. Gain !M! Phantom Mark NL Exhaust"
     ]
   },
   "wishdalemod:Kuangzhan": {
-    "NAME": "战意沸腾",
-    "DESCRIPTION": "固有 NL 将生命值降低至 10,获得等量于损失生命值一半的格挡获得 !M! 层 仪式 NL 消耗",
+    "NAME": "Boiling Battle Intent",
+    "DESCRIPTION": "Innate NL Reduce HP to 10, gain Block equal to half HP lost. Gain !M! Ritual NL Exhaust",
     "EXTENDED_DESCRIPTION": [
-      "保留 NL 将生命值降低至 10,获得等量于损失生命值一半的格挡获得 !M! 层 仪式 NL 消耗"
+      "Retain. NL Reduce HP to 10, gain Block equal to half HP lost. Gain !M! Ritual NL Exhaust"
     ]
   },
   "wishdalemod:Xuying": {
-    "NAME": "虚影",
-    "DESCRIPTION": "!M! 层 wishdalemod:视觉陷阱",
-    "UPGRADE_DESCRIPTION": "固有 NL !M! 层 wishdalemod:视觉陷阱",
+    "NAME": "Phantom Image",
+    "DESCRIPTION": "!M! wishdalemod:Visual_Trap",
+    "UPGRADE_DESCRIPTION": "Innate NL !M! wishdalemod:Visual_Trap",
     "EXTENDED_DESCRIPTION": [
-      "获得 !M! 层 wishdalemod:视觉陷阱 NL 虚无",
-      "获得 !M! 层 wishdalemod:视觉陷阱"
+      "Gain !M! wishdalemod:Visual_Trap. NL Ethereal",
+      "Gain !M! wishdalemod:Visual_Trap"
     ]
   },
   "wishdalemod:Fulingkaijia": {
-    "NAME": "附灵铠甲",
-    "DESCRIPTION": " 获得 !M! 层 wishdalemod:附灵铠甲",
-    "UPGRADE_DESCRIPTION": "固有 NL  获得 !M! 层 wishdalemod:附灵铠甲 。"
+    "NAME": "Spiritbound Armor",
+    "DESCRIPTION": " Gain !M! wishdalemod:Spiritbound_Armor",
+    "UPGRADE_DESCRIPTION": "Innate NL  Gain !M! wishdalemod:Spiritbound_Armor."
   },
   "wishdalemod:Bianyuanxingzhe": {
-    "NAME": "边缘行者",
-    "DESCRIPTION": "+ !M! 血上限 NL 获得 1 层 残影、缓冲、 wishdalemod:边缘行者 NL 在 wishdalemod:残血 时才可打出，打出后将血量变为1 NL 每受伤一次本牌费用-1",
+    "NAME": "Edgewalker",
+    "DESCRIPTION": "+ !M! Max HP NL Gain 1 Phantom Mark, Buffer, wishdalemod:Edgewalker NL Can only be played at wishdalemod:Critical_HP. When played, set HP to 1 NL Cost reduced by 1 each time you take damage",
     "EXTENDED_DESCRIPTION": [
-      " *萨卡兹粗口  老子还没死！",
-      "提高 5 点生命值上限 NL 获得 3 点力量和敏捷，获得 !B! 点 格挡  NL 你在接下来 !M! 回合内无法再从卡牌中获得格挡 NL 在 wishdalemod:残血 时才可打出，打出后将血量变为1 NL 每受伤一次本牌费用-1"
+      " *Sarkaz Expletive* I'm not dead yet!",
+      "Increase Max HP by 5. NL Gain 3 Strength and Dexterity, gain !B! Block. NL You cannot gain Block from cards for the next !M! turns. NL Can only be played at wishdalemod:Critical_HP. When played, set HP to 1. NL Cost reduced by 1 each time you take damage."
     ]
   },
   "wishdalemod:Hunlingqiyue": {
-    "NAME": "魂灵契约",
-    "DESCRIPTION": "失去当前10%的生命，获得 wishdalemod:魂灵契约  NL 虚无。",
+    "NAME": "Spirit Pact",
+    "DESCRIPTION": "Lose 10% of current HP, gain wishdalemod:Spirit_Pact  NL Ethereal.",
     "EXTENDED_DESCRIPTION": [
-      "失去3点生命值，所有攻击牌耗能变为0。 NL 所有攻击牌在被打出时被 消耗   NL 虚无。"
+      "Lose 3 HP. NL The cost of ALL Attack cards becomes 0. NL ALL Attack cards are Exhausted when played. NL Ethereal."
     ]
   },
   "wishdalemod:Yanchenhuanrao": {
-    "NAME": "烟雾缭绕",
-    "DESCRIPTION": "每消耗一张牌，ALL 角色 获得 !M! 点格挡。",
-    "UPGRADE_DESCRIPTION": "每消耗一张牌，所有角色获得 !M! 点格挡。 NL 敌人获得的格挡减半。"
+    "NAME": "Smoke Screen",
+    "DESCRIPTION": "Whenever you Exhaust a card, ALL characters gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Whenever you Exhaust a card, ALL characters gain !M! Block. NL Enemies gain half as much Block."
   },
   "wishdalemod:Goushi": {
-    "NAME": "构史",
-    "DESCRIPTION": "随机所有角色的血量 NL 虚无",
-    "UPGRADE_DESCRIPTION": "随机血量，敌人从一半开始随机 NL 虚无",
+    "NAME": "Historiography",
+    "DESCRIPTION": "Randomize ALL characters' HP NL Ethereal",
+    "UPGRADE_DESCRIPTION": "Randomize HP. Enemies randomize starting from half. NL Ethereal",
     "EXTENDED_DESCRIPTION": [
-      "场上所有角色的格挡会在其最大范围内进行随机化。 NL 虚无",
-      "场上所有角色的格挡会在其最大范围内进行随机化，敌人随机化范围变为一半 NL 虚无"
+      "Randomize the Block of ALL characters on the field within their maximum possible range. NL Ethereal",
+      "Randomize the Block of ALL characters on the field within their maximum possible range. Enemy randomization range halved. NL Ethereal"
     ]
   },
   "wishdalemod:Ronglubaixiang": {
-    "NAME": "熔炉百相",
-    "DESCRIPTION": "wishdalemod:抽卡"
+    "NAME": "Crucible Phantasm",
+    "DESCRIPTION": "wishdalemod:Draw_Card"
   },
   "wishdalemod:Hunlingronglu": {
-    "NAME": "魂灵熔炉",
-    "DESCRIPTION": "回收并扣消耗牌相同耗能的血 NL 夜魇 !M!  NL 复制品的数值会随机变化 NL 消耗",
+    "NAME": "Spirit Crucible",
+    "DESCRIPTION": "Recycle and lose HP equal to the cost of the consumed card NL Nightmare !M!  NL Copied card's values change randomly NL Exhaust",
     "EXTENDED_DESCRIPTION": [
-      "选择一张牌消耗并获得等同于耗能的 [E] 和扣血 NL 在下一回合，将 !M! 份这张牌的复制品放入你的手牌中 NL 复制品的数值会随机变化 NL 消耗 "
+      "Choose a card to Exhaust and gain [E] equal to its cost and lose HP equal to its cost. NL Next turn, add !M! copies of that card to your hand. NL Copied card's values change randomly. NL Exhaust."
     ]
   },
   "wishdalemod:Xietong": {
-    "NAME": "协同",
-    "DESCRIPTION": "!D! 伤， !M! 血 !M! 防 祖宗",
+    "NAME": "Synergy",
+    "DESCRIPTION": "!D! DMG, !M! HP !M! DEF Ancestor",
     "EXTENDED_DESCRIPTION": [
-      "造成 !D! 点伤害，召唤一个 !M! 点生命值 !M! 点防御的 wishdalemod:魂灵之影"
+      "Deal !D! damage. Summon a wishdalemod:Spirit_Shadow with !M! HP and !M! DEF."
     ]
   },
   "wishdalemod:Zhanyi": {
-    "NAME": "战意",
-    "DESCRIPTION": "!D! 伤， !M! 血 10 力 祖宗",
+    "NAME": "Battle Intent",
+    "DESCRIPTION": "!D! DMG, !M! HP 10 STR Ancestor",
     "EXTENDED_DESCRIPTION": [
-      "造成 !D! 点伤害，召唤一个 !M! 点生命值 10 点 力量 的 wishdalemod:魂灵之影"
+      "Deal !D! damage. Summon a wishdalemod:Spirit_Shadow with !M! HP and 10 Strength."
     ]
   },
   "wishdalemod:Laoyin": {
-    "NAME": "烙印",
-    "DESCRIPTION": "!D! 伤， !M! wishdalemod:残影",
+    "NAME": "Brand",
+    "DESCRIPTION": "!D! DMG, !M! wishdalemod:Phantom_Mark",
     "EXTENDED_DESCRIPTION": [
-      "给予对方 !M! 层 wishdalemod:残影"
+      "Apply !M! wishdalemod:Phantom_Mark."
     ]
   },
   "wishdalemod:Qinshi": {
-    "NAME": "侵蚀",
-    "DESCRIPTION": "群攻 !D! 伤， !M!  wishdalemod:残影  X 次",
+    "NAME": "Corrosion",
+    "DESCRIPTION": "AoE !D! DMG, apply !M!  wishdalemod:Phantom_Mark  X times",
     "EXTENDED_DESCRIPTION": [
-      "对所有敌人造成 !D! 点伤害X次 NL 给予对方 !M! 层 wishdalemod:残影 X次"
+      "Deal !D! damage to ALL enemies X times. NL Apply !M! wishdalemod:Phantom_Mark X times."
     ]
   },
   "wishdalemod:Saileiya": {
-    "NAME": "急救",
-    "DESCRIPTION": "群防 !B! ，回 !D! NL 消耗",
+    "NAME": "First Aid",
+    "DESCRIPTION": "AoE Block !B! , Heal !D! NL Exhaust",
     "EXTENDED_DESCRIPTION": [
-      "给所有友方单位 !B! 点 格挡 NL 回复 !D! 点生命 NL 消耗"
+      "Give ALL allies !B! Block. NL Heal !D! HP. NL Exhaust."
     ]
   },
   "wishdalemod:Houqinbaozhang": {
-    "NAME": "后勤保障",
-    "DESCRIPTION": "每当有一张牌被 消耗、丢弃 或 打出能力牌 时，抽 !M! 张牌。",
-    "UPGRADE_DESCRIPTION": "每当有一张牌被 消耗、丢弃 或 打出能力牌 时，抽 !M! 张牌。"
+    "NAME": "Logistical Support",
+    "DESCRIPTION": "Whenever a card is Exhausted, Discarded, or a Power card is played, draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Whenever a card is Exhausted, Discarded, or a Power card is played, draw !M! cards."
   },
   "wishdalemod:Shengyuheiye": {
-    "NAME": "生于黑夜",
-    "DESCRIPTION": "根据你的消耗堆中牌的数量造成伤害，每张牌造成 3 点伤害。 !D! 伤",
-    "UPGRADE_DESCRIPTION": "根据你的消耗堆中牌的数量造成伤害，每张牌造成  !D! 点伤害。"
+    "NAME": "Born in the Dark Night",
+    "DESCRIPTION": "Deal damage based on the number of cards in your Exhaust pile, 3 damage per card. !D! DMG",
+    "UPGRADE_DESCRIPTION": "Deal damage based on the number of cards in your Exhaust pile, !D! damage per card."
   },
   "wishdalemod:Xiuzheng": {
-    "NAME": "修整",
-    "DESCRIPTION": "无伤加血回血 !M! NL  消耗",
-    "UPGRADE_DESCRIPTION": "阿巴巴巴，阿巴阿巴，好多 bug",
+    "NAME": "Recuperate",
+    "DESCRIPTION": "If no damage taken, Heal and increase Max HP by !M! NL  Exhaust",
+    "UPGRADE_DESCRIPTION": "Blah blah blah, blah blah, so many bugs",
     "EXTENDED_DESCRIPTION": [
-      "如果你在上回合没有受到伤害，则将你的生命值上限提高 !M! 点，并恢复 !M! 点生命值 NL 并且其耗能变成0 NL 消耗"
+      "If you took no damage last turn, increase your Max HP by !M! and heal !M! HP. NL Its cost becomes 0. NL Exhaust"
     ]
   },
   "wishdalemod:Hunlingwoliu": {
-    "NAME": "魂灵涡流",
-    "DESCRIPTION": "!D! 伤 !B! 防，每有一个祖宗超级加倍",
-    "UPGRADE_DESCRIPTION": "!D! 伤 !B! 防，每有一个祖宗超级加倍"
+    "NAME": "Spirit Vortex",
+    "DESCRIPTION": "!D! DMG !B! BLK, Super Doubled per Ancestor present",
+    "UPGRADE_DESCRIPTION": "!D! DMG !B! BLK, Super Doubled per Ancestor present"
   }
 }
