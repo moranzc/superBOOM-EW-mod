@@ -37,11 +37,13 @@ public class Fulingkaijia extends CustomCard {
             if (TypeSelectScreen.getType() == 0) {
                 this.upgradeName();
                 this.upgradeBaseCost(2);
+                this.isInnate = true;
                 this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
                 this.initializeDescription();
             } else {
                 this.upgradeName();
                 this.upgradeBaseCost(1);
+                this.isInnate = true;
                 this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
                 this.initializeDescription();
             }

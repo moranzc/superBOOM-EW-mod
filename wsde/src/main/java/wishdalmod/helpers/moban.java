@@ -14,6 +14,12 @@ TypeSelectScreen.getType() == 0 ? CARD_STRINGS.DESCRIPTION : CARD_STRINGS.EXTEND
             this.initializeDescription();
         }
 
+            if (TypeSelectScreen.getType() == 0) {
+
+            } else {
+
+            }
+
 "EXTENDED_DESCRIPTION": [
     ]
 

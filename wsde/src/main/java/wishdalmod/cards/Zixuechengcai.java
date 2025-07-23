@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import wishdalmod.actions.ShengjiAction;
 import wishdalmod.helpers.ModHelper;
+import wishdalmod.screen.TypeSelectScreen;
 
 
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
@@ -30,17 +31,32 @@ public class Zixuechengcai extends CustomCard {
 
     public Zixuechengcai() {
         super(ID, NAME, IMG_PATH, 3, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.isMultiDamage = true;
-        this.baseDamage = 12;
-        this.tags.add(CardTags.HEALING);
-        this.magicNumber = this.baseMagicNumber = 3;
+        updateCardAttributes();
+    }
+    private void updateCardAttributes() {
+        if (TypeSelectScreen.getType() == 0) {
+            this.tags.add(CardTags.HEALING);
+            this.magicNumber = this.baseMagicNumber = 3;
+        } else {
+            this.tags.add(CardTags.HEALING);
+            this.magicNumber = this.baseMagicNumber = 5;
+        }
+        this.initializeDescription();
     }
 
     public void triggerOnGlowCheck() {
-        if (this.useTimes == 2) {
-            this.glowColor = AbstractCard.GREEN_BORDER_GLOW_COLOR.cpy();
+        if (TypeSelectScreen.getType() == 0) {
+            if (this.useTimes == 2) {
+                this.glowColor = AbstractCard.GREEN_BORDER_GLOW_COLOR.cpy();
+            } else {
+                this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+            }
         } else {
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+            if (this.useTimes == 5) {
+                this.glowColor = AbstractCard.GREEN_BORDER_GLOW_COLOR.cpy();
+            } else {
+                this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+            }
         }
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -64,16 +80,25 @@ public class Zixuechengcai extends CustomCard {
             this.exhaust = true;
         }
         this.useTimes++;
-        if (this.useTimes == 3) {
-            this.exhaust = true;
+        if (TypeSelectScreen.getType() == 0) {
+            if (this.useTimes == 3) {
+                this.exhaust = true;
+            }
+        } else {
+            if (this.useTimes == 5) {
+                this.exhaust = true;
+            }
         }
-        this.addToBot(new ShengjiAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+        if (TypeSelectScreen.getType() == 0) {
+            this.addToBot(new ShengjiAction(m, new DamageInfo(p, 12, this.damageTypeForTurn)));
+        } else {
+            this.addToBot(new ShengjiAction(m, new DamageInfo(p, 18, this.damageTypeForTurn)));
+        }
     }
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
             upgradeBaseCost(2);
-            this.upgradeDamage(3);
         }
     }
     public AbstractCard makeCopy() {

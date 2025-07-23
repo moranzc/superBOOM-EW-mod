@@ -238,7 +238,10 @@
   },
   "wishdalemod:Zixuechengcai": {
     "NAME": "自学成才",
-    "DESCRIPTION": " !D! 伤 NL 斩杀 时， 升级 你牌组中的两张随机牌 NL 剩 !M! 次"
+    "DESCRIPTION": "恒定 12 伤 NL 斩杀 时， 升级 你牌组中的两张随机牌 NL 剩 !M! 次",
+    "EXTENDED_DESCRIPTION": [
+      "恒定 18 伤 NL 斩杀 时， 升级 你牌组中的两张随机牌 NL 剩 !M! 次"
+    ]
   },
   "wishdalemod:Bianxieshibujizhan": {
     "NAME": "便携式补给站",
@@ -425,7 +428,7 @@
     "DESCRIPTION": "无伤加血回血 !M! NL  消耗",
     "UPGRADE_DESCRIPTION": "阿巴巴巴，阿巴阿巴，好多 bug",
     "EXTENDED_DESCRIPTION": [
-      "将你的生命值上限提高 !M! 点，并恢复 !M! 点生命值 NL 如果你在上回合没有受到伤害将增加提高和回复量 并且其耗能变成0 NL 消耗"
+      "将你的生命值上限提高 !M! 点，并恢复 !M! 点生命值 NL 上回合敌人意图不是攻击则增加提高和回复量 并且其耗能变成0 NL 消耗"
     ]
   },
   "wishdalemod:Hunlingwoliu": {
