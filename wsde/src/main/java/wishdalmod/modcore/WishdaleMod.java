@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import wishdalmod.actions.BaozhaAction;
 import wishdalmod.cards.*;
 import wishdalmod.characters.EW;
@@ -244,7 +245,7 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
                 if (!m.isDeadOrEscaped()) {
                     leftX = Math.min(leftX, (m.hb.x - Settings.WIDTH * 0.75F) / Settings.xScale);
                 }
-            if (AbstractDungeon.actNum == 2) {
+            if ((AbstractDungeon.actNum == 2) && (room instanceof MonsterRoom)) {
                 if (AbstractDungeon.monsterRng.random(1, 100) <= 50) {
                     AbstractMonster spines = new Bianfu(leftX - 100.F, 0.0F);
                     spines.usePreBattleAction();
