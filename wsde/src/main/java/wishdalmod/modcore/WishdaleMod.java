@@ -7,12 +7,14 @@ import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.icons.CustomIconHelper;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import wishdalmod.actions.BaozhaAction;
@@ -80,10 +82,10 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
     //怪物
     public void receiveEditMonsters() {
         BaseMod.addMonster("WishdaleMod:Bianfu", Bianfu.NAME, () -> new Bianfu(0.0F, 0.0F));
-        BaseMod.addMonsterEncounter("TheCity", new MonsterInfo("WishdaleMod:Bianfu", 10.0F));
-        BaseMod.addStrongMonsterEncounter("TheCity", new MonsterInfo("WishdaleMod:Bianfu", 10.0F));
+        // BaseMod.addMonsterEncounter("TheCity", new MonsterInfo("WishdaleMod:Bianfu", 10.0F));
+        // BaseMod.addStrongMonsterEncounter("TheCity", new MonsterInfo("WishdaleMod:Bianfu", 10.0F));
         BaseMod.addMonster("WishdaleMod:Kongkazi", Kongkazi.NAME, () -> new Kongkazi(0.0F, 0.0F));
-        BaseMod.addMonsterEncounter("TheCity", new MonsterInfo("WishdaleMod:Kongkazi", 0.0F));
+        // BaseMod.addMonsterEncounter("TheCity", new MonsterInfo("WishdaleMod:Kongkazi", 0.0F));
     }
 
     //注册
@@ -236,6 +238,34 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
     public void receiveOnBattleStart(AbstractRoom room) {
         damagedLastTurn = false;    // TODO: 如果你想第一回合不算的话就写成true
         damagedThisTurn = false;
+        if (AbstractDungeon.player instanceof EW) {
+            float leftX = 1000.0F;
+            for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters)
+                if (!m.isDeadOrEscaped()) {
+                    leftX = Math.min(leftX, (m.hb.x - Settings.WIDTH * 0.75F) / Settings.xScale);
+                }
+            if (AbstractDungeon.actNum == 2) {
+                if (AbstractDungeon.monsterRng.random(1, 100) <= 50) {
+                    AbstractMonster spines = new Bianfu(leftX - 100.F, 0.0F);
+                    spines.usePreBattleAction();
+                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(spines, false));
+                }
+            }
+            else if (AbstractDungeon.actNum >= 3) {
+                if (AbstractDungeon.monsterRng.random(1, 100) <= 60) {
+                    // 加入一个
+                    AbstractMonster spines = new Bianfu(leftX - 100.F, 0.0F);
+                    spines.usePreBattleAction();
+                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(spines, false));
+                    if (AbstractDungeon.monsterRng.random(1, 100) <= 30) {
+                        // 再加一个
+                        AbstractMonster spine2 = new Bianfu(leftX - 300.F, 0.0F);
+                        spines.usePreBattleAction();
+                        AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(spine2, false));
+                    }
+                }
+            }
+        }
     }
 
     public void receiveOnPlayerTurnStart() {
