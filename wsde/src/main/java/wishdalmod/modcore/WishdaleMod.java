@@ -261,7 +261,7 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
                     if (AbstractDungeon.monsterRng.random(1, 100) <= 30) {
                         // 再加一个
                         AbstractMonster spine2 = new Bianfu(leftX - 300.F, 0.0F);
-                        spines.usePreBattleAction();
+                        spine2.usePreBattleAction();
                         AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(spine2, false));
                     }
                 }
