@@ -13,12 +13,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import wishdalmod.actions.BaozhaAction;
 import wishdalmod.cards.*;
 import wishdalmod.characters.EW;
 import wishdalmod.helpers.ImageHelper;
 import wishdalmod.helpers.ModConfig;
+import wishdalmod.monsters.Bianfu;
+import wishdalmod.monsters.Kongkazi;
 import wishdalmod.relics.*;
 import wishdalmod.util.BoomIcon;
 
@@ -57,6 +60,8 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
     public void receivePostInitialize() {
         ModConfig.initModConfigMenu();
         ImageHelper.initThis();
+        receiveEditMonsters();
+
     }
     public WishdaleMod() {
         BaseMod.subscribe(this);
@@ -69,11 +74,19 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
             AbstractDungeon.actionManager.addToTop(new BaozhaAction());
         }
     }
-
     public static void initialize() {
         new WishdaleMod();
     }
-//注册
+    //怪物
+    public void receiveEditMonsters() {
+        BaseMod.addMonster("WishdaleMod:Bianfu", Bianfu.NAME, () -> new Bianfu(0.0F, 0.0F));
+        BaseMod.addMonsterEncounter("TheCity", new MonsterInfo("WishdaleMod:Bianfu", 10.0F));
+        BaseMod.addStrongMonsterEncounter("TheCity", new MonsterInfo("WishdaleMod:Bianfu", 10.0F));
+        BaseMod.addMonster("WishdaleMod:Kongkazi", Kongkazi.NAME, () -> new Kongkazi(0.0F, 0.0F));
+        BaseMod.addMonsterEncounter("TheCity", new MonsterInfo("WishdaleMod:Kongkazi", 0.0F));
+    }
+
+    //注册
     public void receiveEditCards() {
         CustomIconHelper.addCustomIcon(BoomIcon.get());
         BaseMod.addCard(new Strike());//打击
@@ -131,6 +144,10 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCard(new Hunlingronglu());//魂灵熔炉
         BaseMod.addCard(new Saileiya());//塞雷娅
         BaseMod.addCard(new Xiuzheng());//修整
+        //BaseMod.addCard(new 预设());//预设
+        //BaseMod.addCard(new 预设());//预设
+        //BaseMod.addCard(new 预设());//预设
+        //BaseMod.addCard(new 预设());//预设
 
         //能力
         BaseMod.addCard(new Hunlingpingzhang());//魂灵屏障
@@ -146,7 +163,11 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addCard(new Hunlingqiyue());//魂灵契约
         BaseMod.addCard(new Yanchenhuanrao());//烟雾缭绕（烟尘环绕
         BaseMod.addCard(new Houqinbaozhang());//后勤保障
-
+        //BaseMod.addCard(new 预设());//预设
+        //BaseMod.addCard(new 预设());//预设
+        //BaseMod.addCard(new 预设());//预设
+        //BaseMod.addCard(new 预设());//预设
+        //BaseMod.addCard(new 预设());//预设
 
         //特殊
         BaseMod.addCard(new ZhanshiBOM());//展示简单
@@ -186,6 +207,8 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.loadCustomStringsFile(RelicStrings.class, "wishdaleResources/localization/" + lang + "/relics.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "wishdaleResources/localization/" + lang + "/powers.json");
         BaseMod.loadCustomStringsFile(UIStrings.class, "wishdaleResources/localization/" + lang + "/ui.json");
+        BaseMod.loadCustomStringsFile(MonsterStrings.class, "wishdaleResources/localization/" + lang + "/monsters.json");
+
     }
 
     public void receiveEditRelics() {
@@ -202,6 +225,7 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addRelicToCustomPool(new Guowangdeyanshen(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new Zhuwangdeguanmian(), WISHDALE_RED);
         BaseMod.addRelicToCustomPool(new GuowangdeHujie(), WISHDALE_RED);
+        BaseMod.addRelicToCustomPool(new Cixiang(), WISHDALE_RED);
 
     }
     public void receiveAddAudio() {

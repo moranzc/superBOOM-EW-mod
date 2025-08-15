@@ -92,7 +92,11 @@
   "wishdalemod:Zhongyanluomu": {
     "NAME": "终焉落幕",
     "DESCRIPTION": "wishdalemod:终焉 NL 让敌人在 !M! 回合后爆炸 NL 消耗 ",
-    "UPGRADE_DESCRIPTION": "我的抽弃牌堆必须是 *萨卡兹粗口 的 #r空的!"
+    "UPGRADE_DESCRIPTION": "我的抽弃牌堆必须是 *萨卡兹粗口 的 #r空的!",
+    "EXTENDED_DESCRIPTION": [
+      "需要消耗堆至少 !M! 张牌才能使用。消耗所有牌。让所有敌人爆炸。消耗",
+      "消耗堆数量不足"
+    ]
   },
   "wishdalemod:Sihunlingdeyuxi": {
     "NAME": "死魂灵的余息",
@@ -275,9 +279,10 @@
   },
   "wishdalemod:Mositima": {
     "NAME": "助战:莫斯提马",
-    "DESCRIPTION": "腾跃",
+    "DESCRIPTION": "在本回合结束后，额外获得一回合。在本回合 保留 你的手牌和多余的能量 。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
-      "在本回合结束后，额外获得一回合。 NL 结束你的回合。 NL 消耗 。"
+      "在本回合结束后，额外获得一回合。在本回合 保留 你的手牌。 本回合多余的能量可以留到下一回合 。 NL 消耗 。",
+      "获得1层 wishdalemod:序时之匙 。每回合开始时，记录并延迟你受到的伤害 。 NL 消耗 。"
     ]
   },
   "wishdalemod:Shunshen": {
@@ -394,7 +399,7 @@
   },
   "wishdalemod:Laoyin": {
     "NAME": "烙印",
-    "DESCRIPTION": "!D! 伤， !M! wishdalemod:残影",
+    "DESCRIPTION": "1 伤， !M! wishdalemod:残影",
     "EXTENDED_DESCRIPTION": [
       "给予对方 !M! 层 wishdalemod:残影"
     ]
@@ -420,8 +425,8 @@
   },
   "wishdalemod:Shengyuheiye": {
     "NAME": "生于黑夜",
-    "DESCRIPTION": "根据你的消耗堆中牌的数量造成伤害，每张牌造成 3 点伤害。 !D! 伤",
-    "UPGRADE_DESCRIPTION": "根据你的消耗堆中牌的数量造成伤害，每张牌造成  !D! 点伤害。"
+    "DESCRIPTION": "根据你的消耗堆中牌的数量造成伤害，每张牌造成 3 点伤害。 !D! 伤。",
+    "UPGRADE_DESCRIPTION": "根据你的消耗堆中牌的数量造成伤害，每张牌造成 4 点伤害。 !D! 伤。"
   },
   "wishdalemod:Xiuzheng": {
     "NAME": "修整",

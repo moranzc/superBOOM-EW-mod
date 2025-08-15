@@ -108,5 +108,24 @@
     "DESCRIPTIONS": [
       "当你受到伤害时，优先消耗你的格挡，然后由祖宗承受剩余伤害"
     ]
+  },
+  "wishdalemod:MositimaPower": {
+    "NAME": "序时之匙",
+    "DESCRIPTIONS": [
+      "延迟伤害：",
+      "即将受到的延迟伤害已全部结算。"
+    ]
+  },
+  "wishdalemod:BianfuPower": {
+    "NAME": "受符",
+    "DESCRIPTIONS": [
+      "每回合结束时收到12点伤害，失去2点生命值。无法打出技能牌。攻击 造成的伤害增加 50%。便符死亡时移除此效果。"
+    ]
+  },
+  "wishdalemod:NiandaiyinhenPower": {
+    "NAME": "年代印痕",
+    "DESCRIPTIONS": [
+      "每回合开始时随机使一张技能牌费用增加 ",
+    ]
   }
 }

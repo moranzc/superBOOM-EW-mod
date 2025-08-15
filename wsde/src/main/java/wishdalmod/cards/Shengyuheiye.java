@@ -25,7 +25,7 @@ public class Shengyuheiye extends CustomCard {
 
     public Shengyuheiye() {
         super(ID, NAME, IMG_PATH, 0, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = 3;
+        this.baseDamage = 0;
         this.magicNumber = this.baseMagicNumber = 3;
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -39,7 +39,7 @@ public class Shengyuheiye extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(1);
+            this.upgradeMagicNumber(1);
             this.initializeDescription();
         }
     }

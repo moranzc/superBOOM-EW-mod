@@ -7,4 +7,5 @@ public class ModHelper {
     public static String getCardImagePath(String id) {
         return "wishdaleResources/images/cards/" + id + ".png";
     }
+
 }

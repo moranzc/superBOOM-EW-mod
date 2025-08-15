@@ -66,5 +66,9 @@
   {
     "NAMES": ["Draw Card"],
     "DESCRIPTION": "White: 30% NL Blue: 40% NL Gold: 20% NL Upgraded Gold: 7% NL 66 HP Ancestor: 2% NL Hidden: 1%"
+  },
+  {
+    "NAMES": ["荒时之锁"],
+    "DESCRIPTION": "封存你所受的伤害2回合，两回合后释放"
   }
 ]

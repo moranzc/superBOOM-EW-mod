@@ -28,8 +28,8 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import wishdalmod.cards.Dindianqingsuan;
-import wishdalmod.cards.Strike;
+import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
+import wishdalmod.cards.*;
 import wishdalmod.helpers.CanyingXiaoguo;
 import wishdalmod.modcore.WishdaleMod;
 import wishdalmod.powers.ZuzongPower;
@@ -39,6 +39,10 @@ import wishdalmod.screen.TypeSelectScreen;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static wishdalmod.actions.RandomizeDrawCardCostAction.cardsExcept;
 
 
 // 继承CustomPlayer类
@@ -153,6 +157,13 @@ public class EW extends CustomPlayer {
         super.useCard(c, monster, energyOnUse);
     }
 
+    private boolean containCard(String id,ArrayList<String> IDS) {
+        for (String ID : IDS) {
+            if (ID.equals(id))
+                return true;
+        }
+        return false;
+    }
     // 初始卡组的ID，可直接写或引用变量
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();

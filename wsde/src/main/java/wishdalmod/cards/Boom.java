@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.TheBombPower;
 import wishdalmod.helpers.ModHelper;
 import wishdalmod.screen.TypeSelectScreen;
 
+import static com.megacrit.cardcrawl.cards.AbstractCard.CardColor.COLORLESS;
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
 public class Boom extends CustomCard {
@@ -20,8 +21,8 @@ public class Boom extends CustomCard {
     private static final String IMG_PATH = ModHelper.getCardImagePath("Boom");
     private static final String DESCRIPTION = TypeSelectScreen.getType() == 0 ? CARD_STRINGS.DESCRIPTION : CARD_STRINGS.EXTENDED_DESCRIPTION[0];
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardColor COLOR = WISHDALE_RED;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardColor COLOR = TypeSelectScreen.getType() == 0 ? COLORLESS : WISHDALE_RED;
+    private static final CardRarity RARITY = TypeSelectScreen.getType() == 0 ? CardRarity.SPECIAL : CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     public Boom() {
         super(ID, NAME, IMG_PATH, 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);

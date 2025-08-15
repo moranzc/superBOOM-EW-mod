@@ -108,5 +108,13 @@
     "DESCRIPTIONS": [
       "When you take damage, your Block is consumed first, then the ancestor takes the remaining damage"
     ]
+  },
+  "wishdalemod:MositimaPower": {
+    "NAME": "荒时之锁",
+    "DESCRIPTIONS": [
+      "你将要失去生命值时，将其延迟2回合后结算，每次叠加额外记录一份（当前叠加层数：",
+      "）。当前时停伤害数：",
+      "。"
+    ]
   }
 }

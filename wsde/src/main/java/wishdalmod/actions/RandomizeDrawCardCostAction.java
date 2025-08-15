@@ -35,7 +35,7 @@ public class RandomizeDrawCardCostAction
         }
         this.isDone = true;
     }
-    private static final ArrayList<String> cardsExcept = new ArrayList<>();
+    public static final ArrayList<String> cardsExcept = new ArrayList<>();
     static {
         cardsExcept.add(Shefu.ID);
         cardsExcept.add(Baolieliming.ID);
