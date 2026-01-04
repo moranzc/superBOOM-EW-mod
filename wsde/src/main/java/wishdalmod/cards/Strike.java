@@ -13,6 +13,7 @@ import wishdalmod.characters.EW.PlayerColorEnum;
 import wishdalmod.helpers.ModHelper;
 import wishdalmod.screen.TypeSelectScreen;
 
+import java.util.Random;  // 需要导入Random类
 
 public class Strike extends CustomCard {
     public static final String ID = ModHelper.makePath("Strike");
@@ -22,6 +23,7 @@ public class Strike extends CustomCard {
     private static final AbstractCard.CardColor COLOR = PlayerColorEnum.WISHDALE_RED;
     private static final AbstractCard.CardRarity RARITY = CardRarity.BASIC;
     private static final AbstractCard.CardTarget TARGET = CardTarget.ENEMY;
+    private static final Random random = new Random();
 
     public Strike() {
         super(ID, CARD_STRINGS.NAME, IMG_PATH, 1, TypeSelectScreen.getType() == 0 ? CARD_STRINGS.DESCRIPTION : CARD_STRINGS.EXTENDED_DESCRIPTION[0], TYPE, COLOR, RARITY, TARGET);
@@ -43,8 +45,12 @@ public class Strike extends CustomCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (random.nextFloat() < 0.2f) {
+            CardCrawlGame.sound.play("作战中3.wav");
+        }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
     }
+
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
@@ -57,4 +63,3 @@ public class Strike extends CustomCard {
         }
     }
 }
-

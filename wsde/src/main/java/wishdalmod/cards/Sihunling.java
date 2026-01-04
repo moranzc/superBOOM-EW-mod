@@ -42,6 +42,7 @@ public class Sihunling extends CustomCard {
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+        CardCrawlGame.sound.play("Baolielimingyinxiao");
     }
     public void upgrade() {
         if (!this.upgraded) {

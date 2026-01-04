@@ -27,7 +27,7 @@ public class Baolieliming extends CustomCard {
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public Baolieliming() {
-        super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 5 : 4, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH,5, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = 6;
         this.magicNumber = this.baseMagicNumber;
         this.cardsToPreview = new Sihunling();
@@ -37,7 +37,7 @@ public class Baolieliming extends CustomCard {
         AbstractDungeon.actionManager.addToTop(new SummonZuzongAction(15, 0, 0));
         AbstractDungeon.actionManager.addToTop(new SummonZuzongAction(15, 0, 0));
         this.addToBot(new ApplyPowerAction(p, p, new BaolielimingPower(p, this.magicNumber), this.magicNumber));
-        CardCrawlGame.sound.play("BOOM");
+        CardCrawlGame.sound.play("Zhenkelian");
     }
     public void changeType(boolean hard) {
         if (!hard) {
@@ -52,9 +52,9 @@ public class Baolieliming extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             if (TypeSelectScreen.getType() == 0) {
-                this.upgradeBaseCost(3);
-            } else {
                 this.upgradeBaseCost(4);
+            } else {
+                this.upgradeBaseCost(3);
             }
             this.initializeDescription();
         }

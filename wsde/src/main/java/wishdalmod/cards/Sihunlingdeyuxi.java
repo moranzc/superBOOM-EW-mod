@@ -11,6 +11,8 @@ import wishdalmod.actions.SummonZuzongAction;
 import wishdalmod.helpers.ModHelper;
 import wishdalmod.screen.TypeSelectScreen;
 
+import java.util.Random;
+
 import static wishdalmod.characters.EW.PlayerColorEnum.WISHDALE_RED;
 
 public class Sihunlingdeyuxi extends CustomCard {
@@ -23,6 +25,8 @@ public class Sihunlingdeyuxi extends CustomCard {
     private static final CardColor COLOR = WISHDALE_RED;
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
+    private static final Random random = new Random();
+
     public Sihunlingdeyuxi() {
         super(ID, NAME, IMG_PATH, TypeSelectScreen.getType() == 0 ? 3 : 2, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         updateCardAttributes();
@@ -37,6 +41,9 @@ public class Sihunlingdeyuxi extends CustomCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (random.nextFloat() < 0.5f) {
+            CardCrawlGame.sound.play("作战中3.wav");
+        }
         if (TypeSelectScreen.getType() == 0) {
             AbstractDungeon.actionManager.addToTop(new SummonZuzongAction(15, 0, 0));
         } else {
