@@ -74,13 +74,7 @@ public class YanchenhuanraoPower extends AbstractPower {
             ));
         }
         AbstractDungeon.effectList.add(new GraySmokeEffect(owner.hb.cX, owner.hb.cY));
-        addToBot(new GainBlockAction(owner, owner, amount));
-        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            if (!m.isDeadOrEscaped()) {
-                int block = calculateBlockForTarget(m);
-                addToBot(new GainBlockAction(m, owner, block));
-            }
-        }
+
     }
     public void update(int slot) {
         super.update(slot);

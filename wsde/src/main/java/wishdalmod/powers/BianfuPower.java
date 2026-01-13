@@ -88,34 +88,23 @@ public class BianfuPower extends AbstractPower {
         }
     }
 
-    /**
-     * 判断是否可以触发恐卡兹和年代印痕
-     */
     private boolean canTriggerEffect() {
-        // 战斗已结束则不触发
         if (AbstractDungeon.getCurrRoom().isBattleEnding()) {
             return false;
         }
-        // 计算存活怪物数量
         long aliveCount = AbstractDungeon.getMonsters().monsters.stream()
                 .filter(m -> !m.isDeadOrEscaped())
                 .count();
-        // 如果只剩下一个怪物（便符本身），不触发
         if (aliveCount <= 1 && source != null && !source.isDeadOrEscaped()) {
             return false;
         }
         return true;
     }
 
-    /**
-     * 触发效果：添加年代印痕并召唤恐卡兹
-     */
     private void triggerEffect(int times) {
         for (int i = 0; i < times; i++) {
-            // 给玩家添加年代印痕（新版构造函数）
             addToBot(new ApplyPowerAction(owner, owner, new NiandaiyinhenPower(owner)));
 
-            // 生成恐卡兹位置
             float spawnX, spawnY;
             if (bianfuDeathX > 0 && bianfuDeathY > 0) {
                 spawnX = bianfuDeathX;
@@ -125,11 +114,8 @@ public class BianfuPower extends AbstractPower {
                 spawnY = Settings.HEIGHT * 0.3f;
             }
 
-            // 添加随机偏移防止重叠
             spawnX += MathUtils.random(-50f, 50f);
             spawnY += MathUtils.random(-20f, 20f);
-
-            // 限制范围
             float minX = Settings.WIDTH * 0.1f;
             float maxX = Settings.WIDTH * 0.9f;
             float minY = Settings.HEIGHT * 0.2f;
@@ -137,7 +123,6 @@ public class BianfuPower extends AbstractPower {
             spawnX = MathUtils.clamp(spawnX, minX, maxX);
             spawnY = MathUtils.clamp(spawnY, minY, maxY);
 
-            // 召唤恐卡兹
             Kongkazi kongkazi = new Kongkazi(spawnX, spawnY);
             AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(kongkazi, true));
         }

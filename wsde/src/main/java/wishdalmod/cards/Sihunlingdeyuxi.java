@@ -41,7 +41,8 @@ public class Sihunlingdeyuxi extends CustomCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (random.nextFloat() < 0.5f) {
+        CardCrawlGame.sound.play("祖宗落地音效");
+        if (random.nextFloat() < 0.1f) {
             CardCrawlGame.sound.play("作战中3.wav");
         }
         if (TypeSelectScreen.getType() == 0) {

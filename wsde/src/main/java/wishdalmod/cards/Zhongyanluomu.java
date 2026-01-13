@@ -24,7 +24,7 @@ public class Zhongyanluomu extends CustomCard {
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = ModHelper.getCardImagePath("Zhongyanluomu");
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = WISHDALE_RED;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -54,7 +54,6 @@ public class Zhongyanluomu extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (TypeSelectScreen.getType() == 0) {
-            // 模式0：先消耗所有牌
             for (AbstractCard c : p.hand.group.toArray(new AbstractCard[0])) {
                 if (c != this) {
                     addToBot(new ExhaustSpecificCardAction(c, p.hand));
@@ -66,17 +65,10 @@ public class Zhongyanluomu extends CustomCard {
             for (AbstractCard c : p.discardPile.group.toArray(new AbstractCard[0])) {
                 addToBot(new ExhaustSpecificCardAction(c, p.discardPile));
             }
-
-            // 再斩杀所有敌人
-            for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                mo.currentHealth = 1;
-                mo.damage(new DamageInfo(mo, 999999, DamageInfo.DamageType.HP_LOSS));
-                addToBot(new VFXAction(new ExplosionSmallEffect(mo.hb.cX, mo.hb.cY), 0.1F));
-            }
+            addToBot(new ApplyPowerAction(p, p, new Yishujiushibaozha(p,1), 0));
 
         } else {
-            // 模式1：延迟爆炸
-            addToBot(new ApplyPowerAction(p, p, new Yishujiushibaozha(p, this.magicNumber), 0));
+            addToBot(new ApplyPowerAction(p, p, new Yishujiushibaozha(p, 2), 0));
         }
     }
 
@@ -122,7 +114,7 @@ public class Zhongyanluomu extends CustomCard {
                 this.upgradeBaseCost(0);
             } else {
                 upgradeMagicNumber(-1);
-                this.rawDescription = CARD_STRINGS.EXTENDED_DESCRIPTION[1];
+                this.rawDescription = CARD_STRINGS.DESCRIPTION;
             }
             this.initializeDescription();
         }

@@ -42,7 +42,7 @@ public class Defend extends CustomCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (random.nextFloat() < 0.3f) {
+        if (random.nextFloat() < 0.1f) {
             CardCrawlGame.sound.play("作战中1.wav");
         }
         this.addToBot(new GainBlockAction(p, p, this.block));

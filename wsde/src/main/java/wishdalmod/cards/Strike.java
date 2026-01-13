@@ -45,7 +45,8 @@ public class Strike extends CustomCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (random.nextFloat() < 0.2f) {
+        CardCrawlGame.sound.play("打击音效");
+        if (random.nextFloat() < 0.1f) {
             CardCrawlGame.sound.play("作战中3.wav");
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));

@@ -1,25 +1,25 @@
 {
   "wishdalemod:Wishdalebadge": {
     "NAME": "Vishdal Badge",
-    "FLAVOR": "Issued to Operator performing grenadier duties. This certifies the above.",
+    "FLAVOR": "Issued to an Operator performing grenadier duties. This certifies the above.",
     "DESCRIPTIONS": [
-      "The first Attack card played each turn is played twice, with the second instance dealing half damage"
+      "The first Attack card played each turn is played twice, with the second instance dealing half damage."
     ]
   },
   "wishdalemod:WishdalebadgePingheng": {
     "NAME": "Vishdal Badge",
-    "FLAVOR": "Issued to Operator performing grenadier duties. This certifies the above.",
+    "FLAVOR": "Issued to an Operator performing grenadier duties. This certifies the above.",
     "DESCRIPTIONS": [
-      "The first Attack card played each combat is played twice, with the second instance dealing half damage"
+      "The first Attack card played each combat is played twice, with the second instance dealing half damage."
     ]
   },
   "wishdalemod:AncestralLauncher": {
-    "NAME": "Ancestor Launcher",
-    "FLAVOR": "Go forth and explode more violently!",
+    "NAME": "\"Ancestral Launcher\"",
+    "FLAVOR": "Go forth, and explode even more violently!",
     "DESCRIPTIONS": [
-      "Replaces #gVishdal Badge",
-      "The first Attack card played each turn is played three times, with subsequent instances dealing half damage",
-      "The first Attack card played each turn is played twice, with the second instance dealing half damage"
+      "Replaces #gVishdal Badge.",
+      "The first Attack card played each turn is played three times, with the latter two instances dealing half damage.",
+      "The first Attack card played each turn is played twice, with the second instance dealing half damage."
     ]
   },
   "wishdalemod:GoldBoneDice": {
@@ -32,18 +32,18 @@
   },
   "wishdalemod:RoaringHand": {
     "NAME": "Roaring Hand",
-    "FLAVOR": "Strikes true and shakes the earth.",
+    "FLAVOR": "Strike the target. Shake the earth.",
     "DESCRIPTIONS": [
-      "Gain temporary Strength that increases by 1 (up to 15) for each consecutive Attack card played. Resets if no Attack cards are played in a turn"
+      "Each consecutive Attack card played grants increasing temporary Strength, starting from 1, up to a maximum of 15. If no Attack cards are played in a turn, all bonuses are lost."
     ]
   },
   "wishdalemod:AncientTreeFruit": {
     "NAME": "Ancient Arbor Fruit",
-    "FLAVOR": "The Sami prayed upon these seeds, buried in snow. When the tree bore fruit, they took the first four as offerings, leaving the smallest for future generations.",
+    "FLAVOR": "The Sami prayed upon the seeds and buried them beneath the snow. When the tree bore fruit, the first four were taken, the smallest left to continue the wish. The rest were offered in tribute to seek an answer.",
     "DESCRIPTIONS": [
-      "Immediately gain three random trinkets",
-      "Branches sway...",
-      "Lost within",
+      "Immediately gain three random trinkets.",
+      "The branches sway...",
+      "Lost within.",
       "Close"
     ]
   },
@@ -52,53 +52,61 @@
     "FLAVOR": "Trash!",
     "DESCRIPTIONS": [
       "What tier are you?",
-      "@Believe in the Martial Soul True Form!@ NL @All troops attack!@ NL @I'll bite you to death!@"
+      "@Believe in the Martial Soul True Form!@ NL @All troops, charge!@ NL @I'll bite you to death!@"
     ]
   },
   "wishdalemod:HotWaterBottle": {
     "NAME": "Hot Water Bottle",
-    "FLAVOR": "The same model used in Rhodes Island offices. Someone frequently uses it to cook instant noodles late at night - not the healthiest habit...",
+    "FLAVOR": "The same model used in Rhodes Island offices. Someone often uses it late at night to cook instant noodles — not the healthiest habit...",
     "DESCRIPTIONS": [
-      "When picked up, increase your Max HP by 2 and gain 15 #yGold"
+      "When picked up, increase your Max HP by 2 and gain 15 #yGold."
     ]
   },
   "wishdalemod:Guowangdexinqiang": {
     "NAME": "King's New Gun",
-    "FLAVOR": "Beautiful wishes in desperate times can bring hope, even when they're not the truth.",
+    "FLAVOR": "Beautiful wishes in desperate times can bring hope, even when they are not the truth.",
     "DESCRIPTIONS": [
-      "When your HP is at or below #b10% or #b10, gain #b",
-      " additional #yDexterity."
+      "When your HP is at or below #b10% or #b10, gain an additional #b",
+      " #yDexterity."
     ]
   },
   "wishdalemod:Guowangdekaijia": {
     "NAME": "King's Armor",
-    "FLAVOR": "The palace square once displayed golden shrines and exotic treasures for all to see. The memory still brings sorrow, alas!",
+    "FLAVOR": "Once upon the palace square stood golden shrines and treasures from all directions. Remembering them now still brings sorrow. Alas.",
     "DESCRIPTIONS": [
-      "At start of combat, gain Block equal to missing HP and #b1 stack of #yAfterimage. After combat, lose 3 HP (cannot die) and gain #b1 #yArtifact"
+      "At the start of combat, gain Block equal to your missing HP and #b1 stack of #yAfterimage. After combat, lose 3 HP (cannot die) and gain #b1 #yArtifact."
     ]
   },
   "wishdalemod:Guowangdeyanshen": {
     "NAME": "King's Extension",
-    "FLAVOR": "Grow, face reality, arm yourself with resilience and determination, arm your friends with tolerance and mercy.",
+    "FLAVOR": "Grow. Face reality. Arm yourself with resilience and resolve, and arm your allies with tolerance and mercy.",
     "DESCRIPTIONS": [
       "When your HP is at or below #b10% or #b10, gain [E] every #b",
       " turns."
     ]
   },
   "wishdalemod:Zhuwangdeguanmian": {
-    "NAME": "Crown of the Monarchs",
-    "FLAVOR": "Oh nameless kings, though your kingdoms have fallen, may you still protect Iberia.",
+    "NAME": "Crown of Many Kings",
+    "FLAVOR": "Oh nameless kings — though your kingdoms have fallen, may you still protect Iberia.",
     "DESCRIPTIONS": [
-      "When your HP is at or below #b10% or #b10, gain #b",
-      " additional #yStrength. If you have 3+ King's Relics, gain ",
-      " #yStrength instead"
+      "When your HP is at or below #b10% or #b10, gain an additional #b",
+      " #yStrength. If you have 3 or more King's Relics, gain",
+      " #yStrength instead."
     ]
   },
   "wishdalemod:GuowangdeHujie": {
     "NAME": "King's Protective Ring",
-    "FLAVOR": "The Deep Sea Cult was not formed in a day. Long lurking between sea and land, they plot the calamity later called the 'Great Silence'.",
+    "FLAVOR": "The Deep Sea Cult was not formed in a day. Long lurking between sea and land, they plotted the calamity later known as the 'Great Silence'.",
     "DESCRIPTIONS": [
-      "Max HP becomes #b1, recording the amount reduced. When taking #rfatal damage, consume the recorded amount to negate it. Resets at start of combat."
+      "Max HP becomes #b1, recording the amount reduced. When taking #rfatal damage, consume the recorded amount to negate it. Resets at the start of each combat."
+    ]
+  },
+  "wishdalemod:Cixiang": {
+    "NAME": "Spike Crate",
+    "FLAVOR": "Its surface is covered in razor-sharp spikes — even the air around it feels dangerous.",
+    "DESCRIPTIONS": [
+      "At the start of each turn, gain [E]. All enemies start combat with #b",
+      " #yThorns."
     ]
   }
 }

@@ -16,27 +16,27 @@
   "wishdalemod:YinbiPower": {
     "NAME": "Concealment",
     "DESCRIPTIONS": [
-      "Lose all #yIntangible when playing an Attack card"
+      "Lose all #yIntangible when playing an Attack card."
     ]
   },
   "wishdalemod:BianxieshibujizhanPower": {
     "NAME": "Portable Supply Station",
     "DESCRIPTIONS": [
       "Gain #b",
-      " *Energy each time you shuffle your draw pile"
+      " *Energy each time you shuffle your draw pile."
     ]
   },
   "wishdalemod:BianxieshibujizhanPinghengPower": {
     "NAME": "Portable Supply Station",
     "DESCRIPTIONS": [
       "Gain #b",
-      " *Energy every 3 turns"
+      " *Energy every 3 turns."
     ]
   },
   "wishdalemod:Lei": {
     "NAME": "Exhaustion",
     "DESCRIPTIONS": [
-      "Lose 2 energy per turn"
+      "Lose 2 Energy per turn."
     ]
   },
   "wishdalemod:Canying": {
@@ -54,7 +54,7 @@
   "wishdalemod:SpiritArmorPower": {
     "NAME": "Soulbound Armor",
     "DESCRIPTIONS": [
-      "Reduces each instance of HP loss by #b1"
+      "Reduces each instance of HP loss by #b1."
     ]
   },
   "wishdalemod:ShijuexianjingPower": {
@@ -66,7 +66,7 @@
   "wishdalemod:BianyuanxingzhePower": {
     "NAME": "Edgewalker",
     "DESCRIPTIONS": [
-      "At the start and end of turn, gain #b1 Block. Whenever you play a card, gain #b1 Block. Increase Block gained from cards by #b1"
+      "At the start and end of turn, gain #b1 Block. Whenever you play a card, gain #b1 Block. Increase Block gained from cards by #b1."
     ]
   },
   "wishdalemod:HunlingqiyuePower": {
@@ -106,15 +106,26 @@
   "wishdalemod:ZuzongPower": {
     "NAME": "Camouflage",
     "DESCRIPTIONS": [
-      "When you take damage, your Block is consumed first, then the ancestor takes the remaining damage"
+      "When you take damage, your Block is consumed first, then the ancestor takes the remaining damage."
     ]
   },
   "wishdalemod:MositimaPower": {
-    "NAME": "荒时之锁",
+    "NAME": "Chronological Key",
     "DESCRIPTIONS": [
-      "你将要失去生命值时，将其延迟2回合后结算，每次叠加额外记录一份（当前叠加层数：",
-      "）。当前时停伤害数：",
-      "。"
+      "Delayed Damage: ",
+      "All pending delayed damage has been resolved."
+    ]
+  },
+  "wishdalemod:BianfuPower": {
+    "NAME": "Spirit Talisman",
+    "DESCRIPTIONS": [
+      "At the end of each turn, take 12 damage and lose 2 Max HP. Cannot play Skill cards. Attack damage dealt increased by 50%. This effect is removed when the Spirit Talisman dies."
+    ]
+  },
+  "wishdalemod:NiandaiyinhenPower": {
+    "NAME": "Era Imprint",
+    "DESCRIPTIONS": [
+      "At the start of each turn, randomly increase the cost of a Skill card by 1."
     ]
   }
 }

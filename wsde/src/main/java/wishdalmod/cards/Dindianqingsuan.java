@@ -49,6 +49,7 @@ public class Dindianqingsuan extends CustomCard {
         this.initializeDescription();
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.play("一技能音效");
         if (random.nextFloat() < 0.5f) {
             CardCrawlGame.sound.play("作战中4.wav");
         }

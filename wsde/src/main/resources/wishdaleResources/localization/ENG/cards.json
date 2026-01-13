@@ -15,16 +15,16 @@
   },
   "wishdalemod:Zhishixuebao": {
     "NAME": "Knowledge Overload",
-    "DESCRIPTION": " !M! Str  NL  !M! Dex  NL  wishdalemod:Fatigue ",
+    "DESCRIPTION": " !M! Str NL !M! Dex NL wishdalemod:Exhaustion",
     "EXTENDED_DESCRIPTION": [
-      "Gain !M! Strength. NL Gain !M! Dexterity. NL wishdalemod:Fatigue."
+      "Gain !M! Strength. NL Gain !M! Dexterity. NL wishdalemod:Exhaustion."
     ]
   },
   "wishdalemod:Dailizhihui": {
     "NAME": "Proxy Command",
     "DESCRIPTION": "Play all cards in your hand randomly.",
     "EXTENDED_DESCRIPTION": [
-      "Lose 6 HP. NL Gain 3 Regeneration. NL You cannot draw cards this turn. NL Play all cards in your hand randomly."
+      "Lose 6 HP. NL Gain 3 Regen. NL You cannot draw cards this turn. NL Play all cards in your hand randomly."
     ]
   },
   "wishdalemod:Boom": {
@@ -43,75 +43,79 @@
   },
   "wishdalemod:Lingguangyishan": {
     "NAME": "Flash of Insight",
-    "DESCRIPTION": " wishdalemod:Silver Silver Silver Silver Silver NL ZHS wishdalemod:Gates NL Ethereal NL Exhaust  ",
-    "UPGRADE_DESCRIPTION": " wishdalemod:Gold Gold Gold Gold Gold NL ZHS wishdalemod:Gates NL Exhaust ",
+    "DESCRIPTION": " wishdalemod:Silver Silver Silver Silver Silver NL wishdalemod:Gates NL Ethereal NL Exhaust",
+    "UPGRADE_DESCRIPTION": " wishdalemod:Gold Gold Gold Gold Gold NL wishdalemod:Gates NL Exhaust",
     "EXTENDED_DESCRIPTION": [
-      "Add a random Gold card to your hand. NL This card costs 0 this turn. NL ZHS wishdalemod:Gates NL Ethereal NL Exhaust NL We kept the fun of drawing cards so you know you're playing the EWmod.",
-      "Add a random Gold card to your hand. NL This card costs 0 this turn. NL ZHS wishdalemod:Gates NL Exhaust NL We kept the fun of drawing cards so you know you're playing the Wishdale mod."
+      "Add a random Gold card to your hand. NL That card costs 0 this turn. NL wishdalemod:Gates NL Ethereal NL Exhaust NL We kept the fun of drawing cards so you know you're playing the EWmod.",
+      "Add a random Gold card to your hand. NL That card costs 0 this turn. NL wishdalemod:Gates NL Exhaust NL We kept the fun of drawing cards so you know you're playing the Wishdale mod."
     ]
   },
   "wishdalemod:Yigongdaishou": {
     "NAME": "Offense as Defense",
-    "DESCRIPTION": "Can only be played if ALL cards in hand are Attacks NL  !D! DMG",
+    "DESCRIPTION": "Can only be played if ALL cards in hand are Attacks NL !D! DMG",
     "EXTENDED_DESCRIPTION": [
-      "*Sarkaz Expletive* You still have non-Attack cards in hand, are you blind?",
+      "*Sarkaz Expletive* You still have non-Attack cards in your hand, are you blind?",
       "Can only be played if every card in your hand is an Attack. NL Deal !D! damage. Gain !B! Block."
     ]
   },
   "wishdalemod:Zidongsheji": {
     "NAME": "Auto-Fire",
-    "DESCRIPTION": "Unplayable  NL When drawn, randomly deal !D! DMG and discard.",
+    "DESCRIPTION": "Unplayable. NL When drawn, randomly deal !D! DMG and Discard.",
     "EXTENDED_DESCRIPTION": [
-      "Unplayable. NL When drawn, randomly deal !D! damage to an enemy and discard this card."
+      "Unplayable. NL When drawn, randomly deal !D! damage to an enemy and Discard."
     ]
   },
   "wishdalemod:Wuxianhuoli": {
     "NAME": "Unlimited Firepower",
-    "DESCRIPTION": " !D! X !M!  NL Add a copy to discard pile NL Exhaust ",
+    "DESCRIPTION": " !D! X !M! NL Add a copy to discard pile NL Exhaust",
     "EXTENDED_DESCRIPTION": [
       "Deal !D! damage to an enemy !M! times. NL Add a copy of this card to your discard pile."
     ]
   },
   "wishdalemod:Shefu": {
     "NAME": "Ambush",
-    "DESCRIPTION": " Retain NL Gain !M! Intangible NL Retain: Cost reduced by 1 ",
-    "UPGRADE_DESCRIPTION": " Innate  NL Retain NL Gain !M! Intangible  NL This card's cost is reduced by 1 each time it is Retained.",
+    "DESCRIPTION": " Retain NL Gain !M! Intangible NL Retain: Cost reduced by 1",
+    "UPGRADE_DESCRIPTION": " Innate NL Retain NL Gain !M! Intangible NL This card's cost is reduced by 1 each time it is Retained.",
     "EXTENDED_DESCRIPTION": [
-      " Retain NL Gain !M! Intangible  NL Gain !B! Block NL This card's cost is reduced by 1 each time it is Retained.",
-      " Innate  NL Retain NL Gain !M! Intangible NL Gain !B! Block NL This card's cost is reduced by 1 each time it is Retained."
+      " Retain NL Gain !M! Intangible NL Gain !B! Block NL This card's cost is reduced by 1 each time it is Retained.",
+      " Innate NL Retain NL Gain !M! Intangible NL Gain !B! Block NL This card's cost is reduced by 1 each time it is Retained."
     ]
   },
   "wishdalemod:Baohedaji": {
     "NAME": "Saturation Strike",
-    "DESCRIPTION": "AoE NL  !D! X 5",
+    "DESCRIPTION": "AoE NL !D! X 5",
     "EXTENDED_DESCRIPTION": [
       "Deal !D! damage to ALL enemies 5 times."
     ]
   },
   "wishdalemod:Zhongyanluomu": {
     "NAME": "Final Curtain",
-    "DESCRIPTION": "wishdalemod:Finale NL Cause enemy to explode after !M! turns NL Exhaust ",
-    "UPGRADE_DESCRIPTION": "My draw/discard pile must be *Sarkaz Expletive* empty!"
+    "DESCRIPTION": "wishdalemod:Finale NL Cause ALL enemies to explode after !M! turns NL Exhaust",
+    "UPGRADE_DESCRIPTION": "My draw and discard piles must be *Sarkaz Expletive* #rEMPTY!",
+    "EXTENDED_DESCRIPTION": [
+      "Requires at least !M! cards in your Exhaust pile to use. Exhaust ALL cards. Cause ALL enemies to explode. Exhaust.",
+      "Insufficient cards in Exhaust pile."
+    ]
   },
   "wishdalemod:Sihunlingdeyuxi": {
     "NAME": "Echo of the Death Spirit",
     "DESCRIPTION": "Summon a Spirit Shadow.",
     "EXTENDED_DESCRIPTION": [
-      "Summon a 15 HP wishdalemod:Spirit_Shadow."
+      "Summon a wishdalemod:Spirit_Shadow with 15 HP."
     ]
   },
   "wishdalemod:Shouliudan": {
     "NAME": "Hand Grenade",
-    "DESCRIPTION": "AoE NL  !D! X 2",
+    "DESCRIPTION": "AoE NL !D! X 2",
     "EXTENDED_DESCRIPTION": [
       "Deal !D! damage to ALL enemies twice."
     ]
   },
   "wishdalemod:Kunanchenshuzhe": {
     "NAME": "Suffering Narrator",
-    "DESCRIPTION": "enemies gain 99 Vulnerable and 99 Weak NL Exhaust NL  ZHS wishdalemod:Gates",
+    "DESCRIPTION": "Apply 99 Vulnerable and 99 Weak to ALL enemies NL Exhaust NL wishdalemod:Gates",
     "EXTENDED_DESCRIPTION": [
-      "Apply 99 Vulnerable and 99 Weak to ALL enemies. NL Exhaust. NL ZHS wishdalemod:Gates"
+      "Apply 99 Vulnerable and 99 Weak to ALL enemies. NL Exhaust. NL wishdalemod:Gates."
     ]
   },
   "wishdalemod:Hunlingpingzhang": {
@@ -127,18 +131,18 @@
   },
   "wishdalemod:Chufaqianyanjiang": {
     "NAME": "Pre-Mission Speech",
-    "DESCRIPTION": "Innate NL Gain [E] [E] NL Exhaust "
+    "DESCRIPTION": "Innate NL Gain [E] [E] NL Exhaust"
   },
   "wishdalemod:Baolieliming": {
-    "NAME": "Blazing Dawn",
+    "NAME": "Explosive Dawn",
     "DESCRIPTION": " *丨 wishdalemod:丨 [wishdalmod:tietuIcon] boom [wishdalmod:tietuIcon] wishdalemod:丨丨",
     "EXTENDED_DESCRIPTION": [
-      "Overpowered"
+      "Overpowered."
     ]
   },
   "wishdalemod:Sihunling": {
     "NAME": "Aged Death Spirit Takes Flight",
-    "DESCRIPTION": "Retain. NL AoE !D! DMG NL Exhaust ",
+    "DESCRIPTION": "Retain. NL AoE !D! DMG NL Exhaust",
     "EXTENDED_DESCRIPTION": [
       "Retain. NL Deal !D! damage to ALL enemies. NL Exhaust."
     ]
@@ -149,18 +153,18 @@
   },
   "wishdalemod:Fangshouyibo": {
     "NAME": "All or Nothing",
-    "DESCRIPTION": "Exhaust your draw pile NL Exhaust "
+    "DESCRIPTION": "Exhaust your draw pile NL Exhaust"
   },
   "wishdalemod:Guozaimoshi": {
     "NAME": "Overload Mode",
-    "DESCRIPTION": " !D! DMG, Draw 1, If Attack card drawn, repeat effect ",
+    "DESCRIPTION": " !D! DMG, Draw 1, If drawn card is an Attack, repeat effect",
     "EXTENDED_DESCRIPTION": [
       "Deal !D! damage. NL Draw 1 card. NL If the drawn card is an Attack, repeat this effect."
     ]
   },
   "wishdalemod:Yinbi": {
     "NAME": "Concealment",
-    "DESCRIPTION": " Gain !M! Intangible  NL Lose all Intangible after playing an Attack card."
+    "DESCRIPTION": "Gain !M! Intangible NL Lose all Intangible after playing an Attack card."
   },
   "wishdalemod:Shanguangdan": {
     "NAME": "Flashbang",
@@ -182,7 +186,7 @@
   },
   "wishdalemod:Buwendingbuji": {
     "NAME": "Unstable Supply",
-    "DESCRIPTION": "50% chance to gain [E]  NL Trigger !M! times NL 50% chance to Exhaust ",
+    "DESCRIPTION": "50% chance to gain [E] NL Trigger !M! times NL 50% chance to Exhaust",
     "EXTENDED_DESCRIPTION": [
       "Trigger !M! times. NL 50% chance to gain [E]. NL 50% chance to Exhaust."
     ]
@@ -200,22 +204,22 @@
   },
   "wishdalemod:Zhupaojiwushuzengfudanyuan": {
     "NAME": "Main Cannon-Grade Sorcery Amplifier Unit",
-    "DESCRIPTION": "AoE !D! DMG !M! times NL Infinitely Upgradable  NL (Randomly upgrade one attribute)",
+    "DESCRIPTION": "AoE !D! DMG !M! times NL Infinitely Upgradable NL (Randomly upgrade one attribute)",
     "EXTENDED_DESCRIPTION": [
       "Deal !D! damage to ALL enemies !M! times. NL Can be upgraded multiple times. NL Each upgrade randomly improves one attribute."
     ]
   },
   "wishdalemod:Diedai": {
     "NAME": "Iteration",
-    "DESCRIPTION": " !D! DMG, Increase damage of all *Iteration by !M!  NL Cost reduced by 1 each time played",
+    "DESCRIPTION": " !D! DMG, Increase damage of all *Iteration by !M! NL Cost reduced by 1 each time played",
     "EXTENDED_DESCRIPTION": [
       "Deal !D! damage. NL Each time this card is played during combat, increase its damage by !M! and reduce its cost by 1."
     ]
   },
   "wishdalemod:Chongzu": {
     "NAME": "Restructure",
-    "DESCRIPTION": " !B! BLK  Draw !M! NL Transform into Attack ",
-    "UPGRADE_DESCRIPTION": " !D! DMG  Draw !M! NL Transform into Skill ",
+    "DESCRIPTION": " !B! BLK Draw !M! NL Transform into Attack",
+    "UPGRADE_DESCRIPTION": " !D! DMG Draw !M! NL Transform into Skill",
     "EXTENDED_DESCRIPTION": [
       "Gain !B! Block. NL Draw !M! cards. NL After playing, this card becomes an Attack.",
       "Deal !D! damage. NL Draw !M! cards. NL After playing, this card becomes a Skill."
@@ -223,33 +227,36 @@
   },
   "wishdalemod:Tudou": {
     "NAME": "Potatoes, Potatoes",
-    "DESCRIPTION": "Shuffle a *Irene's Head into draw pile NL Exhaust ",
-    "UPGRADE_DESCRIPTION": "Shuffle a *Irene's Head+ into draw pile NL Exhaust "
+    "DESCRIPTION": "Shuffle a *Irene's Head into draw pile NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Shuffle a *Irene's Head+ into draw pile NL Exhaust"
   },
   "wishdalemod:Yineisidetou": {
     "NAME": "Irene's Head",
-    "DESCRIPTION": "Unplayable  NL When drawn, deal AoE !D! DMG and discard ",
+    "DESCRIPTION": "Unplayable. NL When drawn, deal AoE !D! DMG and Discard",
     "EXTENDED_DESCRIPTION": [
-      "Unplayable. NL When drawn, deal !D! damage to ALL enemies and discard this card."
+      "Unplayable. NL When drawn, deal !D! damage to ALL enemies and Discard."
     ]
   },
   "wishdalemod:Zixuechengcai": {
     "NAME": "Self-Taught",
-    "DESCRIPTION": " !D! DMG NL If Fatal, Upgrade two random cards in your deck NL !M! uses left"
+    "DESCRIPTION": "Deals a constant 12 damage NL If Fatal, Upgrade two random cards in your deck NL !M! uses left",
+    "EXTENDED_DESCRIPTION": [
+      "Deals a constant 18 damage NL If Fatal, Upgrade two random cards in your deck NL !M! uses left"
+    ]
   },
   "wishdalemod:Bianxieshibujizhan": {
     "NAME": "Portable Supply Station",
-    "DESCRIPTION": "Gain [E] each time you shuffle NL Ethereal ",
-    "UPGRADE_DESCRIPTION": "Gain [E] each time you shuffle  ",
+    "DESCRIPTION": "Gain [E] each time you shuffle NL Ethereal",
+    "UPGRADE_DESCRIPTION": "Gain [E] each time you shuffle",
     "EXTENDED_DESCRIPTION": [
       "Gain !M! *Energy every 3 turns."
     ]
   },
   "wishdalemod:Dindianqingsuan": {
     "NAME": "Targeted Settlement",
-    "DESCRIPTION": " !D! X 2, apply !M! wishdalemod:Phantom_Mark",
+    "DESCRIPTION": " !D! X 2, apply !M! wishdalemod:Afterimage",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage twice. NL Apply !M! wishdalemod:Phantom_Mark."
+      "Deal !D! damage twice. NL Apply !M! wishdalemod:Afterimage."
     ]
   },
   "wishdalemod:ZhanshiBOM": {
@@ -258,32 +265,33 @@
   },
   "wishdalemod:ZhanshiBOOM": {
     "NAME": "Vacant Stare",
-    "DESCRIPTION": "Brain replaced by Blazing Dawn"
+    "DESCRIPTION": "Brain replaced by Explosive Dawn"
   },
   "wishdalemod:Canyingbishou": {
-    "NAME": "Phantom Dagger",
-    "DESCRIPTION": " !D! DMG NL !M! wishdalemod:Phantom_Mark",
+    "NAME": "Afterimage Dagger",
+    "DESCRIPTION": " !D! DMG NL !M! wishdalemod:Afterimage",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage. NL Apply !M! wishdalemod:Phantom_Mark."
+      "Deal !D! damage. NL Apply !M! wishdalemod:Afterimage."
     ]
   },
   "wishdalemod:Mositima": {
     "NAME": "Assist: Mostima",
-    "DESCRIPTION": "Leap",
+    "DESCRIPTION": "After this turn ends, gain an extra turn. NL Your hand and excess Energy are Retained this turn. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "After this turn ends, gain an additional turn. NL End your turn. NL Exhaust."
+      "After this turn ends, gain an extra turn. NL Your hand is Retained this turn. Excess Energy carries over to the next turn. NL Exhaust.",
+      "Gain 1 wishdalemod:Chronological_Key. At the start of each turn, record and delay damage you take. NL Exhaust."
     ]
   },
   "wishdalemod:Shunshen": {
     "NAME": "Blink",
-    "DESCRIPTION": "!B! BLK NL 1 Phantom (Treasure Hunt) ",
+    "DESCRIPTION": "!B! BLK NL 1 Afterimage (Treasure Hunt)",
     "EXTENDED_DESCRIPTION": [
       "Gain !B! Block. NL Block does not disappear at the start of your next turn."
     ]
   },
   "wishdalemod:Gedang": {
     "NAME": "Parry",
-    "DESCRIPTION": "!B! BLK NL Gain 1 Dex every 3rd use ",
+    "DESCRIPTION": "!B! BLK NL Gain 1 Dex every 3rd use",
     "EXTENDED_DESCRIPTION": [
       "Gain !B! Block. NL On the third use, gain 1 Dexterity."
     ]
@@ -292,7 +300,7 @@
     "NAME": "Virtue",
     "DESCRIPTION": "Exhaust Curses and Status cards NL Gain !B! Block per card",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust ALL Curse and Status cards in your draw pile, discard pile, and hand. Gain !B! Block per card exhausted."
+      "Exhaust ALL Curse and Status cards in your draw, discard piles and hand. Gain !B! Block per card."
     ]
   },
   "wishdalemod:Huandan": {
@@ -301,21 +309,21 @@
     "EXTENDED_DESCRIPTION": [
       "Exhaust ALL cards in your hand. NL Then draw that many cards. NL Exhaust.",
       "Exhaust ALL cards in your hand. NL Then draw that many cards.",
-      "Exhaust hand NL Draw equal number of cards NL Gain [E] "
+      "Exhaust hand NL Draw equal number of cards NL Gain [E]"
     ]
   },
   "wishdalemod:Boming": {
     "NAME": "Life or Death",
-    "DESCRIPTION": "Innate NL Reduce HP to 5, gain Block equal to HP lost. Gain !M! Phantom Mark NL Exhaust",
+    "DESCRIPTION": "Innate NL Reduce HP to 5, gain Block equal to HP lost. Gain !M! Afterimage NL Exhaust",
     "EXTENDED_DESCRIPTION": [
-      "Retain. NL Reduce HP to 5, gain Block equal to HP lost. Gain !M! Phantom Mark NL Exhaust"
+      "Retain NL Reduce HP to 5, gain Block equal to HP lost. Gain !M! Afterimage NL Exhaust"
     ]
   },
   "wishdalemod:Kuangzhan": {
     "NAME": "Boiling Battle Intent",
     "DESCRIPTION": "Innate NL Reduce HP to 10, gain Block equal to half HP lost. Gain !M! Ritual NL Exhaust",
     "EXTENDED_DESCRIPTION": [
-      "Retain. NL Reduce HP to 10, gain Block equal to half HP lost. Gain !M! Ritual NL Exhaust"
+      "Retain NL Reduce HP to 10, gain Block equal to half HP lost. Gain !M! Ritual NL Exhaust"
     ]
   },
   "wishdalemod:Xuying": {
@@ -329,36 +337,36 @@
   },
   "wishdalemod:Fulingkaijia": {
     "NAME": "Spiritbound Armor",
-    "DESCRIPTION": " Gain !M! wishdalemod:Spiritbound_Armor",
-    "UPGRADE_DESCRIPTION": "Innate NL  Gain !M! wishdalemod:Spiritbound_Armor."
+    "DESCRIPTION": "Gain !M! wishdalemod:Spiritbound_Armor",
+    "UPGRADE_DESCRIPTION": "Innate NL Gain !M! wishdalemod:Spiritbound_Armor."
   },
   "wishdalemod:Bianyuanxingzhe": {
     "NAME": "Edgewalker",
-    "DESCRIPTION": "+ !M! Max HP NL Gain 1 Phantom Mark, Buffer, wishdalemod:Edgewalker NL Can only be played at wishdalemod:Critical_HP. When played, set HP to 1 NL Cost reduced by 1 each time you take damage",
+    "DESCRIPTION": "+ !M! Max HP NL Gain 1 Afterimage, Buffer, wishdalemod:Edgewalker NL Can only be played when wishdalemod:Critically_Injured. When played, set HP to 1 NL Cost reduced by 1 each time you take damage",
     "EXTENDED_DESCRIPTION": [
-      " *Sarkaz Expletive* I'm not dead yet!",
-      "Increase Max HP by 5. NL Gain 3 Strength and Dexterity, gain !B! Block. NL You cannot gain Block from cards for the next !M! turns. NL Can only be played at wishdalemod:Critical_HP. When played, set HP to 1. NL Cost reduced by 1 each time you take damage."
+      "*Sarkaz Expletive* I'm not dead yet!",
+      "Increase Max HP by 5. NL Gain 3 Strength and Dexterity, gain !B! Block. NL You cannot gain Block from cards for the next !M! turns. NL Can only be played when wishdalemod:Critically_Injured. When played, set HP to 1. NL Cost reduced by 1 each time you take damage."
     ]
   },
   "wishdalemod:Hunlingqiyue": {
-    "NAME": "Spirit Pact",
-    "DESCRIPTION": "Lose 10% of current HP, gain wishdalemod:Spirit_Pact  NL Ethereal.",
+    "NAME": "Spirit Contract",
+    "DESCRIPTION": "Lose 10% of current HP, gain wishdalemod:Spirit_Contract NL Ethereal.",
     "EXTENDED_DESCRIPTION": [
       "Lose 3 HP. NL The cost of ALL Attack cards becomes 0. NL ALL Attack cards are Exhausted when played. NL Ethereal."
     ]
   },
   "wishdalemod:Yanchenhuanrao": {
     "NAME": "Smoke Screen",
-    "DESCRIPTION": "Whenever you Exhaust a card, ALL characters gain !M! Block.",
-    "UPGRADE_DESCRIPTION": "Whenever you Exhaust a card, ALL characters gain !M! Block. NL Enemies gain half as much Block."
+    "DESCRIPTION": "Whenever a card is Exhausted, ALL characters gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Whenever a card is Exhausted, ALL characters gain !M! Block. NL Enemies gain half the Block."
   },
   "wishdalemod:Goushi": {
     "NAME": "Historiography",
     "DESCRIPTION": "Randomize ALL characters' HP NL Ethereal",
     "UPGRADE_DESCRIPTION": "Randomize HP. Enemies randomize starting from half. NL Ethereal",
     "EXTENDED_DESCRIPTION": [
-      "Randomize the Block of ALL characters on the field within their maximum possible range. NL Ethereal",
-      "Randomize the Block of ALL characters on the field within their maximum possible range. Enemy randomization range halved. NL Ethereal"
+      "The Block of ALL characters on the field is randomized within their maximum possible range. NL Ethereal",
+      "The Block of ALL characters on the field is randomized within their maximum possible range. Enemy randomization range is halved. NL Ethereal"
     ]
   },
   "wishdalemod:Ronglubaixiang": {
@@ -366,8 +374,8 @@
     "DESCRIPTION": "wishdalemod:Draw_Card"
   },
   "wishdalemod:Hunlingronglu": {
-    "NAME": "Spirit Crucible",
-    "DESCRIPTION": "Recycle and lose HP equal to the cost of the consumed card NL Nightmare !M!  NL Copied card's values change randomly NL Exhaust",
+    "NAME": "Spirit Forge",
+    "DESCRIPTION": "Recycle and lose HP equal to the cost of the Exhausted card NL Nightmare !M! NL Copied card's values change randomly NL Exhaust",
     "EXTENDED_DESCRIPTION": [
       "Choose a card to Exhaust and gain [E] equal to its cost and lose HP equal to its cost. NL Next turn, add !M! copies of that card to your hand. NL Copied card's values change randomly. NL Exhaust."
     ]
@@ -376,53 +384,53 @@
     "NAME": "Synergy",
     "DESCRIPTION": "!D! DMG, !M! HP !M! DEF Ancestor",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage. Summon a wishdalemod:Spirit_Shadow with !M! HP and !M! DEF."
+      "Deal !D! damage, summon a wishdalemod:Spirit_Shadow with !M! HP and !M! DEF."
     ]
   },
   "wishdalemod:Zhanyi": {
     "NAME": "Battle Intent",
     "DESCRIPTION": "!D! DMG, !M! HP 10 STR Ancestor",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage. Summon a wishdalemod:Spirit_Shadow with !M! HP and 10 Strength."
+      "Deal !D! damage, summon a wishdalemod:Spirit_Shadow with !M! HP and 10 Strength."
     ]
   },
   "wishdalemod:Laoyin": {
     "NAME": "Brand",
-    "DESCRIPTION": "!D! DMG, !M! wishdalemod:Phantom_Mark",
+    "DESCRIPTION": "1 DMG, !M! wishdalemod:Afterimage",
     "EXTENDED_DESCRIPTION": [
-      "Apply !M! wishdalemod:Phantom_Mark."
+      "Apply !M! wishdalemod:Afterimage to the target."
     ]
   },
   "wishdalemod:Qinshi": {
     "NAME": "Corrosion",
-    "DESCRIPTION": "AoE !D! DMG, apply !M!  wishdalemod:Phantom_Mark  X times",
+    "DESCRIPTION": "AoE !D! DMG, apply !M! wishdalemod:Afterimage X times",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage to ALL enemies X times. NL Apply !M! wishdalemod:Phantom_Mark X times."
+      "Deal !D! damage to ALL enemies X times. NL Apply !M! wishdalemod:Afterimage X times."
     ]
   },
   "wishdalemod:Saileiya": {
     "NAME": "First Aid",
-    "DESCRIPTION": "AoE Block !B! , Heal !D! NL Exhaust",
+    "DESCRIPTION": "AoE Block !B!, Heal !D! NL Exhaust",
     "EXTENDED_DESCRIPTION": [
       "Give ALL allies !B! Block. NL Heal !D! HP. NL Exhaust."
     ]
   },
   "wishdalemod:Houqinbaozhang": {
     "NAME": "Logistical Support",
-    "DESCRIPTION": "Whenever a card is Exhausted, Discarded, or a Power card is played, draw !M! cards.",
-    "UPGRADE_DESCRIPTION": "Whenever a card is Exhausted, Discarded, or a Power card is played, draw !M! cards."
+    "DESCRIPTION": "Whenever a card is Exhausted, Discarded or a Power card is played, draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Whenever a card is Exhausted, Discarded or a Power card is played, draw !M! cards."
   },
   "wishdalemod:Shengyuheiye": {
     "NAME": "Born in the Dark Night",
-    "DESCRIPTION": "Deal damage based on the number of cards in your Exhaust pile, 3 damage per card. !D! DMG",
-    "UPGRADE_DESCRIPTION": "Deal damage based on the number of cards in your Exhaust pile, !D! damage per card."
+    "DESCRIPTION": "Deal damage based on the number of cards in your Exhaust pile, 3 damage per card. !D! DMG.",
+    "UPGRADE_DESCRIPTION": "Deal damage based on the number of cards in your Exhaust pile, 4 damage per card. !D! DMG."
   },
   "wishdalemod:Xiuzheng": {
     "NAME": "Recuperate",
-    "DESCRIPTION": "If no damage taken, Heal and increase Max HP by !M! NL  Exhaust",
+    "DESCRIPTION": "Heal and increase Max HP by !M! if no damage taken NL Exhaust",
     "UPGRADE_DESCRIPTION": "Blah blah blah, blah blah, so many bugs",
     "EXTENDED_DESCRIPTION": [
-      "If you took no damage last turn, increase your Max HP by !M! and heal !M! HP. NL Its cost becomes 0. NL Exhaust"
+      "Increase your Max HP by !M! and heal !M! HP. NL If the enemy's intent last turn was not an Attack, increase the amount and its cost becomes 0. NL Exhaust."
     ]
   },
   "wishdalemod:Hunlingwoliu": {

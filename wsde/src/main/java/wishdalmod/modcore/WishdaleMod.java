@@ -239,6 +239,9 @@ public class WishdaleMod implements PostExhaustSubscriber,EditCardsSubscriber,Ed
         BaseMod.addAudio("作战中2.wav", "wishdaleResources/audio/作战中2.wav");
         BaseMod.addAudio("作战中3.wav", "wishdaleResources/audio/作战中3.wav");
         BaseMod.addAudio("作战中4.wav", "wishdaleResources/audio/作战中4.wav");
+        BaseMod.addAudio("祖宗落地音效", "wishdaleResources/audio/祖宗落地音效.mp3");
+        BaseMod.addAudio("打击音效", "wishdaleResources/audio/打击音效.mp3");
+        BaseMod.addAudio("一技能音效", "wishdaleResources/audio/一技能音效.mp3");
     }
 
     public void receiveOnBattleStart(AbstractRoom room) {
